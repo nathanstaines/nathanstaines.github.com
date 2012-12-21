@@ -1,0 +1,30 @@
+// =============================================================================
+// Posts
+// =============================================================================
+
+.post {
+  > header {
+    position: relative;
+    float: left;
+    width: flex-grid(4);
+    margin-bottom: $base-spacing-unit;
+    border-bottom: 1px solid $gray-light;
+    @include box-shadow(0 1px 0 $white);
+
+    > h2 {
+      margin-bottom: ($base-spacing-unit / 3);
+    }
+  }
+
+  .content {
+    float: left;
+    width: flex-grid(8);
+    margin-left: flex-gutter();
+  }
+
+  .meta-data {
+    margin-top: 0;
+    text-shadow: 0 1px 0 $white;
+    color: $gray;
+  }
+}

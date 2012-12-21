@@ -1,0 +1,117 @@
+// =============================================================================
+// Typography
+// =============================================================================
+
+// Headings
+// =====================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $base-spacing-unit;
+  font-family: $headings-font-family;
+  color: $headings-color;
+}
+
+h1,
+.alpha {
+  @include font-combo($h1-size);
+}
+
+h2,
+.beta {
+  @include font-combo($h2-size);
+}
+
+h3,
+.gamma {
+  @include font-combo($h3-size);
+}
+
+h4,
+.delta {
+  @include font-combo($h4-size);
+}
+
+h5,
+.epsilon {
+  @include font-combo($h5-size);
+}
+
+h6,
+.zeta {
+  @include font-combo($h6-size);
+}
+
+// Others
+// =====================================
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  margin-bottom: $base-spacing-unit;
+  border: none;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $white;
+}
+
+mark {
+  color: $black;
+  background: $yellow;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $mono-font-family;
+  @include font-size($milli-size);
+}
+
+p {
+  margin: 0 0 $base-spacing-unit;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 0.875em;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

@@ -1,0 +1,68 @@
+// =============================================================================
+// Variables
+// =============================================================================
+
+// Grays
+// =====================================
+
+$black:                             #000 !default;
+$gray-darker:                       #444 !default;
+$gray-dark:                         #666 !default;
+$gray:                              #999 !default;
+$gray-light:                        #ccc !default;
+$gray-lighter:                      #eee !default;
+$white:                             #fff !default;
+
+// Accent colors
+// =====================================
+
+$blue:                              #21759b !default;
+$orange:                            #d54e21 !default;
+$yellow:                            #ff0000 !default;
+
+// Typography
+// =====================================
+
+$base-font-size:                    16px !default;
+$base-line-height:                  24px !default;
+$base-font-family:                  "proxima-nova", "helvetica neue", helvetica, arial, sans-serif !default;
+
+$headings-font-family:              "adelle", georgia, times, "times new roman", serif !default;
+$headings-color:                    $gray-darker !default;
+
+$mono-font-family:                  monaco, "andale mono", "courier new", monospace !default;
+
+$giga-size:                         72px !default;
+$mega-size:                         48px !default;
+$kilo-size:                         30px !default;
+
+$h1-size:                           24px !default; // .alpha
+$h2-size:                           24px !default; // .beta
+$h3-size:                           20px !default; // .gamma
+$h4-size:                           18px !default; // .delta
+$h5-size:                           16px !default; // .epsilon
+$h6-size:                           14px !default; // .zeta
+
+$milli-size:                        12px !default;
+$micro-size:                        10px !default;
+
+// Scaffolding
+// =====================================
+
+$body-background:                   #f0f2f4 !default;
+
+$line-height-ratio:                 $base-line-height / $base-font-size !default;
+$base-spacing-unit:                 $line-height-ratio * 1rem !default;
+$half-spacing-unit:                 $base-spacing-unit / 2 !default;
+$double-spacing-unit:               $base-spacing-unit * 2 !default;
+
+$footer-height:                     $double-spacing-unit !default;
+
+$base-radius:                       4px !default;
+
+// Flex grid
+// =====================================
+
+$fg-column:                         60px !default;
+$fg-gutter:                         25px !default;
+$fg-max-columns:                    12 !default;

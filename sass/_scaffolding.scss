@@ -1,0 +1,51 @@
+// =============================================================================
+// Scaffolding
+// =============================================================================
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  border-top: 6px solid $gray-darker;
+  font: #{($base-font-size / 16px) * 1em}/#{$line-height-ratio} $base-font-family;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  color: $gray-darker;
+}
+
+body {
+  margin: 0;
+  background: $body-background;
+}
+
+// =============================================================================
+// HTML5 display definitions
+// =============================================================================
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}

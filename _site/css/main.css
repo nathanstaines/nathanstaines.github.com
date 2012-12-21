@@ -1,0 +1,386 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  border-top: 6px solid #444444;
+  font: 1em/1.5 "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  color: #444444;
+}
+
+body {
+  margin: 0;
+  background: #f0f2f4;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  text-shadow: none;
+  color: #21759b;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+a:hover {
+  text-decoration: underline;
+  color: #d54e21;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.5rem;
+  font-family: "adelle", georgia, times, "times new roman", serif;
+  color: #444444;
+}
+
+h1,
+.alpha {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+h2,
+.beta {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+h3,
+.gamma {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+h4,
+.delta {
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+
+h5,
+.epsilon {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h6,
+.zeta {
+  font-size: 0.875rem;
+  line-height: 1.71429;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+hr {
+  margin-bottom: 1.5rem;
+  border: none;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid white;
+}
+
+mark {
+  color: black;
+  background: red;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monaco, "andale mono", "courier new", monospace;
+  font-size: 0.75rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+  font-size: 0.875em;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+code {
+  padding: 0 0.25rem;
+  border: 1px solid #5fb6dd;
+  border-radius: 4px;
+  color: #21759b;
+  background: #c8e6f3;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
+  background: #eeeeee;
+}
+
+pre > code {
+  padding: 0;
+  border: none;
+  color: #666666;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure > img {
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 0.5rem;
+  border: 1px solid #cccccc;
+  font-weight: bold;
+  text-shadow: 0 1px 0 white;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #666666;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px white;
+  box-shadow: 0 1px 1px white;
+}
+.btn:hover {
+  border-color: #999999;
+  text-decoration: none;
+  color: #666666;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px white inset;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px white inset;
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, white, #eeeeee);
+  background-image: -moz-linear-gradient(top, white, #eeeeee);
+  background-image: -ms-linear-gradient(top, white, #eeeeee);
+  background-image: -o-linear-gradient(top, white, #eeeeee);
+  background-image: linear-gradient(top, white, #eeeeee);
+}
+
+.btn-small {
+  font-size: 0.75rem;
+}
+
+.tags .btn {
+  margin-right: 0.1875rem;
+}
+
+.nav-posts {
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#layout {
+  min-height: 100%;
+  margin-bottom: -3rem;
+}
+
+#head {
+  margin-bottom: 3rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-shadow: 0 1px 0 white;
+  box-shadow: 0 1px 0 white;
+  background: white;
+}
+#head a {
+  text-decoration: none;
+}
+#head .nav {
+  float: right;
+}
+#head .nav ul {
+  margin: 0;
+}
+#head .nav li {
+  display: inline-block;
+  margin-left: 3rem;
+}
+
+#logo {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.logo-circles {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.75rem;
+  border: 2px solid white;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 0 0 4px #d54e21;
+  box-shadow: 0 0 0 4px #d54e21;
+  background: #21759b;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+#logo:hover .logo-circles {
+  border: 6px solid white;
+  background: #d54e21;
+  -webkit-box-shadow: 0 0 0 4px #21759b;
+  box-shadow: 0 0 0 4px #21759b;
+}
+
+#faux-foot {
+  height: 3rem;
+}
+
+#foot {
+  position: relative;
+  clear: both;
+  height: 3rem;
+  border-top: 1px solid #cccccc;
+  background: white;
+}
+
+#copyright {
+  margin: 0.75rem 0;
+  text-align: right;
+}
+
+#copyright,
+#copyright a {
+  color: #999999;
+}
+
+.post > header {
+  position: relative;
+  float: left;
+  width: 31.65829%;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-shadow: 0 1px 0 white;
+  box-shadow: 0 1px 0 white;
+}
+.post > header > h2 {
+  margin-bottom: 0.5rem;
+}
+.post .content {
+  float: left;
+  width: 65.82915%;
+  margin-left: 2.51256%;
+}
+.post .meta-data {
+  margin-top: 0;
+  text-shadow: 0 1px 0 white;
+  color: #999999;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}

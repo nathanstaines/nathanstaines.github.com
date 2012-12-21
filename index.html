@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% assign year = "" %}
+
+{% for post in site.posts %}
+  {% capture oh_year %}
+    {{ post.date | date: "%Y" }}
+  {% endcapture %}
+
+  {% if year != oh_year %}
+    {% assign year = oh_year %}
+
+    <h1>{{ oh_year }}</h1>
+  {% endif %}
+
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+  <p class="meta-data">
+    {% if post.date  %}
+      {{ post.date | date: "%B %d, %Y" }}
+    {% endif %}
+  </p>
+{% endfor %}

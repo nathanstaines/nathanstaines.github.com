@@ -1,0 +1,96 @@
+// =============================================================================
+// Layout
+// =============================================================================
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#layout {
+  min-height: 100%;
+  margin-bottom: -($footer-height);
+}
+
+// Site header
+// =====================================
+
+#head {
+  margin-bottom: $double-spacing-unit;
+  padding: $half-spacing-unit 0;
+  border-bottom: 1px solid $gray-light;
+  @include box-shadow(0 1px 0 $white);
+  background: $white;
+
+  a {
+    text-decoration: none;
+  }
+
+  .nav {
+    float: right;
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: $double-spacing-unit;
+    }
+  }
+}
+
+// The logo
+// =====================================
+
+#logo {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.logo-circles {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: $base-font-size;
+  height: $base-font-size;
+  margin-right: $half-spacing-unit;
+  border: 2px solid $white;
+  border-radius: $base-font-size;
+  @include box-shadow(0 0 0 4px $orange);
+  background: $blue;
+  @include transition(all 0.3s linear);
+}
+
+#logo:hover .logo-circles {
+  border: 6px solid $white;
+  background: $orange;
+  @include box-shadow(0 0 0 4px $blue);
+}
+
+// Site footer
+// =====================================
+
+#faux-foot {
+  height: $footer-height;
+}
+
+#foot {
+  position: relative;
+  clear: both;
+  height: $footer-height;
+  border-top: 1px solid $gray-light;
+  background: $white;
+}
+
+#copyright {
+  margin: $half-spacing-unit 0;
+  text-align: right;
+}
+
+#copyright,
+#copyright a {
+  color: $gray;
+}

@@ -1,0 +1,34 @@
+// =============================================================================
+// Buttons
+// =============================================================================
+
+.btn {
+  display: inline-block;
+  padding: 0 ($base-spacing-unit / 3);
+  border: 1px solid $gray-light;
+  font-weight: bold;
+  text-shadow: 0 1px 0 $white;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: $gray-dark;
+  background: transparent;
+  cursor: pointer;
+  border-radius: $base-radius;
+  @include box-shadow(0 1px 1px $white);
+
+  &:hover {
+    border-color: $gray;
+    text-decoration: none;
+    color: $gray-dark;
+    @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px $white inset);
+    @include linear-gradient($white, $gray-lighter);
+  }
+}
+
+.btn-small {
+  @include font-size($milli-size);
+}
+
+.tags .btn {
+  margin-right: ($base-spacing-unit / 8);
+}

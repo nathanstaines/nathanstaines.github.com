@@ -1,0 +1,8 @@
+# Standard Jekyll configuration
+markdown: rdiscount
+pygments: true
+permalink: /:categories/:title/
+exclude: ['Rakefile', 'readme.md', 'sass']
+
+# Configuration required for some pages
+title: Nathan Staines

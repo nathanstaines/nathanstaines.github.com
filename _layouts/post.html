@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<article class="post clearfix">
+  <header>
+    {% if page.title %}
+      <h2>{{ page.title }}</h2>
+    {% endif %}
+
+    <p class="meta-data">
+      {% if page.date  %}
+        {{ page.date | date: "%B %d, %Y" }} &bull;
+      {% endif %}
+      {{ page.content | number_of_words }} words
+    </p>
+
+    <p class="tags">
+      {% for tag in page.tags %}
+        <a class="btn btn-small" href="#" rel="tag">{{ tag }}</a>
+      {% endfor %}
+    </p>
+
+    <nav class="nav nav-posts">
+      {% if page.previous %}
+      {% else %}
+        Prev
+      {% endif %}
+
+      &bull;
+
+      {% if page.next %}
+      {% else %}
+        Next
+      {% endif %}
+    </nav>
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+</article>

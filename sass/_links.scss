@@ -1,0 +1,24 @@
+// =============================================================================
+// Links
+// =============================================================================
+
+a {
+  text-decoration: none;
+  text-shadow: none;
+  color: $blue;
+  @include transition(all 0.3s linear);
+
+  &:hover {
+    text-decoration: underline;
+    color: $orange;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
