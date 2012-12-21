@@ -1,0 +1,19 @@
+// =============================================================================
+// Tags
+// =============================================================================
+
+.tag {
+  display: inline-block;
+  margin-right: ($base-spacing-unit / 8);
+  padding: 0 ($base-spacing-unit / 3);
+  border: 1px solid $gray-light;
+  @include font-size($milli-size);
+  font-weight: bold;
+  text-shadow: 0 1px 0 $white;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: $gray-dark;
+  background: transparent;
+  border-radius: $base-radius;
+  @include box-shadow(0 1px 1px $white);
+}
