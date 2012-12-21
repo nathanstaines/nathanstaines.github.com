@@ -28,7 +28,3 @@
 .btn-small {
   @include font-size($milli-size);
 }
-
-.tags .btn {
-  margin-right: ($base-spacing-unit / 8);
-}

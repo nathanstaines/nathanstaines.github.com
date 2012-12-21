@@ -15,21 +15,23 @@ layout: default
       {{ page.content | number_of_words }} words
     </p>
 
-    <p class="tags">
+    <p>
       {% for tag in page.tags %}
-        <a class="btn btn-small" href="#" rel="tag">{{ tag }}</a>
+        <span class="tag">{{ tag }}</span>
       {% endfor %}
     </p>
 
     <nav class="nav nav-posts">
-      {% if page.previous %}
+      {% if page.previous and page.previous.categories[0] == page.categories[0] %}
+        <a href="{{ page.previous.url }}">Prev</a>
       {% else %}
         Prev
       {% endif %}
 
       &bull;
 
-      {% if page.next %}
+      {% if page.next and page.next.categories[0] == page.categories[0] %}
+        <a href="{{ page.next.url }}">Next</a>
       {% else %}
         Next
       {% endif %}

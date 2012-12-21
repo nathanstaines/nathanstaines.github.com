@@ -6,4 +6,6 @@
   position: absolute;
   bottom: -($double-spacing-unit);
   left: 0;
+  text-shadow: 0 1px 0 $white;
+  color: $gray;
 }
