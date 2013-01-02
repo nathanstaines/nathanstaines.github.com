@@ -96,6 +96,24 @@ q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
+blockquote {
+  padding-left: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+  border-left: 3px solid $orange;
+  font-style: italic;
+
+  &:before,
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+
+/**
+ * We don't want to use rems for <small>, <sub> or <sup>.
+ * We want the font-size to remain relative to whatever the parent element is.
+ */
+
 small {
   font-size: 0.875em;
 }
