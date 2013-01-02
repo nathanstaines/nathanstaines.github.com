@@ -7,6 +7,10 @@ date: 2010-02-25 12:00:00
 ---
 
 I'm here, I've finally made it... my very own slice of the world wide web! Now don't get me wrong, I've had websites before but I've never had one named after me... it's kind of a big deal.
+<figure>
+  <img src="http://placehold.it/300x200">
+  <figcaption>Meow</figcaption>
+</figure>
 
 Just like a builder who builds his own house or a mechanic who puts together his own car a designer who designs his own site, is never really finished. Even though I'm happy with the way things look at the moment I can certainly guarantee that over time improvements will be made.
 
