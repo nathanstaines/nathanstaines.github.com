@@ -97,8 +97,8 @@ q {
 }
 
 blockquote {
-  padding-left: $base-spacing-unit;
-  margin-bottom: $base-spacing-unit;
+  margin: 0 0 $base-spacing-unit;
+  padding: 0 0 0 $base-spacing-unit;
   border-left: 3px solid $orange;
   font-style: italic;
 
