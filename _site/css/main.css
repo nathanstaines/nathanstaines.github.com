@@ -237,6 +237,14 @@ img {
   border: none;
 }
 
+.img-polaroid {
+  padding: 4px;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
 figure {
   display: inline-block;
   margin: 0;
@@ -329,6 +337,10 @@ figcaption:before {
 #layout {
   min-height: 100%;
   margin-bottom: -3rem;
+}
+
+#main {
+  margin-bottom: 1.5rem;
 }
 
 #head {

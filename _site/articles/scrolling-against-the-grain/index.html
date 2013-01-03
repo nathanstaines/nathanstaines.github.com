@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <title>Scrolling against the grain - Nathan Staines</title>
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="//use.typekit.com/wzg1ian.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="layout">
+      <header id="head" class="clearfix" role="banner">
+        <div class="container">
+          <h1 id="logo"><a href="/" rel="home"><span class="logo-circles"></span>Nathan Staines</a></h1>
+          <nav class="nav" role="navigation">
+            <ul>
+              <li><a href="#">Articles</a></li>
+              <li><a href="#">Photos</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div id="main" class="container" role="main">
+        <article class="post clearfix">
+  <header>
+    
+      <h2>Scrolling against the grain</h2>
+    
+
+    <p class="meta-data">
+      
+        February 11, 2010 &bull;
+      
+      415 words
+    </p>
+
+    <p>
+      
+        <span class="tag">jquery</span>
+      
+        <span class="tag">tutorial</span>
+      
+    </p>
+
+    <nav class="nav nav-posts">
+      
+        <a href="/articles/how-do-you-say-html/">Prev</a>
+      
+
+      &bull;
+
+      
+        Next
+      
+    </nav>
+  </header>
+
+  <div class="content">
+    <p>Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in 'going against the grain' because by default, browsers want to wrap the content to fit vertically within the window.</p>
+
+<p>There are plenty of different options out there for you when it comes to making your site go sideways, firstly <a href="http://www.thehorizontalway.com/#footer">the horizontal way</a> have a template that you can download and have a play with.</p>
+
+<p>Chris Coyier has also come up with <a href="http://css-tricks.com/how-to-create-a-horizontally-scrolling-site/">a solution</a> using jQuery to create a table based layout on the fly, while Antonio Lupetti discusses <a href="http://woork.blogspot.com/2009/02/useful-tips-to-design-horizontal.html">another option</a> of manually setting the width of your containing element.</p>
+
+<h3>How I went horizontal</h3>
+
+<p>I think I may have decided to go the road less traveled with the <a href="http://qcdboards.com">QCD Boards website</a>, choosing to dynamically set the width of the containing element using jQuery.</p>
+
+<p>I know it's considered bad practise to handle page layout with JavaScript and it may not degrade as nicely as it should but has anyone really come across a bulletproof technique yet?</p>
+
+<p>Well the idea behind this method is to come up with a <strong>set width</strong> for each post, multiply it by the <strong>number of posts</strong> you have and then include that figure in the CSS file, which in turn forces the browser to grow horizontally.</p>
+
+<p>This is achieved by first setting the width of the post element in the CSS file:</p>
+
+<div class="highlight"><pre><code class="css"><span class="nc">.post</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">800px</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+
+<p>Then all you need to do is include this simple jQuery function:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">$function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">numElementsSingle</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.post&#39;</span><span class="p">).</span><span class="nx">size</span><span class="p">(),</span>
+      <span class="nx">wrapperWidthSingle</span> <span class="o">=</span> <span class="nx">numElementsSingle</span> <span class="o">*</span> <span class="mi">800</span><span class="p">,</span>
+      <span class="nx">wrapperWidth</span> <span class="o">=</span> <span class="nx">wrapperWidthSingle</span><span class="p">;</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#wrapper&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="nx">width</span><span class="o">:</span> <span class="nx">wrapperWidth</span> <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+
+<p>And you should end up with a layout structure similar to this:</p>
+
+<p><img class="img-polaroid" src="/img/horiz.jpg" alt=""></p>
+
+<p>Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I'll do my best to help you out.</p>
+
+<h3>In closing</h3>
+
+<p>I know that there are plenty of <a href="http://naldzgraphics.net/inspirations/40-examples-of-horizontal-scrolling-websites/">horizontally scrolling websites</a> out there so if you've come across a different/better solution for scrolling against the grain then please let me know.</p>
+
+<p><strong>A Helpful Tip:</strong> if you hold shift while using your mouse wheel, most horizontal websites should scroll sideways for you.</p>
+
+  </div>
+</article>
+
+      </div>
+
+      <div id="faux-foot"></div>
+    </div>
+
+    <footer id="foot" role="contentinfo">
+      <div class="container">
+        <p id="copyright"><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">&copy;</a> 2010 - 2013 Nathan Staines</p>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

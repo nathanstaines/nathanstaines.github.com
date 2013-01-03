@@ -8,9 +8,15 @@ img {
   border: none;
 }
 
-// =============================================================================
+.img-polaroid {
+  padding: 4px;
+  border: 1px solid $gray-light;
+  @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  background: $white;
+}
+
 // Figures
-// =============================================================================
+// =====================================
 
 figure {
   display: inline-block;
