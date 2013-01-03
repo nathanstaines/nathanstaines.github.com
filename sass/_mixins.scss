@@ -10,3 +10,25 @@
   font-size: ($font-size / $base-font-size) * 1rem;
   line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
 }
+
+@mixin inset-effect {
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 $white);
+  background: $gray-lighter;
+}
+
+@mixin keyline($position) {
+  @if $position == top {
+    border-top: 1px solid $gray-light;
+    @include box-shadow(0 1px 0 $white inset);
+  }
+
+  @if $position == bottom {
+    border-bottom: 1px solid $gray-light;
+    @include box-shadow(0 1px 0 $white);
+  }
+
+  @if $position == none {
+    border: none;
+    @include box-shadow(none);
+  }
+}

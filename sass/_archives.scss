@@ -1,0 +1,38 @@
+// =============================================================================
+// Archives
+// =============================================================================
+
+.archive-list {
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-list-item {
+  clear: both;
+  padding-top: $base-spacing-unit;
+
+  > h1 {
+    float: left;
+    width: flex-grid(4);
+  }
+
+  > article {
+    float: right;
+    width: flex-grid(8);
+    margin-left: flex-gutter();
+
+    > h2 {
+      margin-bottom: ($base-spacing-unit / 3);
+    }
+  }
+}
+
+.archive-list-item.with-year {
+  @include keyline(top);
+
+  &:first-child {
+    padding-top: 0;
+    @include keyline(none);
+  }
+}

@@ -8,8 +8,7 @@
     float: left;
     width: flex-grid(4);
     margin-bottom: $base-spacing-unit;
-    border-bottom: 1px solid $gray-light;
-    @include box-shadow(0 1px 0 $white);
+    @include keyline(bottom);
 
     > h2 {
       margin-bottom: ($base-spacing-unit / 3);

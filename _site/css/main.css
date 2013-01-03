@@ -204,41 +204,6 @@ li > ol {
   margin-bottom: 0;
 }
 
-.archive-list {
-  margin-left: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.archive-list-item {
-  clear: both;
-  padding-top: 1.5rem;
-}
-.archive-list-item > h1 {
-  float: left;
-  width: 31.65829%;
-}
-.archive-list-item > article {
-  float: right;
-  width: 65.82915%;
-  margin-left: 2.51256%;
-}
-.archive-list-item > article > h2 {
-  margin-bottom: 0.5rem;
-}
-
-.archive-list-item.with-year {
-  border-top: 1px solid #cccccc;
-  -webkit-box-shadow: 0 1px 0 white inset;
-  box-shadow: 0 1px 0 white inset;
-}
-.archive-list-item.with-year:first-child {
-  padding-top: 0;
-  border-top: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
 code {
   padding: 0 0.25rem;
   border: 1px solid #5fb6dd;
@@ -458,6 +423,41 @@ figcaption:before {
   float: left;
   width: 65.82915%;
   margin-left: 2.51256%;
+}
+
+.archive-list {
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-list-item {
+  clear: both;
+  padding-top: 1.5rem;
+}
+.archive-list-item > h1 {
+  float: left;
+  width: 31.65829%;
+}
+.archive-list-item > article {
+  float: right;
+  width: 65.82915%;
+  margin-left: 2.51256%;
+}
+.archive-list-item > article > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.archive-list-item.with-year {
+  border-top: 1px solid #cccccc;
+  -webkit-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
+}
+.archive-list-item.with-year:first-child {
+  padding-top: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .meta-data {
