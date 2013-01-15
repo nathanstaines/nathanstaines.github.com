@@ -1,3 +1,4 @@
+/* line 7, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 *,
 *:before,
 *:after {
@@ -6,11 +7,13 @@
   box-sizing: border-box;
 }
 
+/* line 12, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 html,
 body {
   height: 100%;
 }
 
+/* line 16, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 html {
   border-top: 6px solid #444444;
   font: 1em/1.5 "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
@@ -19,11 +22,13 @@ html {
   color: #444444;
 }
 
+/* line 24, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 body {
   margin: 0;
   background: #f0f2f4;
 }
 
+/* line 42, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 article,
 aside,
 details,
@@ -38,12 +43,14 @@ summary {
   display: block;
 }
 
+/* line 48, /Users/nstaines/Sites/nathanstaines/sass/_scaffolding.scss */
 audio,
 canvas,
 video {
   display: inline-block;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_links.scss */
 a {
   text-decoration: none;
   text-shadow: none;
@@ -54,17 +61,21 @@ a {
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
+/* line 11, /Users/nstaines/Sites/nathanstaines/sass/_links.scss */
 a:hover {
   text-decoration: underline;
   color: #d54e21;
 }
+/* line 16, /Users/nstaines/Sites/nathanstaines/sass/_links.scss */
 a:focus {
   outline: thin dotted;
 }
+/* line 21, /Users/nstaines/Sites/nathanstaines/sass/_links.scss */
 a:hover, a:active {
   outline: 0;
 }
 
+/* line 13, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h1,
 h2,
 h3,
@@ -76,55 +87,65 @@ h6 {
   color: #444444;
 }
 
+/* line 20, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h1,
 .alpha {
   font-size: 1.5rem;
   line-height: 1;
 }
 
+/* line 25, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h2,
 .beta {
   font-size: 1.5rem;
   line-height: 1;
 }
 
+/* line 30, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h3,
 .gamma {
   font-size: 1.25rem;
   line-height: 1.2;
 }
 
+/* line 35, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h4,
 .delta {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
 
+/* line 40, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h5,
 .epsilon {
   font-size: 1rem;
   line-height: 1.5;
 }
 
+/* line 45, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 h6,
 .zeta {
   font-size: 0.875rem;
   line-height: 1.71429;
 }
 
+/* line 52, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
+/* line 57, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 b,
 strong {
   font-weight: bold;
 }
 
+/* line 61, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 dfn {
   font-style: italic;
 }
 
+/* line 65, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 hr {
   margin-bottom: 1.5rem;
   border: none;
@@ -132,11 +153,13 @@ hr {
   border-bottom: 1px solid white;
 }
 
+/* line 72, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 mark {
   color: black;
   background: red;
 }
 
+/* line 80, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 code,
 kbd,
 pre,
@@ -145,26 +168,31 @@ samp {
   font-size: 0.75rem;
 }
 
+/* line 85, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 p {
   margin: 0 0 1.5rem;
 }
 
+/* line 89, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
+/* line 95, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
+/* line 99, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 blockquote {
   margin: 0 0 1.5rem;
   padding: 0 0 0 1.5rem;
   border-left: 3px solid #d54e21;
   font-style: italic;
 }
+/* line 106, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 blockquote:before, blockquote:after {
   content: "";
   content: none;
@@ -174,10 +202,12 @@ blockquote:before, blockquote:after {
  * We don't want to use rems for <small>, <sub> or <sup>.
  * We want the font-size to remain relative to whatever the parent element is.
  */
+/* line 117, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 small {
   font-size: 0.875em;
 }
 
+/* line 122, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 sub,
 sup {
   position: relative;
@@ -186,24 +216,29 @@ sup {
   vertical-align: baseline;
 }
 
+/* line 129, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 sup {
   top: -0.5em;
 }
 
+/* line 133, /Users/nstaines/Sites/nathanstaines/sass/_type.scss */
 sub {
   bottom: -0.25em;
 }
 
+/* line 6, /Users/nstaines/Sites/nathanstaines/sass/_lists.scss */
 ul,
 ol {
   margin: 0 0 1.5rem 1.5rem;
 }
 
+/* line 12, /Users/nstaines/Sites/nathanstaines/sass/_lists.scss */
 li > ul,
 li > ol {
   margin-bottom: 0;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
 code {
   padding: 0 0.25rem;
   border: 1px solid #5fb6dd;
@@ -212,6 +247,7 @@ code {
   background: #c8e6f3;
 }
 
+/* line 13, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
 pre {
   display: block;
   overflow: auto;
@@ -224,6 +260,7 @@ pre {
   background: #eeeeee;
 }
 
+/* line 23, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
 pre > code {
   padding: 0;
   border: none;
@@ -231,20 +268,24 @@ pre > code {
   background: none;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 img {
   max-width: 100%;
   height: auto;
   border: none;
 }
 
+/* line 11, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 .img-polaroid {
   padding: 4px;
   border: 1px solid #cccccc;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background: white;
 }
 
+/* line 22, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 figure {
   display: inline-block;
   margin: 0;
@@ -256,19 +297,41 @@ figure {
   background: #eeeeee;
 }
 
+/* line 31, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 figure > img {
   display: block;
 }
 
+/* line 35, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 figcaption {
   margin-top: 0.75rem;
   font-size: 0.75rem;
 }
+/* line 39, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
 figcaption:before {
   margin-right: 0.375rem;
   content: "\2014";
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_panels.scss */
+.panel {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.5rem 0;
+  border: 1px solid;
+  border-color: #cccccc #cccccc #c4c4c4;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -ms-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(top, white, #f2f2f2);
+}
+
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_buttons.scss */
 .btn {
   display: inline-block;
   padding: 0 0.5rem;
@@ -284,25 +347,28 @@ figcaption:before {
   -webkit-box-shadow: 0 1px 1px white;
   box-shadow: 0 1px 1px white;
 }
+/* line 19, /Users/nstaines/Sites/nathanstaines/sass/_buttons.scss */
 .btn:hover {
-  border-color: #999999;
+  border-color: #cccccc #cccccc #c4c4c4;
   text-decoration: none;
   color: #666666;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px white inset;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px white inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, white, #eeeeee);
-  background-image: -moz-linear-gradient(top, white, #eeeeee);
-  background-image: -ms-linear-gradient(top, white, #eeeeee);
-  background-image: -o-linear-gradient(top, white, #eeeeee);
-  background-image: linear-gradient(top, white, #eeeeee);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -ms-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(top, white, #f2f2f2);
 }
 
+/* line 28, /Users/nstaines/Sites/nathanstaines/sass/_buttons.scss */
 .btn-small {
   font-size: 0.75rem;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_tags.scss */
 .tag {
   display: inline-block;
   margin-right: 0.1875rem;
@@ -320,6 +386,7 @@ figcaption:before {
   box-shadow: 0 1px 1px white;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_navs.scss */
 .nav-posts {
   position: absolute;
   bottom: -3rem;
@@ -328,21 +395,25 @@ figcaption:before {
   color: #999999;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 .container {
   width: 90%;
   max-width: 960px;
   margin: 0 auto;
 }
 
+/* line 11, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #layout {
   min-height: 100%;
   margin-bottom: -3rem;
 }
 
+/* line 16, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #main {
   margin-bottom: 1.5rem;
 }
 
+/* line 23, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #head {
   margin-bottom: 3rem;
   padding: 0.75rem 0;
@@ -351,26 +422,32 @@ figcaption:before {
   box-shadow: 0 1px 0 white;
   background: white;
 }
+/* line 30, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #head a {
   text-decoration: none;
 }
+/* line 34, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #head .nav {
   float: right;
 }
+/* line 37, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #head .nav ul {
   margin: 0;
 }
+/* line 41, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #head .nav li {
   display: inline-block;
   margin-left: 3rem;
 }
 
+/* line 51, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #logo {
   display: inline-block;
   margin: 0;
   vertical-align: middle;
 }
 
+/* line 57, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 .logo-circles {
   position: relative;
   top: -1px;
@@ -390,6 +467,7 @@ figcaption:before {
   transition: all 0.3s linear;
 }
 
+/* line 71, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #logo:hover .logo-circles {
   border: 6px solid white;
   background: #d54e21;
@@ -397,10 +475,12 @@ figcaption:before {
   box-shadow: 0 0 0 4px #21759b;
 }
 
+/* line 80, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #faux-foot {
   height: 3rem;
 }
 
+/* line 84, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #foot {
   position: relative;
   clear: both;
@@ -409,16 +489,19 @@ figcaption:before {
   background: white;
 }
 
+/* line 92, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #copyright {
   margin: 0.75rem 0;
   text-align: right;
 }
 
+/* line 98, /Users/nstaines/Sites/nathanstaines/sass/_layout.scss */
 #copyright,
 #copyright a {
   color: #999999;
 }
 
+/* line 6, /Users/nstaines/Sites/nathanstaines/sass/_posts.scss */
 .post > header {
   position: relative;
   float: left;
@@ -428,43 +511,52 @@ figcaption:before {
   -webkit-box-shadow: 0 1px 0 white;
   box-shadow: 0 1px 0 white;
 }
+/* line 13, /Users/nstaines/Sites/nathanstaines/sass/_posts.scss */
 .post > header > h2 {
   margin-bottom: 0.5rem;
 }
+/* line 18, /Users/nstaines/Sites/nathanstaines/sass/_posts.scss */
 .post .content {
   float: left;
   width: 65.82915%;
   margin-left: 2.51256%;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list {
   margin-left: 0;
   padding: 0;
   list-style: none;
 }
 
+/* line 11, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item {
   clear: both;
   padding-top: 1.5rem;
 }
+/* line 15, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item > h1 {
   float: left;
   width: 31.65829%;
 }
+/* line 20, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item > article {
   float: right;
   width: 65.82915%;
   margin-left: 2.51256%;
 }
+/* line 25, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item > article > h2 {
   margin-bottom: 0.5rem;
 }
 
+/* line 31, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item.with-year {
   border-top: 1px solid #cccccc;
   -webkit-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
+/* line 34, /Users/nstaines/Sites/nathanstaines/sass/_archives.scss */
 .archive-list-item.with-year:first-child {
   padding-top: 0;
   border: none;
@@ -472,18 +564,22 @@ figcaption:before {
   box-shadow: none;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_misc.scss */
 .meta-data {
   text-shadow: 0 1px 0 white;
   color: #999999;
 }
 
+/* line 5, /Users/nstaines/Sites/nathanstaines/sass/_utilities.scss */
 .clearfix {
   *zoom: 1;
 }
+/* line 18, /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
+/* line 23, /Applications/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
 .clearfix:after {
   clear: both;
 }
