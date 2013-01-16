@@ -5,19 +5,11 @@
 .post {
   > header {
     position: relative;
-    float: left;
-    width: flex-grid(4);
     margin-bottom: $base-spacing-unit;
     @include keyline(bottom);
 
     > h2 {
       margin-bottom: ($base-spacing-unit / 3);
     }
-  }
-
-  .content {
-    float: left;
-    width: flex-grid(8);
-    margin-left: flex-gutter();
   }
 }

@@ -4,8 +4,8 @@
 
 .nav-posts {
   position: absolute;
-  bottom: -($double-spacing-unit);
-  left: 0;
+  right: 0;
+  bottom: $base-spacing-unit;
   text-shadow: 0 1px 0 $white;
   color: $gray;
 }

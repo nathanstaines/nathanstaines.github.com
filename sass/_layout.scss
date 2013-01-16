@@ -3,8 +3,8 @@
 // =============================================================================
 
 .container {
-  width: 90%;
-  max-width: 960px;
+  width: 85%;
+  max-width: 660px;
   margin: 0 auto;
 }
 
@@ -26,23 +26,6 @@
   border-bottom: 1px solid $gray-light;
   @include box-shadow(0 1px 0 $white);
   background: $white;
-
-  a {
-    text-decoration: none;
-  }
-
-  .nav {
-    float: right;
-
-    ul {
-      margin: 0;
-    }
-
-    li {
-      display: inline-block;
-      margin-left: $double-spacing-unit;
-    }
-  }
 }
 
 // The logo
@@ -52,6 +35,10 @@
   display: inline-block;
   margin: 0;
   vertical-align: middle;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .logo-circles {

@@ -15,12 +15,6 @@ layout: default
       {{ page.content | number_of_words }} words
     </p>
 
-    <p>
-      {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>
-      {% endfor %}
-    </p>
-
     <nav class="nav nav-posts">
       {% if page.previous and page.previous.categories[0] == page.categories[0] %}
         <a href="{{ page.previous.url }}">Prev</a>
