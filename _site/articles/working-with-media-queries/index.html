@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <title>Working with media queries - Nathan Staines</title>
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="//use.typekit.com/wzg1ian.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="layout">
+      <header id="head" class="clearfix" role="banner">
+        <div class="container">
+          <h1 id="logo"><a href="/" rel="home"><span class="logo-circles"></span>Nathan Staines</a></h1>
+          <nav class="nav" role="navigation">
+            <ul>
+              <li><a href="#">Articles</a></li>
+              <li><a href="#">Photos</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div id="main" class="container" role="main">
+        <article class="post clearfix">
+  <header>
+    
+      <h2>Working with media queries</h2>
+    
+
+    <p class="meta-data">
+      
+        December 02, 2010 &bull;
+      
+      463 words
+    </p>
+
+    <p>
+      
+        <span class="tag">css</span>
+      
+        <span class="tag">responsive</span>
+      
+        <span class="tag">tutorial</span>
+      
+    </p>
+
+    <nav class="nav nav-posts">
+      
+        <a href="/articles/starkers-html5/">Prev</a>
+      
+
+      &bull;
+
+      
+        Next
+      
+    </nav>
+  </header>
+
+  <div class="content">
+    <p>The use of media queries simply allows us to apply different CSS styles based on resolution and/or device orientation. It uses the same old media declaration that we've used for serving up print stylesheets but now it just has a few more features under its belt.</p>
+
+<p><strong>Everyone's doing it</strong>... ok, so maybe not everyone but it's definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.</p>
+
+<p><figure>
+  <a href="http://hicksdesign.co.uk"><img class="img-polaroid" src="/img/query-hicks.png" alt=""></a>
+  <figcaption>Hicks Design</figcaption>
+</figure></p>
+
+<h3>How do we use them?</h3>
+
+<p>First we need to set the viewport to device-width</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+
+<p>We can either link to external stylesheets</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (max-device-width: 480px)&quot;</span> <span class="na">href=</span><span class="s">&quot;small.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (min-device-width: 768px) and (max-device-width: 1024px)&quot;</span> <span class="na">href=</span><span class="s">&quot;medium.css&quot;</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+
+<p>Or add them to an existing stylesheet</p>
+
+<div class="highlight"><pre><code class="css"><span class="c">/* Minimum width */</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Maximum width */</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">600px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Minimum and maximum width */</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">600px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Maximum device width */</span>
+<span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Maximum device width and orientation */</span>
+<span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:portrait</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* High resolution devices */</span>
+<span class="k">@media</span>
+<span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">),</span>
+<span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">192dpi</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+<h3>Is it supported?</h3>
+
+<p>The browser support for media queries is actually pretty good. The latest versions of Firefox, Safari, Chrome, and Opera are all using it. Internet Explorer 9 will be, but IE8 and below do not :( however there is a <a href="http://plugins.jquery.com/project/MediaQueries">jQuery media queries plugin</a> - for those not-so-capable browsers.</p>
+
+<h3>Final thoughts</h3>
+
+<p>One thing to keep in mind - Although we can now tailor our designs to suit different devices we'll still be dealing with the exact same content. (<a href="http://dev.w3.org/csswg/css3-flexbox/">CSS3 flexbox</a> can help rearrange some content if necessary) So even if we decide to use CSS to hide images on the iPhone, they'll still be downloaded by the user.</p>
+
+<h3>Notable Mentions</h3>
+
+<ul>
+<li><a href="http://mediaqueri.es">Mediaqueri.es</a> - A collection of responsive web design.</li>
+<li><a href="http://lessframework.com">Less Framework</a> - A CSS grid system for designing adaptive web­sites.</li>
+<li><a href="http://cssgrid.net/">CSSgrid</a> - A 1140px wide, 12 column grid. Fluid all the way down to mobile.</li>
+<li><a href="http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/">A Jason Grigsby article</a> - On media queries for mobile being fools gold.</li>
+</ul>
+
+
+<p><figure>
+  <a href="http://edmerritt.com/"><img class="img-polaroid" src="/img/query-merritt.png" alt=""></a>
+  <figcaption>Ed Merritt</figcaption>
+</figure></p>
+
+<p><figure>
+  <a href="http://colly.com/"><img class="img-polaroid" src="/img/query-colly.png" alt=""></a>
+  <figcaption>Simon Collison</figcaption>
+</figure></p>
+
+  </div>
+</article>
+
+      </div>
+
+      <div id="faux-foot"></div>
+    </div>
+
+    <footer id="foot" role="contentinfo">
+      <div class="container">
+        <p id="copyright"><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">&copy;</a> 2010 - 2013 Nathan Staines</p>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>
