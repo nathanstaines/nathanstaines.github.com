@@ -19,21 +19,21 @@ The use of media queries simply allows us to apply different CSS styles based on
 
 First we need to set the viewport to device-width
 
-{% highlight html %}
+``` html
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% endhighlight %}
+```
 
 We can either link to external stylesheets
 
-{% highlight html %}
+``` html
 <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="small.css">
 
 <link rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="medium.css">
-{% endhighlight %}
+```
 
 Or add them to an existing stylesheet
 
-{% highlight css %}
+``` css
 /* Minimum width */
 @media screen and (min-width: 900px) {
   body {
@@ -77,7 +77,7 @@ only screen and (min-resolution: 192dpi) {
     background: #ffe11a;
   }
 }
-{% endhighlight %}
+```
 
 ###Is it supported?
 

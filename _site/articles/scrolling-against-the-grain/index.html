@@ -45,7 +45,7 @@
       
         February 11, 2010 &bull;
       
-      415 words
+      407 words
     </p>
 
     <p>
@@ -70,7 +70,7 @@
   </header>
 
   <div class="content">
-    <p>Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in 'going against the grain' because by default, browsers want to wrap the content to fit vertically within the window.</p>
+    <p>Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in &#39;going against the grain&#39; because by default, browsers want to wrap the content to fit vertically within the window.</p>
 
 <p>There are plenty of different options out there for you when it comes to making your site go sideways, firstly <a href="http://www.thehorizontalway.com/#footer">the horizontal way</a> have a template that you can download and have a play with.</p>
 
@@ -80,19 +80,14 @@
 
 <p>I think I may have decided to go the road less traveled with the <a href="http://qcdboards.com">QCD Boards website</a>, choosing to dynamically set the width of the containing element using jQuery.</p>
 
-<p>I know it's considered bad practise to handle page layout with JavaScript and it may not degrade as nicely as it should but has anyone really come across a bulletproof technique yet?</p>
+<p>I know it&#39;s considered bad practise to handle page layout with JavaScript and it may not degrade as nicely as it should but has anyone really come across a bulletproof technique yet?</p>
 
 <p>Well the idea behind this method is to come up with a <strong>set width</strong> for each post, multiply it by the <strong>number of posts</strong> you have and then include that figure in the CSS file, which in turn forces the browser to grow horizontally.</p>
 
 <p>This is achieved by first setting the width of the post element in the CSS file:</p>
-
 <div class="highlight"><pre><code class="css"><span class="nc">.post</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">800px</span><span class="p">;</span> <span class="p">}</span>
-</code></pre>
-</div>
-
-
+</code></pre></div>
 <p>Then all you need to do is include this simple jQuery function:</p>
-
 <div class="highlight"><pre><code class="javascript"><span class="nx">$function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">numElementsSingle</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.post&#39;</span><span class="p">).</span><span class="nx">size</span><span class="p">(),</span>
       <span class="nx">wrapperWidthSingle</span> <span class="o">=</span> <span class="nx">numElementsSingle</span> <span class="o">*</span> <span class="mi">800</span><span class="p">,</span>
@@ -100,19 +95,16 @@
 
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#wrapper&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="nx">width</span><span class="o">:</span> <span class="nx">wrapperWidth</span> <span class="p">});</span>
 <span class="p">});</span>
-</code></pre>
-</div>
-
-
+</code></pre></div>
 <p>And you should end up with a layout structure similar to this:</p>
 
 <p><img class="img-polaroid" src="/img/horiz.jpg" alt=""></p>
 
-<p>Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I'll do my best to help you out.</p>
+<p>Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I&#39;ll do my best to help you out.</p>
 
 <h3>In closing</h3>
 
-<p>I know that there are plenty of <a href="http://naldzgraphics.net/inspirations/40-examples-of-horizontal-scrolling-websites/">horizontally scrolling websites</a> out there so if you've come across a different/better solution for scrolling against the grain then please let me know.</p>
+<p>I know that there are plenty of <a href="http://naldzgraphics.net/inspirations/40-examples-of-horizontal-scrolling-websites/">horizontally scrolling websites</a> out there so if you&#39;ve come across a different/better solution for scrolling against the grain then please let me know.</p>
 
 <p><strong>A Helpful Tip:</strong> if you hold shift while using your mouse wheel, most horizontal websites should scroll sideways for you.</p>
 

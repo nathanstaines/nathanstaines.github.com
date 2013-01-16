@@ -1,6 +1,5 @@
 # Standard Jekyll configuration
-markdown: rdiscount
-pygments: true
+markdown: redcarpet
 permalink: /:categories/:title/
 exclude: ['Rakefile', 'readme.md', 'sass']
 

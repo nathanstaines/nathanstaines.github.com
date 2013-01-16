@@ -22,13 +22,13 @@ Well the idea behind this method is to come up with a **set width** for each pos
 
 This is achieved by first setting the width of the post element in the CSS file:
 
-{% highlight css %}
+``` css
 .post { width: 800px; }
-{% endhighlight %}
+```
 
 Then all you need to do is include this simple jQuery function:
 
-{% highlight javascript %}
+``` javascript
 $function() {
   var numElementsSingle = $('.post').size(),
       wrapperWidthSingle = numElementsSingle * 800,
@@ -36,7 +36,7 @@ $function() {
 
   $('#wrapper').css({ width: wrapperWidth });
 });
-{% endhighlight %}
+```
 
 And you should end up with a layout structure similar to this:
 
