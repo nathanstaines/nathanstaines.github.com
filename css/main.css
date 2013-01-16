@@ -257,7 +257,6 @@ pre {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
-  background: #eeeeee;
 }
 
 /* line 23, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
@@ -266,6 +265,321 @@ pre > code {
   border: none;
   color: #666666;
   background: none;
+}
+
+/* line 33, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight {
+  background: #ffffff;
+}
+
+/* line 34, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+/* line 35, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+/* line 36, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .k {
+  font-weight: bold;
+}
+
+/* line 37, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .o {
+  font-weight: bold;
+}
+
+/* line 38, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+/* line 39, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+/* line 40, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+/* line 41, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 42, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+/* line 43, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+/* line 44, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .ge {
+  font-style: italic;
+}
+
+/* line 45, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gr {
+  color: #aa0000;
+}
+
+/* line 46, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gh {
+  color: #999999;
+}
+
+/* line 47, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+/* line 48, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+/* line 49, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .go {
+  color: #888888;
+}
+
+/* line 50, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gp {
+  color: #555555;
+}
+
+/* line 51, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gs {
+  font-weight: bold;
+}
+
+/* line 52, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gu {
+  color: #aaaaaa;
+}
+
+/* line 53, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .gt {
+  color: #aa0000;
+}
+
+/* line 54, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .kc {
+  font-weight: bold;
+}
+
+/* line 55, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .kd {
+  font-weight: bold;
+}
+
+/* line 56, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .kp {
+  font-weight: bold;
+}
+
+/* line 57, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .kr {
+  font-weight: bold;
+}
+
+/* line 58, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+/* line 59, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .m {
+  color: #009999;
+}
+
+/* line 60, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .s {
+  color: #dd1144;
+}
+
+/* line 61, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .na {
+  color: teal;
+}
+
+/* line 62, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nb {
+  color: #0086b3;
+}
+
+/* line 63, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+/* line 64, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .no {
+  color: teal;
+}
+
+/* line 65, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .ni {
+  color: purple;
+}
+
+/* line 66, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+/* line 67, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+/* line 68, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nn {
+  color: #555555;
+}
+
+/* line 69, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nt {
+  color: navy;
+}
+
+/* line 70, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .nv {
+  color: teal;
+}
+
+/* line 71, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .ow {
+  font-weight: bold;
+}
+
+/* line 72, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .w {
+  color: #bbbbbb;
+}
+
+/* line 73, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .mf {
+  color: #009999;
+}
+
+/* line 74, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .mh {
+  color: #009999;
+}
+
+/* line 75, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .mi {
+  color: #009999;
+}
+
+/* line 76, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .mo {
+  color: #009999;
+}
+
+/* line 77, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sb {
+  color: #dd1144;
+}
+
+/* line 78, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sc {
+  color: #dd1144;
+}
+
+/* line 79, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sd {
+  color: #dd1144;
+}
+
+/* line 80, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .s2 {
+  color: #dd1144;
+}
+
+/* line 81, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .se {
+  color: #dd1144;
+}
+
+/* line 82, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sh {
+  color: #dd1144;
+}
+
+/* line 83, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .si {
+  color: #dd1144;
+}
+
+/* line 84, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sx {
+  color: #dd1144;
+}
+
+/* line 85, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .sr {
+  color: #009926;
+}
+
+/* line 86, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .s1 {
+  color: #dd1144;
+}
+
+/* line 87, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .ss {
+  color: #990073;
+}
+
+/* line 88, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .bp {
+  color: #999999;
+}
+
+/* line 89, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .vc {
+  color: teal;
+}
+
+/* line 90, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .vg {
+  color: teal;
+}
+
+/* line 91, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .vi {
+  color: teal;
+}
+
+/* line 92, /Users/nstaines/Sites/nathanstaines/sass/_code.scss */
+.highlight .il {
+  color: #009999;
 }
 
 /* line 5, /Users/nstaines/Sites/nathanstaines/sass/_media.scss */
