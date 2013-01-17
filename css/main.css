@@ -79,37 +79,37 @@ h6 {
 h1,
 .alpha {
   font-size: 2.25rem;
-  line-height: 3rem;
+  line-height: 1.33333;
 }
 
 h2,
 .beta {
   font-size: 1.875rem;
-  line-height: 2.625rem;
+  line-height: 1.4;
 }
 
 h3,
 .gamma {
   font-size: 1.5rem;
-  line-height: 2.25rem;
+  line-height: 1.5;
 }
 
 h4,
 .delta {
   font-size: 1.25rem;
-  line-height: 1.875rem;
+  line-height: 1.5;
 }
 
 h5,
 .epsilon {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
 
 h6,
 .zeta {
   font-size: 0.875rem;
-  line-height: 1.3125rem;
+  line-height: 1.5;
 }
 
 abbr[title] {
