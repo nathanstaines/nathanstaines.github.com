@@ -9,16 +9,16 @@
 }
 
 .archive-list-item {
-  h1 {
+  h2 {
     padding: $base-spacing-unit 0;
     @include keyline(bottom);
   }
 
-  &:first-child h1 {
+  &:first-child h2 {
     padding-top: 0;
   }
 
-  article > h2 {
-    margin-bottom: ($base-spacing-unit / 3);
+  article > h3 {
+    margin-bottom: 0;
   }
 }
