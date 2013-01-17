@@ -6,9 +6,9 @@
   font-size: ($font-size / $base-font-size) * 1rem;
 }
 
-@mixin font-combo($font-size) {
-  font-size: ($font-size / $base-font-size) * 1rem;
-  line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+@mixin font-combo($font-size, $line-height) {
+  @include font-size($font-size);
+  line-height: ($line-height / $base-font-size) * 1rem;
 }
 
 @mixin inset-effect {

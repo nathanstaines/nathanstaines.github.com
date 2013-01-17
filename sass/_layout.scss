@@ -3,8 +3,8 @@
 // =============================================================================
 
 .container {
-  width: 85%;
-  max-width: 660px;
+  width: 90%;
+  max-width: 44em;
   margin: 0 auto;
 }
 
@@ -34,6 +34,8 @@
 #logo {
   display: inline-block;
   margin: 0;
+  @include font-size($gamma-size);
+  line-height: 1;
   vertical-align: middle;
 
   a {

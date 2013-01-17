@@ -24,7 +24,3 @@
     @include linear-gradient($white, darken($white, 5%));
   }
 }
-
-.btn-small {
-  @include font-size($milli-size);
-}

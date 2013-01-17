@@ -18,32 +18,32 @@ h6 {
 
 h1,
 .alpha {
-  @include font-combo($h1-size);
+  @include font-combo($alpha-size, $mega-size);
 }
 
 h2,
 .beta {
-  @include font-combo($h2-size);
+  @include font-combo($beta-size, $kilo-size);
 }
 
 h3,
 .gamma {
-  @include font-combo($h3-size);
+  @include font-combo($gamma-size, $alpha-size);
 }
 
 h4,
 .delta {
-  @include font-combo($h4-size);
+  @include font-combo($epsilon-size, $beta-size);
 }
 
 h5,
 .epsilon {
-  @include font-combo($h5-size);
+  @include font-combo($zeta-size, $gamma-size);
 }
 
 h6,
 .zeta {
-  @include font-combo($h6-size);
+  @include font-combo($milli-size, $delta-size);
 }
 
 // Others
@@ -79,7 +79,7 @@ kbd,
 pre,
 samp {
   font-family: $mono-font-family;
-  @include font-size($milli-size);
+  @include font-size($micro-size);
 }
 
 p {

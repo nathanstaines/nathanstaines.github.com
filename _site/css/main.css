@@ -78,38 +78,38 @@ h6 {
 
 h1,
 .alpha {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 2.25rem;
+  line-height: 3rem;
 }
 
 h2,
 .beta {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.875rem;
+  line-height: 2.625rem;
 }
 
 h3,
 .gamma {
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
 h4,
 .delta {
-  font-size: 1.125rem;
-  line-height: 1.33333;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
 }
 
 h5,
 .epsilon {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
 }
 
 h6,
 .zeta {
   font-size: 0.875rem;
-  line-height: 1.71429;
+  line-height: 1.3125rem;
 }
 
 abbr[title] {
@@ -351,15 +351,15 @@ pre > code {
 }
 
 .highlight .s {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .na {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .nb {
-  color: #0086B3;
+  color: #0086b3;
 }
 
 .highlight .nc {
@@ -368,11 +368,11 @@ pre > code {
 }
 
 .highlight .no {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .ni {
-  color: #800080;
+  color: purple;
 }
 
 .highlight .ne {
@@ -390,11 +390,11 @@ pre > code {
 }
 
 .highlight .nt {
-  color: #000080;
+  color: navy;
 }
 
 .highlight .nv {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .ow {
@@ -422,35 +422,35 @@ pre > code {
 }
 
 .highlight .sb {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .sc {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .sd {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .s2 {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .se {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .sh {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .si {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .sx {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .sr {
@@ -458,7 +458,7 @@ pre > code {
 }
 
 .highlight .s1 {
-  color: #d14;
+  color: #dd1144;
 }
 
 .highlight .ss {
@@ -470,15 +470,15 @@ pre > code {
 }
 
 .highlight .vc {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .vg {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .vi {
-  color: #008080;
+  color: teal;
 }
 
 .highlight .il {
@@ -517,7 +517,7 @@ figure > img {
 
 figcaption {
   margin-top: 0.75rem;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 figcaption:before {
   margin-right: 0.375rem;
@@ -571,27 +571,6 @@ figcaption:before {
   background-image: linear-gradient(top, white, #f2f2f2);
 }
 
-.btn-small {
-  font-size: 0.75rem;
-}
-
-.tag {
-  display: inline-block;
-  margin-right: 0.1875rem;
-  padding: 0 0.5rem;
-  border: 1px solid #cccccc;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-shadow: 0 1px 0 white;
-  vertical-align: middle;
-  white-space: nowrap;
-  color: #666666;
-  background: transparent;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px white;
-  box-shadow: 0 1px 1px white;
-}
-
 .nav-posts {
   position: absolute;
   right: 0;
@@ -601,8 +580,8 @@ figcaption:before {
 }
 
 .container {
-  width: 85%;
-  max-width: 660px;
+  width: 90%;
+  max-width: 44em;
   margin: 0 auto;
 }
 
@@ -627,6 +606,8 @@ figcaption:before {
 #logo {
   display: inline-block;
   margin: 0;
+  font-size: 1.5rem;
+  line-height: 1;
   vertical-align: middle;
 }
 #logo a {
