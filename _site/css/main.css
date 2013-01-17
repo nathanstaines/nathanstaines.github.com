@@ -670,7 +670,7 @@ figcaption:before {
   box-shadow: 0 1px 0 white;
 }
 .post > header > h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .archive-list {

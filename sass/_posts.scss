@@ -9,7 +9,7 @@
     @include keyline(bottom);
 
     > h2 {
-      margin-bottom: ($base-spacing-unit / 3);
+      margin-bottom: $half-spacing-unit;
     }
   }
 }
