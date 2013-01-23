@@ -1,0 +1,30 @@
+@media screen and (min-width: 900px) {
+  body {
+    background: #f0f2f4;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    background: #f0f6f0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background: #fcf0f0;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  body {
+    background: red;
+  }
+}
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
+  body {
+    background: blue;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  body {
+    background: green;
+  }
+}

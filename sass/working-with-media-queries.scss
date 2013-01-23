@@ -1,0 +1,57 @@
+// =============================================================================
+// Working with media queries
+// =============================================================================
+
+// Bourbon | http://bourbon.io
+@import "bourbon";
+
+// Core variables and mixins
+@import "variables";
+@import "mixins";
+
+// Page specific styles
+// =====================================
+
+// Minimum width
+@media screen and (min-width: 900px) {
+  body {
+    background: #f0f2f4;
+  }
+}
+
+// Maximum width
+@media screen and (max-width: 600px) {
+  body {
+    background: #f0f6f0;
+  }
+}
+
+// Minimum and maximum width
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background: #fcf0f0;
+  }
+}
+
+// Maximum device width
+@media only screen and (max-device-width: 480px) {
+  body {
+    background: red;
+  }
+}
+
+// Maximum device width and orientation
+@media only screen and (max-device-width: 480px) and (orientation:portrait) {
+  body {
+    background: blue;
+  }
+}
+
+// High resolution devices
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  body {
+    background: green;
+  }
+}

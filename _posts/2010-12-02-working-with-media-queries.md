@@ -4,6 +4,7 @@ title: Working with media queries
 category: articles
 tags: [css, responsive, tutorial]
 date: 2010-12-02 12:00:00
+css: working-with-media-queries
 ---
 
 The use of media queries simply allows us to apply different CSS styles based on resolution and/or device orientation. It uses the same old media declaration that we've used for serving up print stylesheets but now it just has a few more features under its belt.

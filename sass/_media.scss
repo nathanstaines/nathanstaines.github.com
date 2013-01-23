@@ -23,7 +23,6 @@ figure {
   display: inline-block;
   margin: 0 0 $base-spacing-unit;
   padding: $half-spacing-unit;
-  border: 1px solid $gray-light;
   border-radius: $base-radius;
   @include inset-effect;
 }
