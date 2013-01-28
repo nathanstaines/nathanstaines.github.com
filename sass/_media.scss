@@ -25,6 +25,14 @@ figure {
   padding: $half-spacing-unit;
   border-radius: $base-radius;
   @include inset-effect;
+
+  &.pull-right {
+    margin: 0 0 ($base-spacing-unit) ($base-spacing-unit);
+  }
+
+  &.pull-left {
+    margin: 0 ($base-spacing-unit) ($base-spacing-unit) 0;
+  }
 }
 
 figure > img {
