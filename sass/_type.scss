@@ -79,7 +79,7 @@ kbd,
 pre,
 samp {
   font-family: $mono-font-family;
-  @include font-size($micro-size);
+  @include font-size(13px);
 }
 
 p {
