@@ -219,6 +219,7 @@ pre {
   padding: 0.75rem;
   border: 1px solid #cccccc;
   border-radius: 4px;
+  background: white;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
 }
@@ -228,10 +229,6 @@ pre > code {
   border: none;
   color: #586e75;
   background: none;
-}
-
-.highlight {
-  background: white;
 }
 
 .highlight .c {
@@ -348,7 +345,7 @@ figure {
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 white;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 figure.pull-right {
   margin: 0 0 1.5rem 1.5rem;
@@ -469,9 +466,9 @@ figcaption:before {
   margin-right: 0.75rem;
   border: 2px solid white;
   border-radius: 16px;
-  -webkit-box-shadow: 0 0 0 4px #cb4b16;
-  box-shadow: 0 0 0 4px #cb4b16;
-  background: #268bd2;
+  -webkit-box-shadow: 0 0 0 4px #d54e21;
+  box-shadow: 0 0 0 4px #d54e21;
+  background: #21759b;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -ms-transition: all 0.3s linear;
@@ -481,9 +478,9 @@ figcaption:before {
 
 #logo:hover .logo-circles {
   border: 6px solid white;
-  background: #cb4b16;
-  -webkit-box-shadow: 0 0 0 4px #268bd2;
-  box-shadow: 0 0 0 4px #268bd2;
+  background: #d54e21;
+  -webkit-box-shadow: 0 0 0 4px #21759b;
+  box-shadow: 0 0 0 4px #21759b;
 }
 
 #faux-foot {

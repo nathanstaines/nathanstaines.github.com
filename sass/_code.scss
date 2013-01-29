@@ -16,22 +16,22 @@ code {
 // Colours: http://ethanschoonover.com/solarized
 // =====================================
 
-// $base03:                            #002b36;
-// $base02:                            #073642;
-$base01:                            #586e75;
-// $base00:                            #657b83;
-// $base0:                             #839496;
-$base1:                             #93a1a1;
-// $base2:                             #eee8d5;
-// $base3:                             #fdf6e3;
-// $yellow:                            #b58900;
-$orange:                            #cb4b16;
-$red:                               #dc322f;
-// $magenta:                           #d33682;
-// $violet:                            #6c71c4;
-$blue:                              #268bd2;
-// $cyan:                              #2aa198;
-$green:                             #859900;
+// $highlight-base03:                            #002b36;
+// $highlight-base02:                            #073642;
+$highlight-base01:                            #586e75;
+// $highlight-base00:                            #657b83;
+// $highlight-base0:                             #839496;
+$highlight-base1:                             #93a1a1;
+// $highlight-base2:                             #eee8d5;
+// $highlight-base3:                             #fdf6e3;
+// $highlight-yellow:                            #b58900;
+$highlight-orange:                            #cb4b16;
+$highlight-red:                               #dc322f;
+// $highlight-magenta:                           #d33682;
+// $highlight-violet:                            #6c71c4;
+$highlight-blue:                              #268bd2;
+// $highlight-cyan:                              #2aa198;
+$highlight-green:                             #859900;
 
 pre {
   display: block;
@@ -40,39 +40,39 @@ pre {
   padding: $half-spacing-unit;
   border: 1px solid $gray-light;
   border-radius: $base-radius;
+  background: $white;
   @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 $white);
 }
 
 pre > code {
   padding: 0;
   border: none;
-  color: $base01;
+  color: $highlight-base01;
   background: none;
 }
 
-.highlight                          { background: $white; }
-.highlight .c                       { color: $base1; } // Comment
-.highlight .cm                      { color: $base1; } // Comment.Multiline
-.highlight .c1                      { color: $base1; } // Comment.Single
-.highlight .k                       { color: $base01; font-weight: bold; } // Keyword
-.highlight .kc                      { color: $orange; } // Keyword.Constant
-.highlight .kd                      { color: $base01; font-weight: bold; } // Keyword.Declaration
-.highlight .kr                      { color: $red; font-weight: bold; } // Keyword.Reserved
-.highlight .m                       { color: $green; } // Literal.Number
-.highlight .mi                      { color: $green; } // Literal.Number.Integer
-.highlight .n                       { color: $base01; } // Name
-.highlight .na                      { color: $blue; } // Name.Attribute
-.highlight .nb                      { color: $blue; } // Name.Builtin
-.highlight .nc                      { color: $blue; } // Name.Class
-.highlight .nd                      { color: $blue; } // Name.Decorator
-.highlight .nf                      { color: $orange; } // Name.Function
-.highlight .nt                      { color: $blue; } // Name.Tag
-.highlight .nx                      { color: $base01; } // Name.Property
-.highlight .o                       { color: $base01; } // Operator
-.highlight .p                       { color: $base01; } // Punctuation
-.highlight .s                       { color: $orange; } // Literal.String
-.highlight .s1                      { color: $orange; } // Literal.String.Single
-.highlight .s2                      { color: $orange; } // Literal.String.Double
+.highlight .c                       { color: $highlight-base1; } // Comment
+.highlight .cm                      { color: $highlight-base1; } // Comment.Multiline
+.highlight .c1                      { color: $highlight-base1; } // Comment.Single
+.highlight .k                       { color: $highlight-base01; font-weight: bold; } // Keyword
+.highlight .kc                      { color: $highlight-orange; } // Keyword.Constant
+.highlight .kd                      { color: $highlight-base01; font-weight: bold; } // Keyword.Declaration
+.highlight .kr                      { color: $highlight-red; font-weight: bold; } // Keyword.Reserved
+.highlight .m                       { color: $highlight-green; } // Literal.Number
+.highlight .mi                      { color: $highlight-green; } // Literal.Number.Integer
+.highlight .n                       { color: $highlight-base01; } // Name
+.highlight .na                      { color: $highlight-blue; } // Name.Attribute
+.highlight .nb                      { color: $highlight-blue; } // Name.Builtin
+.highlight .nc                      { color: $highlight-blue; } // Name.Class
+.highlight .nd                      { color: $highlight-blue; } // Name.Decorator
+.highlight .nf                      { color: $highlight-orange; } // Name.Function
+.highlight .nt                      { color: $highlight-blue; } // Name.Tag
+.highlight .nx                      { color: $highlight-base01; } // Name.Property
+.highlight .o                       { color: $highlight-base01; } // Operator
+.highlight .p                       { color: $highlight-base01; } // Punctuation
+.highlight .s                       { color: $highlight-orange; } // Literal.String
+.highlight .s1                      { color: $highlight-orange; } // Literal.String.Single
+.highlight .s2                      { color: $highlight-orange; } // Literal.String.Double
 
 // .highlight .err                     { color: red; } // Error
 // .highlight .g                       { color: red; } // Generic
