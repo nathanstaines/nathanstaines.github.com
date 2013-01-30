@@ -134,7 +134,7 @@ hr {
 
 mark {
   color: black;
-  background: red;
+  background: yellow;
 }
 
 code,
@@ -205,7 +205,7 @@ li > ol {
 }
 
 code {
-  padding: 0 0.25rem;
+  padding: 0.125rem 0.25rem;
   border: 1px solid #5fb6dd;
   border-radius: 4px;
   color: #21759b;
@@ -249,7 +249,7 @@ pre > code {
 }
 
 .highlight .kc {
-  color: #cb4b16;
+  color: #d33682;
 }
 
 .highlight .kd {
@@ -258,7 +258,7 @@ pre > code {
 }
 
 .highlight .kr {
-  color: #dc322f;
+  color: #d33682;
   font-weight: bold;
 }
 
@@ -291,7 +291,7 @@ pre > code {
 }
 
 .highlight .nf {
-  color: #cb4b16;
+  color: #d33682;
 }
 
 .highlight .nt {
@@ -311,15 +311,15 @@ pre > code {
 }
 
 .highlight .s {
-  color: #cb4b16;
+  color: #d33682;
 }
 
 .highlight .s1 {
-  color: #cb4b16;
+  color: #d33682;
 }
 
 .highlight .s2 {
-  color: #cb4b16;
+  color: #d33682;
 }
 
 img {
