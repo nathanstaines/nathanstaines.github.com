@@ -196,12 +196,18 @@ sub {
 
 ul,
 ol {
+  padding: 0;
   margin: 0 0 1.5rem 1.5rem;
 }
 
 li > ul,
 li > ol {
   margin-bottom: 0;
+}
+
+.list-unstyled {
+  margin-left: 0;
+  list-style: none;
 }
 
 code {
@@ -328,13 +334,23 @@ img {
   border: none;
 }
 
-.img-polaroid {
+iframe {
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-polaroid,
+.iframe-polaroid {
   padding: 4px;
   border: 1px solid #cccccc;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background: white;
+}
+
+.fluid-width-video-wrapper {
+  margin-bottom: 1.5rem;
 }
 
 figure {
