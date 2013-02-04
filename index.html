@@ -22,8 +22,9 @@ layout: default
 
           <p class="meta-data">
             {% if post.date  %}
-              {{ post.date | date: "%B %d, %Y" }}
+              {{ post.date | date: "%B %d, %Y" }} &bull;
             {% endif %}
+            {{ page.content | number_of_words }} words
           </p>
         </article>
       </li>
