@@ -32,6 +32,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
 section,
 summary {
@@ -449,7 +450,7 @@ figcaption:before {
   margin-bottom: -3rem;
 }
 
-#main {
+#content {
   margin-bottom: 1.5rem;
 }
 
