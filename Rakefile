@@ -1,8 +1,8 @@
-# Usage: rake post title="A title" category="A category"
+# Usage: rake post title="Title" category="category"
 desc "Create a new post"
 task :post do
   title = ENV["title"] || "New post"
-  category = ENV["category"] || "Articles"
+  category = ENV["category"] || "articles"
   filename = "#{Time.now.strftime('%Y-%m-%d')}-#{title.gsub(/\s/, '-').downcase}.md"
   path = File.join("_posts", filename)
 
