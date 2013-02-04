@@ -19,3 +19,26 @@ li {
   margin-left: 0;
   list-style: none;
 }
+
+.two-up {
+  margin: 0 (-$base-spacing-unit / 4) $base-spacing-unit;
+  @include clearfix();
+
+  li {
+    float: left;
+    width: 50%;
+    padding: 0 ($base-spacing-unit / 4) ($base-spacing-unit / 2);
+  }
+}
+
+.list-equipment {
+  img {
+    margin-right: ($base-spacing-unit / 4);
+    vertical-align: middle;
+  }
+
+  .btn {
+    display: block;
+    padding: ($base-spacing-unit / 4);
+  }
+}

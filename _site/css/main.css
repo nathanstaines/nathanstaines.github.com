@@ -211,6 +211,32 @@ li > ol {
   list-style: none;
 }
 
+.two-up {
+  margin: 0 -0.375rem 1.5rem;
+  *zoom: 1;
+}
+.two-up:before, .two-up:after {
+  content: " ";
+  display: table;
+}
+.two-up:after {
+  clear: both;
+}
+.two-up li {
+  float: left;
+  width: 50%;
+  padding: 0 0.375rem 0.75rem;
+}
+
+.list-equipment img {
+  margin-right: 0.375rem;
+  vertical-align: middle;
+}
+.list-equipment .btn {
+  display: block;
+  padding: 0.375rem;
+}
+
 code {
   padding: 0.125rem 0.25rem;
   border: 1px solid #5fb6dd;
