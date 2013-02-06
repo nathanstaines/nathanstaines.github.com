@@ -18,7 +18,7 @@ html {
   font: #{($base-font-size / 16px) * 1em}/#{$line-height-ratio} $base-font-family;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  color: $gray-darker;
+  color: $text-color;
 }
 
 body {

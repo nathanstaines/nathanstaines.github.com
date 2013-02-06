@@ -20,6 +20,15 @@ $blue:                              #21759b !default;
 $orange:                            #d54e21 !default;
 $yellow:                            #ffff00 !default;
 
+// Base colors
+// =====================================
+
+$body-background:                   #f0f2f4 !default;
+$text-color:                        $gray-darker;
+$link-color:                        $blue !default;
+$link-color-hover:                  $orange !default;
+$headings-color:                    $gray-darker !default;
+
 // Syntax highlighting
 // =====================================
 
@@ -48,8 +57,6 @@ $base-line-height:                  24px !default;
 $base-font-family:                  "proxima-nova", "helvetica neue", helvetica, arial, sans-serif !default;
 
 $headings-font-family:              "adelle", georgia, times, "times new roman", serif !default;
-$headings-color:                    $gray-darker !default;
-
 $mono-font-family:                  consolas, "liberation mono", courier, monospace !default;
 
 $giga-size:                         72px !default;
@@ -68,8 +75,6 @@ $micro-size:                        12px !default;
 
 // Scaffolding
 // =====================================
-
-$body-background:                   #f0f2f4 !default;
 
 $line-height-ratio:                 $base-line-height / $base-font-size !default;
 $base-spacing-unit:                 $line-height-ratio * 1rem !default;

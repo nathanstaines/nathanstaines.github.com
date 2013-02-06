@@ -5,12 +5,12 @@
 a {
   text-decoration: none;
   text-shadow: none;
-  color: $blue;
+  color: $link-color;
   @include transition(all 0.3s linear);
 
   &:hover {
     text-decoration: underline;
-    color: $orange;
+    color: $link-color-hover;
   }
 
   &:focus {
