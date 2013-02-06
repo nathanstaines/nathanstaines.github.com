@@ -1,0 +1,27 @@
+// =============================================================================
+// Alerts
+// =============================================================================
+
+.alert {
+  padding: $half-spacing-unit $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+  color: $orange;
+  border: 1px solid $orange;
+  border-radius: $base-radius;
+  background: lighten($orange, 45%);
+
+  h2 {
+    margin-bottom: $quarter-spacing-unit;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    color: inherit;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  p + p {
+    margin-top: $half-spacing-unit;
+  }
+}

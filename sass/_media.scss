@@ -39,11 +39,11 @@ figure {
   @include inset-effect;
 
   &.pull-right {
-    margin: 0 0 ($base-spacing-unit) ($base-spacing-unit);
+    margin: 0 0 $base-spacing-unit $base-spacing-unit;
   }
 
   &.pull-left {
-    margin: 0 ($base-spacing-unit) ($base-spacing-unit) 0;
+    margin: 0 $base-spacing-unit $base-spacing-unit 0;
   }
 }
 
@@ -56,7 +56,7 @@ figcaption {
   @include font-size($milli-size);
 
   &:before {
-    margin-right: ($base-spacing-unit / 4);
+    margin-right: $quarter-spacing-unit;
     content: "\2014";
   }
 }

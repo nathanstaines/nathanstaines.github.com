@@ -11,7 +11,7 @@ table {
 
 th,
 td {
-  padding: ($base-spacing-unit / 4);
+  padding: $quarter-spacing-unit;
   border: 1px solid $gray-light;
   text-align: left;
 }

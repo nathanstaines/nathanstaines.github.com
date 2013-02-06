@@ -9,7 +9,10 @@ alias: /starkers
 
 <img class="img-polaroid" src="/img/starkers.png" alt="">
 
-<div class="panel"><p><strong>Updated: February 25th 2011</strong> Starkers HTML5 is now available on <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a>, you can download it, fork it, change it, basically do whatever you want to do with it.</p></div>
+<div class="alert">
+    <h2>Updated: February 25th 2011</h2>
+    <p>Starkers HTML5 is now available on <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a>, you can download it, fork it, change it, basically do whatever you want to do with it.</p>
+</div>
 
 It's been roughly 2&frac12; years since [Elliot Jay Stocks](http://elliotjaystocks.com) first released [Starkers](http://elliotjaystocks.com/starkers/), a completely naked Wordpress theme for designers and developers to build on.
 

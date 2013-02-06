@@ -58,7 +58,6 @@ $footer-background:                 $white !default;
 $base-font-size:                    16px !default;
 $base-line-height:                  24px !default;
 $base-font-family:                  "proxima-nova", "helvetica neue", helvetica, arial, sans-serif !default;
-
 $headings-font-family:              "adelle", georgia, times, "times new roman", serif !default;
 $mono-font-family:                  consolas, "liberation mono", courier, monospace !default;
 
@@ -82,6 +81,7 @@ $micro-size:                        12px !default;
 $line-height-ratio:                 $base-line-height / $base-font-size !default;
 $base-spacing-unit:                 $line-height-ratio * 1rem !default;
 $half-spacing-unit:                 $base-spacing-unit / 2 !default;
+$quarter-spacing-unit:              $base-spacing-unit / 4 !default;
 $double-spacing-unit:               $base-spacing-unit * 2 !default;
 
 $footer-height:                     $double-spacing-unit !default;

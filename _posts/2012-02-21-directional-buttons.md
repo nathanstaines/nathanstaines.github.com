@@ -19,7 +19,8 @@ These buttons have been made by utilising the CSS <code>:before</code> attribute
   </nav>
 </div>
 
-<div class="panel panel-info">
+<div class="alert">
+  <h2>Note:</h2>
   <p>For the sake of simplicity, vendor prefixes have been omitted. However, you can still view them in the page source.</p>
 </div>
 

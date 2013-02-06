@@ -418,13 +418,7 @@ figcaption:before {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f7f7f7));
-  background-image: -webkit-linear-gradient(top, white, #f7f7f7);
-  background-image: -moz-linear-gradient(top, white, #f7f7f7);
-  background-image: -ms-linear-gradient(top, white, #f7f7f7);
-  background-image: -o-linear-gradient(top, white, #f7f7f7);
-  background-image: linear-gradient(top, white, #f7f7f7);
+  background: white;
 }
 
 .panel-info {
@@ -460,6 +454,27 @@ figcaption:before {
   background-image: -ms-linear-gradient(top, white, #f7f7f7);
   background-image: -o-linear-gradient(top, white, #f7f7f7);
   background-image: linear-gradient(top, white, #f7f7f7);
+}
+
+.alert {
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #d54e21;
+  border: 1px solid #d54e21;
+  border-radius: 4px;
+  background: #fae7e1;
+}
+.alert h2 {
+  margin-bottom: 0.375rem;
+  font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 16px;
+  color: inherit;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert p + p {
+  margin-top: 0.75rem;
 }
 
 .nav-posts {
