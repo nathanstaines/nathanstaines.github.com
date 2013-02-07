@@ -18,7 +18,10 @@ H is the eighth letter in the basic modern Latin alphabet. Its name in both Brit
 
 There is plenty of [information](http://en.wikipedia.org/wiki/H#Name_in_English) as to why there are two different pronunciations of the letter H but I'd personally like to thank the Catholics.
 
-<blockquote>We conducted a survey of the television programme Wheel of Fortune over a period of some weeks, just to see how many of the participants were aitchers and how many were haitchers. The results: 40% aitched and 60% haitched... Australians from a wide variety of backgrounds are haitchers these days. - <cite><a href="http://www.anu.edu.au/ANDC/pubs/ozwords/June_98/2._aitch.htm" title="Ab(h)ominable (H)aitch">Ab(h)ominable (H)aitch</a>, by Frederick Ludowyk</cite></blockquote>
+<figure class="figure-quote">
+    <blockquote>We conducted a survey of the television programme Wheel of Fortune over a period of some weeks, just to see how many of the participants were aitchers and how many were haitchers. The results: 40% aitched and 60% haitched... Australians from a wide variety of backgrounds are haitchers these days.</blockquote>
+    <figcaption><a href="http://www.anu.edu.au/ANDC/pubs/ozwords/June_98/2._aitch.htm" title="Ab(h)ominable (H)aitch"><cite>Ab(h)ominable (H)aitch</cite></a>, by Frederick Ludowyk</figcaption>
+</figure>
 
 ### So is it an HTML or a HTML?
 

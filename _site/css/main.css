@@ -161,10 +161,8 @@ q {
 }
 
 blockquote {
-  margin: 0 0 1.5rem;
-  padding: 0 0 0 1.5rem;
-  border-left: 3px solid #d54e21;
-  font-style: italic;
+  margin: 0 0 0.75rem;
+  padding: 0;
 }
 blockquote:before, blockquote:after {
   content: "";
@@ -380,7 +378,7 @@ iframe {
   margin-bottom: 1.5rem;
 }
 
-figure {
+.figure-img {
   display: inline-block;
   margin: 0 0 1.5rem;
   padding: 0.75rem;
@@ -390,22 +388,35 @@ figure {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 white;
   background: rgba(0, 0, 0, 0.05);
 }
-figure.pull-right {
+.figure-img.pull-right {
   margin: 0 0 1.5rem 1.5rem;
 }
-figure.pull-left {
+.figure-img.pull-left {
   margin: 0 1.5rem 1.5rem 0;
 }
-
-figure > img {
+.figure-img > img {
   display: block;
 }
-
-figcaption {
+.figure-img figcaption {
   margin-top: 0.75rem;
   font-size: 0.875rem;
 }
-figcaption:before {
+.figure-img figcaption:before {
+  margin-right: 0.375rem;
+  content: "\2014";
+}
+
+.figure-quote {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+  font-style: italic;
+  border-left: 3px solid #d54e21;
+}
+.figure-quote figcaption {
+  text-shadow: 0 1px 0 white;
+  color: #999999;
+}
+.figure-quote figcaption:before {
   margin-right: 0.375rem;
   content: "\2014";
 }
@@ -466,7 +477,7 @@ figcaption:before {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 white;
   background: #fae7e1;
 }
-.alert h2 {
+.alert h3 {
   margin-bottom: 0.375rem;
   font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
   font-size: 16px;

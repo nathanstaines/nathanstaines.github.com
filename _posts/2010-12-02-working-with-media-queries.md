@@ -11,7 +11,7 @@ The use of media queries simply allows us to apply different CSS styles based on
 
 **Everyone's doing it**... ok, so maybe not everyone but it's definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.
 
-<figure>
+<figure class="figure-img">
   <a href="http://hicksdesign.co.uk"><img class="img-polaroid" src="/img/query-hicks.png" alt=""></a>
   <figcaption>Hicks Design</figcaption>
 </figure>
@@ -95,12 +95,12 @@ One thing to keep in mind - Although we can now tailor our designs to suit diffe
 + [CSSgrid](http://cssgrid.net/) - A 1140px wide, 12 column grid. Fluid all the way down to mobile.
 + [A Jason Grigsby article](http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/) - On media queries for mobile being fools gold.
 
-<figure>
+<figure class="figure-img">
   <a href="http://edmerritt.com/"><img class="img-polaroid" src="/img/query-merritt.png" alt=""></a>
   <figcaption>Ed Merritt</figcaption>
 </figure>
 
-<figure>
+<figure class="figure-img">
   <a href="http://colly.com/"><img class="img-polaroid" src="/img/query-colly.png" alt=""></a>
   <figcaption>Simon Collison</figcaption>
 </figure>

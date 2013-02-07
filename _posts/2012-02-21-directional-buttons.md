@@ -7,9 +7,9 @@ date: 2012-02-21 12:00:00
 css: directional-buttons
 ---
 
-I've been waiting for an excuse to fine tune an idea I had about creating some directional buttons using just CSS. So after seeing the <a href="http://dribbble.com/shots/433299-Simple-light-button/rebounds">Simple light button playoff on dribbble</a>, I decided to get my act together and finally finish it off and in the process, write my first blog post for 2012.
+I've been waiting for an excuse to fine tune an idea I had about creating some directional buttons using just CSS. So after seeing the [Simple light button playoff on dribbble](http://dribbble.com/shots/433299-Simple-light-button/rebounds), I decided to get my act together and finally finish it off and in the process, write my first blog post for 2012.
 
-These buttons have been made by utilising the CSS <code>:before</code> attribute and <a href="http://modernizr.com/">Modernizr</a> to ensure that browsers that <b>don't</b> support CSS transitions but <b>do</b> support the <code>:before</code> attribute don't break. However, even without Modernizr or JavaScript enabled these buttons will degrade gracefully.
+These buttons have been made by utilising the CSS `:before` attribute and [Modernizr](http://modernizr.com/) to ensure that browsers that **don't** support CSS transitions but **do** support the `:before` attribute don't break. However, even without Modernizr or JavaScript enabled these buttons will degrade gracefully.
 
 <div class="panel">
   <h3>The demo</h3>
@@ -20,7 +20,7 @@ These buttons have been made by utilising the CSS <code>:before</code> attribute
 </div>
 
 <div class="alert">
-  <h2>Note:</h2>
+  <h3>Note:</h3>
   <p>For the sake of simplicity, vendor prefixes have been omitted. However, you can still view them in the page source.</p>
 </div>
 
@@ -130,4 +130,4 @@ Then for the directional arrows:
 }
 ```
 
-If you feel as though this technique could be improved upon or you end up using it on one of your sites then please <a href="http://twitter.com/nathanstaines">let me know via Twitter</a>.
+If you feel as though this technique could be improved upon or you end up using it on one of your sites then please [let me know via Twitter](http://twitter.com/nathanstaines).

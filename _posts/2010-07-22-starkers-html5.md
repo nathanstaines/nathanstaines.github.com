@@ -10,7 +10,7 @@ alias: /starkers
 <img class="img-polaroid" src="/img/starkers.png" alt="">
 
 <div class="alert">
-    <h2>Updated: February 25th 2011</h2>
+    <h3>Updated: February 25th 2011</h3>
     <p>Starkers HTML5 is now available on <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a>, you can download it, fork it, change it, basically do whatever you want to do with it.</p>
 </div>
 
@@ -18,7 +18,10 @@ It's been roughly 2&frac12; years since [Elliot Jay Stocks](http://elliotjaystoc
 
 Like so many others I found Elliot's theme invaluable, and so about 7 months ago I decided to create an HTML5 version that others would be able to use.
 
-<blockquote>Starkers is a bare bones WordPress theme created to act as a starting point for the theme designer... <cite><a href="http://elliotjaystocks/" title="Elliot Jay Stocks">Elliot Jay Stocks</a>, Starkers</cite></blockquote>
+<figure class="figure-quote">
+    <blockquote>Starkers is a bare bones WordPress theme created to act as a starting point for the theme designer...</blockquote>
+    <figcaption><a href="http://elliotjaystocks/" title="Elliot Jay Stocks">Elliot Jay Stocks</a>, Starkers</figcaption>
+</figure>
 
 With the introduction of Wordpress 3.0 I'm pleased to unveil the new version of Starkers HTML5, just like the previous version this one has been based on Elliot's [Starkers](http://elliotjaystocks.com/blog/starkers-3/), which in turn was based on the new default theme known as [Twenty Ten](http://2010dev.wordpress.com/).
 

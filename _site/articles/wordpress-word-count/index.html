@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <title>WordPress word count - Nathan Staines</title>
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+
+    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="//use.typekit.com/wzg1ian.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="layout">
+      <header id="head" class="clearfix" role="banner">
+        <div class="container">
+          <h1 id="logo"><a href="/" rel="home"><span class="logo-circles"></span>Nathan Staines</a></h1>
+        </div>
+      </header>
+
+      <main id="content" class="container" role="main">
+        <article class="post clearfix">
+  <header>
+    
+      <h2>WordPress word count</h2>
+    
+
+    <p class="meta-data">
+      
+        June 25, 2012 &bull;
+      
+      395 words
+    </p>
+
+    <nav class="nav nav-posts">
+      
+        <a href="/articles/directional-buttons/">Prev</a>
+      
+
+      &bull;
+
+      
+        Next
+      
+    </nav>
+  </header>
+
+  <div class="content">
+    <p>When I redesigned my site last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.</p>
+
+<p>I assumed this would be an easy thing to achieve using WordPress, which to a certain extent it was. However, I also wanted to be able to exclude any code blocks from the final count.</p>
+
+<p>Below you&#39;ll find a couple of solutions I came up with to help solve the predicament I found myself in, they may not be bulletproof solutions but they did work for me.</p>
+
+<h3>The simple solution</h3>
+
+<p>If you&#39;re not interested in removing any HTML elements from your final count then you can simply place the following function in your theme&#39;s <code>functions.php</code> file:</p>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+  <span class="k">function</span> <span class="nf">wcount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$content</span> <span class="o">=</span> <span class="nx">get_post_field</span><span class="p">(</span> <span class="s1">&#39;post_content&#39;</span><span class="p">,</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
+    <span class="nv">$count</span> <span class="o">=</span> <span class="nb">str_word_count</span><span class="p">(</span> <span class="nb">strip_tags</span><span class="p">(</span> <span class="nv">$content</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$count</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+<p>Then add this to your theme wherever you&#39;d like the word count to appear:</p>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;wcount&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nx">wcount</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+<h3>The not so simple solution</h3>
+
+<p>This solution requires a little extra work. First you have to to create a new instance of the <code>DOMDocument</code> class and then disable the error reporting as it doesn&#39;t seem to want to play nice with HTML5.</p>
+
+<p>From there you need to collect and remove any of the HTML elements that you no longer want to be included in your final count and then you can continue as per normal.</p>
+
+<p>Simply place the following function in your theme&#39;s <code>functions.php</code> file:</p>
+
+<!-- http://stackoverflow.com/questions/1516085/strip-html-tags-and-its-contents -->
+
+<!-- http://stackoverflow.com/questions/6090667/php-domdocument-errors-warnings-on-html5-tags -->
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+  <span class="k">function</span> <span class="nf">wcount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$content</span> <span class="o">=</span> <span class="nx">get_post_field</span><span class="p">(</span> <span class="s1">&#39;post_content&#39;</span><span class="p">,</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
+
+    <span class="nv">$dom</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+    <span class="nb">libxml_use_internal_errors</span><span class="p">(</span> <span class="k">true</span> <span class="p">);</span>
+    <span class="nv">$dom</span><span class="o">-&gt;</span><span class="na">loadHTML</span><span class="p">(</span> <span class="nv">$content</span> <span class="p">);</span>
+    <span class="nb">libxml_clear_errors</span><span class="p">();</span>
+    <span class="nv">$excluded_elements</span> <span class="o">=</span> <span class="nv">$dom</span><span class="o">-&gt;</span><span class="na">getElementsByTagName</span><span class="p">(</span> <span class="s1">&#39;pre&#39;</span> <span class="p">);</span>
+    <span class="nv">$elements</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+    <span class="k">foreach</span><span class="p">(</span> <span class="nv">$excluded_elements</span> <span class="k">as</span> <span class="nv">$element</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$elements</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$element</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">foreach</span><span class="p">(</span> <span class="nv">$elements</span> <span class="k">as</span> <span class="nv">$element</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$element</span><span class="o">-&gt;</span><span class="na">parentNode</span><span class="o">-&gt;</span><span class="na">removeChild</span><span class="p">(</span> <span class="nv">$element</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nv">$count</span> <span class="o">=</span> <span class="nb">str_word_count</span><span class="p">(</span> <span class="nb">strip_tags</span><span class="p">(</span> <span class="nv">$dom</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">()</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$count</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+<p>Then add this to your theme wherever you&#39;d like the word count to appear:</p>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;wcount&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nx">wcount</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+<p>If you run into any problems or have any questions regarding these solutions feel free to <a href="mailto:&#110;&#097;&#116;&#104;&#097;&#110;&#064;&#110;&#097;&#116;&#104;&#097;&#110;&#115;&#116;&#097;&#105;&#110;&#101;&#115;&#046;&#099;&#111;&#109;">send me an email</a> or contact me via twitter <a href="http://twitter.com/nathanstaines">@nathanstaines</a>.</p>
+
+  </div>
+</article>
+
+      </main>
+
+      <div id="faux-foot"></div>
+    </div>
+
+    <footer id="foot" role="contentinfo">
+      <div class="container">
+        <p id="copyright"><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">&copy;</a> 2010 - 2013 Nathan Staines</p>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
+    
+
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>
