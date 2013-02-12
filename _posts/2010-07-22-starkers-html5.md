@@ -10,8 +10,10 @@ alias: /starkers
 <img class="img-polaroid" src="/img/starkers.png" alt="">
 
 <div class="alert">
-    <h3>Updated: February 25th 2011</h3>
-    <p>Starkers HTML5 is now available on <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a>, you can download it, fork it, change it, basically do whatever you want to do with it.</p>
+    <h3>Update:</h3>
+    <p>Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a> and use it in its current state.</p>
+
+    <p>Alternatively I'd suggest downloading the original <a href="http://starkerstheme.com">Starkers</a> recently updated by Viewport Industries or the <a href="http://http://underscores.me">underscores theme</a> by Automattic.</p>
 </div>
 
 It's been roughly 2&frac12; years since [Elliot Jay Stocks](http://elliotjaystocks.com) first released [Starkers](http://elliotjaystocks.com/starkers/), a completely naked Wordpress theme for designers and developers to build on.
@@ -40,5 +42,3 @@ Starkers HTML5 comes packed with [Modernizr](http://modernizr.com/), a small and
 For a more in-depth look into HTML5 you can check out the following websites: [HTML5 Doctor](http://html5doctor.com/), [Dive into HTML5](http://diveintohtml5.org/), [the WC3 working draft](http://www.w3.org/TR/html5/) and [the WHATWG working draft](http://www.whatwg.org/specs/web-apps/current-work/multipage/).
 
 Although Starkers HTML5 is a great starting point for any WordPress theme development I highly recommend you take the time to check out and dig through Paul Irish and Divya Manian's [HTML5 Boilerplate](http://html5boilerplate.com/).
-
-<a class="btn" href="https://github.com/nathanstaines/starkers-html5">Download from GitHub &rarr;</a>
