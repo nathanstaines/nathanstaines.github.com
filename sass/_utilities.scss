@@ -16,3 +16,10 @@
 .pull-left {
   float: left;
 }
+
+// Toggling content
+// =====================================
+
+.text-hide {
+  @include hide-text;
+}

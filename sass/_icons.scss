@@ -1,0 +1,30 @@
+// =============================================================================
+// Font icons
+// =============================================================================
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("../font/fontcustom.eot");
+  src: url("../font/fontcustom.eot?#iefix") format("embedded-opentype"),
+       url("../font/fontcustom.woff") format("woff"),
+       url("../font/fontcustom.ttf") format("truetype"),
+       url("../font/fontcustom.svg#fontcustom") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+[class^="icon-"]:before {
+  font-family: "fontcustom";
+  font-style: normal;
+  line-height: 1;
+}
+
+// Individual icons
+// =====================================
+
+.icon-dribbble:before { content: "\f100"; }
+.icon-flickr:before { content: "\f101"; }
+.icon-github:before { content: "\f102"; }
+.icon-instagram:before { content: "\f103"; }
+.icon-rss:before { content: "\f104"; }
+.icon-twitter:before { content: "\f105"; }

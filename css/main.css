@@ -490,12 +490,72 @@ iframe {
   margin-top: 0.75rem;
 }
 
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-main {
+  float: right;
+}
+.nav-main ul {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+.nav-main li {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+.nav-main a {
+  display: block;
+  text-decoration: none;
+}
+
 .nav-posts {
   position: absolute;
   right: 0;
   bottom: 1.5rem;
   text-shadow: 0 1px 0 white;
   color: #999999;
+}
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("../font/fontcustom.eot");
+  src: url("../font/fontcustom.eot?#iefix") format("embedded-opentype"), url("../font/fontcustom.woff") format("woff"), url("../font/fontcustom.ttf") format("truetype"), url("../font/fontcustom.svg#fontcustom") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+[class^="icon-"]:before {
+  font-family: "fontcustom";
+  font-style: normal;
+  line-height: 1;
+}
+
+.icon-dribbble:before {
+  content: "\f100";
+}
+
+.icon-flickr:before {
+  content: "\f101";
+}
+
+.icon-github:before {
+  content: "\f102";
+}
+
+.icon-instagram:before {
+  content: "\f103";
+}
+
+.icon-rss:before {
+  content: "\f104";
+}
+
+.icon-twitter:before {
+  content: "\f105";
 }
 
 .container {
@@ -633,4 +693,12 @@ iframe {
 
 .pull-left {
   float: left;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }

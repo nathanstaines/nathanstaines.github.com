@@ -2,6 +2,33 @@
 // Navigation
 // =============================================================================
 
+.nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.nav-main {
+  float: right;
+
+  ul {
+    @include font-size($epsilon-size);
+    line-height: 1.25;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: $half-spacing-unit;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
 .nav-posts {
   position: absolute;
   right: 0;
