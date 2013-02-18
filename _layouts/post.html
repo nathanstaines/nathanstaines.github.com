@@ -10,9 +10,9 @@ layout: default
 
     <p class="meta-data">
       {% if page.date  %}
-        {{ page.date | date: "%B %d, %Y" }} &bull;
+        <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
       {% endif %}
-      {{ page.content | number_of_words }} words
+      <span class="post-count">{{ page.content | number_of_words }} words</span>
     </p>
 
     <nav class="nav nav-posts">

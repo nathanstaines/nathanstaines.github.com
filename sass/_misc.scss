@@ -6,3 +6,8 @@
   text-shadow: 0 1px 0 $white;
   color: $gray;
 }
+
+.post-date:after {
+  margin-left: $quarter-spacing-unit;
+  content: "\2022";
+}

@@ -19,6 +19,7 @@
 
   article > h3 {
     margin-bottom: 0;
+    padding-right: $base-spacing-unit / 0.3;
   }
 
   &.with-year {

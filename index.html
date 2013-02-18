@@ -21,10 +21,10 @@ layout: default
           <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 
           <p class="meta-data">
-            {% if post.date  %}
-              {{ post.date | date: "%B %d, %Y" }} &bull;
+            {% if page.date  %}
+              <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
             {% endif %}
-            {{ page.content | number_of_words }} words
+            <span class="post-count">{{ page.content | number_of_words }} words</span>
           </p>
         </article>
       </li>
