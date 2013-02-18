@@ -9,16 +9,31 @@
 }
 
 .archive-list-item {
-  h2 {
-    padding: $base-spacing-unit 0;
-    @include keyline(bottom);
-  }
+  position: relative;
 
-  &:first-child h2 {
-    padding-top: 0;
+  h2 {
+    position: absolute;
+    top: $base-spacing-unit / 1.2;
+    right: 0;
   }
 
   article > h3 {
     margin-bottom: 0;
+  }
+
+  &.with-year {
+    margin-top: $double-spacing-unit;
+    padding-top: $base-spacing-unit;
+    @include keyline(top);
+  }
+
+  &:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    @include keyline(none);
+
+    h2 {
+      top: -($half-spacing-unit / 3);
+    }
   }
 }

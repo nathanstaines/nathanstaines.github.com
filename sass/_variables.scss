@@ -84,6 +84,6 @@ $half-spacing-unit:                 $base-spacing-unit / 2 !default;
 $quarter-spacing-unit:              $base-spacing-unit / 4 !default;
 $double-spacing-unit:               $base-spacing-unit * 2 !default;
 
-$footer-height:                     $double-spacing-unit !default;
+$footer-height:                     $base-spacing-unit * 2.375 !default;
 
 $base-radius:                       4px !default;

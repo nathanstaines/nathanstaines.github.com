@@ -22,7 +22,7 @@
 
 #head {
   margin-bottom: $double-spacing-unit;
-  padding: $half-spacing-unit 0;
+  padding: ($base-spacing-unit / 1.5) 0;
   border-bottom: 1px solid $gray-light;
   @include box-shadow(0 1px 0 $white);
   background: $header-background;
@@ -79,8 +79,7 @@
 }
 
 #copyright {
-  margin: $half-spacing-unit 0;
-  text-align: right;
+  margin: ($base-spacing-unit / 1.5) 0;
 }
 
 #copyright,
