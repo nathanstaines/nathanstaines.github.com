@@ -14,7 +14,7 @@
   h3 {
     margin-bottom: $quarter-spacing-unit;
     font-family: $base-font-family;
-    font-size: $base-font-size;
+    @include font-size($base-font-size);
     color: inherit;
   }
 
