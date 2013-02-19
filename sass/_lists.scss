@@ -21,7 +21,7 @@ li {
 }
 
 .two-up {
-  margin: 0 (-$quarter-spacing-unit) $base-spacing-unit;
+  margin: 0 (-$quarter-spacing-unit) $half-spacing-unit;
   @include clearfix();
 
   li {

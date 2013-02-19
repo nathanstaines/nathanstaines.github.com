@@ -8,6 +8,30 @@
     font-size: 0.875em;
   }
 
+  .figure-img {
+    display: block;
+    float: none;
+
+    &.pull-right,
+    &.pull-left {
+      margin: 0 0 $base-spacing-unit 0;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  .two-up {
+    margin: 0 0 $half-spacing-unit;
+
+    li {
+      float: none;
+      width: 100%;
+      padding: 0 0 $half-spacing-unit;
+    }
+  }
+
   .post-date:after {
     display: none;
   }
