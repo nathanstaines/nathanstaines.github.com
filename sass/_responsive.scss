@@ -4,6 +4,10 @@
 
 @media (max-width: 479px) {
 
+  html {
+    font-size: 0.875em;
+  }
+
   .post-date:after {
     display: none;
   }

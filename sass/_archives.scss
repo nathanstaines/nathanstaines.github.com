@@ -15,11 +15,13 @@
     position: absolute;
     top: $base-spacing-unit / 1.2;
     right: 0;
+    text-shadow: 0 1px 0 $white;
+    color: $gray;
   }
 
   article > h3 {
     margin-bottom: 0;
-    padding-right: $base-spacing-unit / 0.3;
+    padding-right: $base-spacing-unit * 4;
   }
 
   &.with-year {

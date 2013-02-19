@@ -667,10 +667,12 @@ iframe {
   position: absolute;
   top: 1.25rem;
   right: 0;
+  text-shadow: 0 1px 0 white;
+  color: #999999;
 }
 .archive-list-item article > h3 {
   margin-bottom: 0;
-  padding-right: 5rem;
+  padding-right: 6rem;
 }
 .archive-list-item.with-year {
   margin-top: 3rem;
@@ -732,6 +734,10 @@ iframe {
 }
 
 @media (max-width: 479px) {
+  html {
+    font-size: 0.875em;
+  }
+
   .post-date:after {
     display: none;
   }
