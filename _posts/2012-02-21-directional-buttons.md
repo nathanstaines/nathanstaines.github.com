@@ -71,15 +71,15 @@ Next we have our basic button styles:
 Then for the directional arrows:
 
 ``` css
-.csstransforms #btns a.prev {
+#btns a.prev {
   border-left: none;
 }
 
-.csstransforms #btns a.next {
+#btns a.next {
   border-right: none;
 }
 
-.csstransforms #btns a:before {
+#btns a:before {
   display: block;
   position: absolute;
   top: .25em;
@@ -98,7 +98,7 @@ Then for the directional arrows:
   transform: rotate(45deg);
 }
 
-.csstransforms #btns a.next:before {
+#btns a.next:before {
   left: auto;
   right: -.625em;
   border: 1px solid #aaa;
@@ -107,25 +107,25 @@ Then for the directional arrows:
   box-shadow: 2px 0 0 rgba(0, 0, 0, .075);
 }
 
-.csstransforms #btns a:hover:before {
+#btns a:hover:before {
   border-color: #832448;
   background: #ec528d;
   background: linear-gradient(-45deg, #f874a4 0%, #ec528d 100%);
   box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
 }
 
-.csstransforms #btns a.next:hover:before {
+#btns a.next:hover:before {
   box-shadow: 2px 0 0 rgba(0, 0, 0, .1);
 }
 
-.csstransforms #btns a:active:before {
+#btns a:active:before {
   border-color: #832448;
   background: #f76499;
   background: linear-gradient(-45deg, #ea4383 0%, #f76499 100%);
   box-shadow: none;
 }
 
-.csstransforms #btns a.next:active:before {
+#btns a.next:active:before {
   box-shadow: none;
 }
 ```
