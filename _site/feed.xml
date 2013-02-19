@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Nathan Staines</title>
+    <link href="http://nathanstaines.github.com/feed.xml" rel="self" />
+    <link href="http://nathanstaines.github.com/" />
+    <updated>2013-02-19T16:22:18+00:00</updated>
+    <id>http://nathanstaines.github.com/</id>
+    <author>
+        <name>Nathan Staines</name>
+        <email>nathan@nathanstaines.com</email>
+    </author>
+
+    
+        <entry>
+            <title>WordPress word count</title>
+            <link href="http://nathanstaines.github.com/articles/wordpress-word-count/"/>
+            <updated>2012-06-25T13:00:00+01:00</updated>
+            <id>http://nathanstaines.github.com/articles/wordpress-word-count</id>
+            <content type="html">&lt;p&gt;When I redesigned this last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.&lt;/p&gt;
+
+&lt;p&gt;I assumed this would be an easy thing to achieve using WordPress, which to a certain extent it was. However, I also wanted to be able to exclude any code blocks from the final count.&lt;/p&gt;
+
+&lt;p&gt;Below you&amp;#39;ll find a couple of solutions I came up with to help solve the predicament I found myself in, they may not be bulletproof solutions but they did work for me.&lt;/p&gt;
+
+&lt;h3&gt;The simple solution&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;#39;re not interested in removing any HTML elements from your final count then you can simply place the following function in your theme&amp;#39;s &lt;code&gt;functions.php&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_post_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;post_content&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str_word_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;strip_tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then add this to your theme wherever you&amp;#39;d like the word count to appear:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;function_exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;wcount&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;The not so simple solution&lt;/h3&gt;
+
+&lt;p&gt;This solution requires a little extra work. First you have to to create a new instance of the &lt;code&gt;DOMDocument&lt;/code&gt; class and then disable the error reporting as it doesn&amp;#39;t seem to want to play nice with HTML5.&lt;/p&gt;
+
+&lt;p&gt;From there you need to collect and remove any of the HTML elements that you no longer want to be included in your final count and then you can continue as per normal.&lt;/p&gt;
+
+&lt;p&gt;Simply place the following function in your theme&amp;#39;s &lt;code&gt;functions.php&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;!-- http://stackoverflow.com/questions/1516085/strip-html-tags-and-its-contents --&gt;
+
+&lt;!-- http://stackoverflow.com/questions/6090667/php-domdocument-errors-warnings-on-html5-tags --&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_post_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;post_content&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nv&quot;&gt;$dom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DOMDocument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;libxml_use_internal_errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$dom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$content&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;libxml_clear_errors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$excluded_elements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;pre&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$elements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$excluded_elements&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;$elements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$elements&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;$element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parentNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str_word_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;strip_tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;saveHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then add this to your theme wherever you&amp;#39;d like the word count to appear:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;function_exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;wcount&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wcount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you run into any problems or have any questions regarding these solutions feel free to &lt;a href=&quot;mailto:&amp;#110;&amp;#097;&amp;#116;&amp;#104;&amp;#097;&amp;#110;&amp;#064;&amp;#110;&amp;#097;&amp;#116;&amp;#104;&amp;#097;&amp;#110;&amp;#115;&amp;#116;&amp;#097;&amp;#105;&amp;#110;&amp;#101;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;send me an email&lt;/a&gt; or contact me via twitter &lt;a href=&quot;http://twitter.com/nathanstaines&quot;&gt;@nathanstaines&lt;/a&gt;.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Directional buttons</title>
+            <link href="http://nathanstaines.github.com/articles/directional-buttons/"/>
+            <updated>2012-02-21T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/directional-buttons</id>
+            <content type="html">&lt;p&gt;I&amp;#39;ve been waiting for an excuse to fine tune an idea I had about creating some directional buttons using just CSS. So after seeing the &lt;a href=&quot;http://dribbble.com/shots/433299-Simple-light-button/rebounds&quot;&gt;Simple light button playoff on dribbble&lt;/a&gt;, I decided to get my act together and finally finish it off and in the process, write my first blog post for 2012.&lt;/p&gt;
+
+&lt;p&gt;These buttons have been made by utilising the CSS &lt;code&gt;:before&lt;/code&gt; attribute and &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt; to ensure that browsers that &lt;strong&gt;don&amp;#39;t&lt;/strong&gt; support CSS transitions but &lt;strong&gt;do&lt;/strong&gt; support the &lt;code&gt;:before&lt;/code&gt; attribute don&amp;#39;t break. However, even without Modernizr or JavaScript enabled these buttons will degrade gracefully.&lt;/p&gt;
+
+&lt;div class=&quot;panel&quot;&gt;
+  &lt;h3&gt;The demo&lt;/h3&gt;
+  &lt;nav id=&quot;btns&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;prev&quot;&gt;Prev&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;next&quot;&gt;Next&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;alert&quot;&gt;
+  &lt;h3&gt;Note:&lt;/h3&gt;
+  &lt;p&gt;For the sake of simplicity, vendor prefixes have been omitted. However, you can still view them in the page source.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The HTML markup is about as simple as it gets:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btns&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;prev&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Prev&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;next&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Next&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next we have our basic button styles:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25em&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.5em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;bold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eee&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#aa305e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ec528d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f874a4&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ec528d&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#832448&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f76499&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ea4383&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f76499&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;inset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then for the directional arrows:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.prev&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.next&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-.625em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.4375em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1.4375em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-top&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-45&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eee&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;075&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.next&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-.625em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;075&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#832448&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ec528d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-45&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f874a4&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ec528d&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.next&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;border-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#832448&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f76499&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-45&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ea4383&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f76499&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.csstransforms&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#btns&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.next&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:active:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you feel as though this technique could be improved upon or you end up using it on one of your sites then please &lt;a href=&quot;http://twitter.com/nathanstaines&quot;&gt;let me know via Twitter&lt;/a&gt;.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Macbook Pro SSD upgrade</title>
+            <link href="http://nathanstaines.github.com/articles/macbook-pro-ssd-upgrade/"/>
+            <updated>2011-09-22T13:00:00+01:00</updated>
+            <id>http://nathanstaines.github.com/articles/macbook-pro-ssd-upgrade</id>
+            <content type="html">&lt;p&gt;It&amp;#39;s been just over two weeks since I decided to upgrade my Macbook Pro 15&amp;quot; late 2008 model with a 128GB Crucial M4 &lt;abbr title=&quot;Solid State Drive&quot;&gt;SSD&lt;/abbr&gt; also replacing my SuperDrive with the exisiting 320GB &lt;abbr title=&quot;Hard Disc Drive&quot;&gt;HDD&lt;/abbr&gt; in the process.&lt;/p&gt;
+
+&lt;p&gt;I was initially going to bite the bullet and purchase a brand new Macbook Air but figured I&amp;#39;d probably want to upgrade again within the next 12-24 months, so despite the fact that everyone seems to be raving about the Air at the moment I thought going with the SSD upgrade instead would save me some money in the long run.&lt;/p&gt;
+
+&lt;h3&gt;Equipment used&lt;/h3&gt;
+
+&lt;ul class=&quot;list-unstyled list-equipment two-up&quot;&gt;
+    &lt;li class=&quot;lion-osx&quot;&gt;
+        &lt;a class=&quot;btn&quot; href=&quot;http://store.apple.com/uk/product/MD256Z/A&quot;&gt;
+            &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/osx-lion.png&quot; alt=&quot;&quot;&gt;
+            OSX Lion thumb drive
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;phillips&quot;&gt;
+        &lt;a class=&quot;btn&quot; href=&quot;http://www.crucial.com/uk/store/partspecs.aspx?imodule=CTSCRDRVRPH0&quot;&gt;
+            &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/phillips.png&quot; alt=&quot;&quot;&gt;
+            00 phillips screwdriver
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;torx&quot;&gt;
+        &lt;a class=&quot;btn&quot; href=&quot;http://www.amazon.co.uk/Silverline-277858-T6-Trx-Screwdriver/dp/B000LFXBIC/ref=sr_1_1?ie=UTF8&amp;qid=1315568888&amp;sr=8-1&quot;&gt;
+            &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/torx.png&quot; alt=&quot;&quot;&gt;
+            T6 Torx screwdriver
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;crucial&quot;&gt;
+        &lt;a class=&quot;btn&quot; href=&quot;http://www.crucial.com/uk/store/partspecs.aspx?IMODULE=CT128M4SSD2&quot;&gt;
+            &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/crucial.png&quot; alt=&quot;&quot;&gt;
+            128GB Crucial M4
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;hdcaddy&quot;&gt;
+        &lt;a class=&quot;btn&quot; href=&quot;http://hdcaddy.com/product.php?id_product=10&quot;&gt;
+            &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/hdcaddy.png&quot; alt=&quot;&quot;&gt;
+            Fenvi HDcaddy
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Choosing the SSD&lt;/h3&gt;
+
+&lt;p&gt;Obviously the most important part of this process is in deciding which SSD to go with. As always our trusty friend Google had plenty to say on the matter but not everything it spat out was entirely helpful. I did however find this &lt;a href=&quot;http://macgateway.com/reviews/best-ssd-upgrades-for-the-macbook-pro/&quot;&gt;article from MacGateway&lt;/a&gt; had enough information to get me started.&lt;/p&gt;
+
+&lt;p&gt;There are already a number of good quality Solid State Drives to choose from and this is only going to increase as the technology behind them improves. I decided to go for a mixture of price, space and all-round speed settling on the 128GB Crucial M4 in the end.&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;ve always been a bit of a clean freak when it comes to computers. I love reformatting my HDD (now SSD) about every 6 months in an effort to trick myself into thinking I have a completely new machine. I had an external HDD lying around that I used that to back up all of the files I wanted to keep and took this opportunity to install a clean version OSX Lion.&lt;/p&gt;
+
+&lt;p&gt;Replacing the HDD with the SSD couldn&amp;#39;t have been simpler (assuming of course you have the correct tools), whereas swapping out the SuperDrive with the HDD was a little bit trickier. To get the job done I basically followed these step by step instructions from ifixit.com and watched this guy take his machine apart on YouTube:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ifixit.com/Guide/MacBook-Pro-15-Inch-Unibody-Late-2008-and-Early-2009-Hard-Drive-Replacement/841/1&quot;&gt;Hard Drive replacement tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ifixit.com/Guide/MacBook-Pro-15-Inch-Unibody-Late-2008-and-Early-2009-Optical-Drive-Replacement/826/1&quot;&gt;Optical Drive replacement tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;iframe class=&quot;iframe-polaroid&quot; width=&quot;720&quot; height=&quot;440&quot; src=&quot;http://www.youtube.com/embed/iv91m2z6DPY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;So far everything seems to be a lot snappier than it was before, applications are responding a lot quicker and waiting for my machine to boot up in the morning is now a thing of the past. If you&amp;#39;re thinking about performing a similar upgrade on your machine - do it, you won&amp;#39;t regret it.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>A responsive redesign</title>
+            <link href="http://nathanstaines.github.com/articles/a-responsive-redesign/"/>
+            <updated>2011-08-19T13:00:00+01:00</updated>
+            <id>http://nathanstaines.github.com/articles/a-responsive-redesign</id>
+            <content type="html">&lt;p&gt;&lt;strong&gt;I&amp;#39;ve finally decided to do the responsible thing and go &lt;em&gt;responsive&lt;/em&gt; with my website.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Today, sites are being viewed on a number of different devices and browsers each with differing dimensions and screen resolutions, gone are the days of the one size fits all design philosophy.&lt;/p&gt;
+
+&lt;figure class=&quot;figure-img&quot;&gt;
+  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/responsive.png&quot; alt=&quot;&quot;&gt;
+  &lt;figcaption&gt;A responsive redesign&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Ethan Marcotte outlines in his game changing book &lt;a href=&quot;http://abookapart.com/products/responsive-web-design&quot;&gt;&amp;#39;Responsive Web Design&amp;#39;&lt;/a&gt; that fluid grids, flexible images and media queries are the three technical ingredients that are needed for responsive web design, but that it also requires a different way of thinking.&lt;/p&gt;
+
+&lt;p&gt;So equipped with this new found knowledge I set out to create a WordPress theme that would allow users to easily read the content on this site regardless of screen size. I decided to take what I already knew from working with &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;Starkers HTML5&lt;/a&gt; and mixed it together with the &lt;a href=&quot;http://h5bp.com&quot;&gt;HTML5 Boilerplate&lt;/a&gt; and Andy Clarke&amp;#39;s &lt;a href=&quot;http://stuffandnonsense.co.uk/projects/320andup/&quot;&gt;320 &amp;amp; Up&lt;/a&gt; boilerplate extension.&lt;/p&gt;
+
+&lt;h3&gt;A fresh coat of paint&lt;/h3&gt;
+
+&lt;p&gt;While I was at it with the whole &lt;em&gt;responsive&lt;/em&gt; thing I also thought I&amp;#39;d go with a new &lt;a href=&quot;http://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; inspired colour scheme, a homage to &lt;a href=&quot;http://flightoftheconchords.co.nz/&quot;&gt;Flight of the Conchords&lt;/a&gt; on the homepage and the inclusion of &lt;a href=&quot;http://miekd.com/articles/pull-quotes-with-html5-and-css/&quot;&gt;Maykel Loomans&amp;#39; pull quote technique&lt;/a&gt; on some of the blog posts and pages.&lt;/p&gt;
+
+&lt;h3&gt;What next?&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m hoping this new look will inspire me to write blog posts a little more frequently but as always, only time will tell...&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Thoughts on New Adventures 2011</title>
+            <link href="http://nathanstaines.github.com/articles/thoughts-on-new-adventures-2011/"/>
+            <updated>2011-01-23T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/thoughts-on-new-adventures-2011</id>
+            <content type="html">&lt;p&gt;I had the opportunity this week to head up north to Nottingham along with another 600+ fellow web geeks for the inaugural &lt;a href=&quot;http://newadventuresconf.com/&quot;&gt;New Adventures in web design conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;From the moment I arrived at St Pancras train station it felt like I was playing a real life version of &amp;#39;Where in the World is Carmen Sandiego?&amp;#39; it seemed like I had just missed other conference goers by only a matter of hours when I checked in on Gowalla.&lt;/p&gt;
+
+&lt;p&gt;This trend continued until after I had checked in at the Premier Inn (where everything&amp;#39;s premier but the price) and headed on out to the now famous:&lt;/p&gt;
+
+&lt;h3&gt;Erskine Bowling&lt;/h3&gt;
+
+&lt;figure class=&quot;figure-img pull-right&quot;&gt;
+  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/bowling-shoes-252x167.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;figcaption&gt;Bowling shoes &amp;bull; photo by Marc Thiele&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The guys from &lt;a href=&quot;http://erskinedesign.com/&quot;&gt;Erskine Design&lt;/a&gt; organized a great night of bowling, creating a nice laid-back atmosphere where the conference attendees could catch up and enjoy themselves in a social setting before having to put their thinking caps on the next morning.&lt;/p&gt;
+
+&lt;p&gt;As far as the bowling was concerned everyone seemed to peak early except wee &lt;a href=&quot;http://twitter.com/jackosborne&quot;&gt;@jackosborne&lt;/a&gt; who improved &lt;em&gt;only slightly&lt;/em&gt; as the night went on.&lt;/p&gt;
+
+&lt;p&gt;Now I haven&amp;#39;t exactly been to a lot of web design conferences but I&amp;#39;m pretty sure it&amp;#39;s safe to say that the people who go look forward to these sort of social events almost as much as the conference talks themselves.&lt;/p&gt;
+
+&lt;p&gt;During the course of the night I had the pleasure of meeting some amazing people from within our industry where many great conversations were had.&lt;/p&gt;
+
+&lt;p&gt;And even though I wasn&amp;#39;t lucky enough to be apart of a bowling team I did get the opportunity to knock over a few pins every now and then.&lt;/p&gt;
+
+&lt;p&gt;I didn&amp;#39;t stick around to see which team was crowned champions but overall the night to me was plenty of fun.&lt;/p&gt;
+
+&lt;h3&gt;Conference Speakers&lt;/h3&gt;
+
+&lt;figure class=&quot;figure-img pull-left&quot;&gt;
+  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/albert-hall-252x189.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;figcaption&gt;Albert Hall &amp;bull; photo by Simon Collison&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Thursday brought with it a reasonably early start, a queue around the corner to get inside Albert Hall and plenty of coffee in hand.&lt;/p&gt;
+
+&lt;p&gt;Over the course of the day there were some brilliant ideas and opinions presented from some of the industry&amp;#39;s most respected voices like Dan Rubin, Mark Boulton, Sarah Parmenter, Elliot Jay Stocks, Jon Tan, Tim Van Damme, Greg Wood, Veerle Pieters, Andy Clarke and Brendan Dawes.&lt;/p&gt;
+
+&lt;p&gt;All &lt;em&gt;my favourite&lt;/em&gt; talks in one way or another seemed to revolve around &lt;strong&gt;the content&lt;/strong&gt;. From Mark Boulton&amp;#39;s idea of designing from the content out, not the canvas in, to Greg Wood&amp;#39;s personal experiment with art directed/editorial design and whether or not this works on the web, then finally Andy Clarke&amp;#39;s idea of telling stories with &amp;#39;Once upon a time on the web&amp;#39;.&lt;/p&gt;
+
+&lt;p&gt;For me the conference accomplished everything it set out to do:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;New Adventures... will be carefully curated; chock-full of integrity, opinion, and fresh content, with an emphasis on shaking things up and challenging convention. This event has inspiration, thinking, and intelligence at its core. It will encourage debate, enthuse, excite, ask questions, and look for real outcomes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now although New Adventures was always billed as having a fast-paced punchy format, my one and only criticism would be to say that 10 speakers in a day is a lot to take on - and a lot to take in.&lt;/p&gt;
+
+&lt;h3&gt;The After Party&lt;/h3&gt;
+
+&lt;figure class=&quot;figure-img pull-right&quot;&gt;
+  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/after-party-252x184.png&quot; alt=&quot;&quot;&gt;
+  &lt;figcaption&gt;Argh! &amp;bull; photo by gablaxian&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Once the conference had officially finished up I headed back to the hotel with a couple of the &lt;abbr title=&quot;Great Bunch of Lads&quot;&gt;GBOLs&lt;/abbr&gt; to drop off our stuff and head out for some food.&lt;/p&gt;
+
+&lt;p&gt;A few hours later and we arrived at Escucha to find plenty of fellow web geeks catching up on the days events.&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s always a few factors at play when it comes to hosting a successful after party (in my opinion at least). The venue, the free tab at the bar and the volume. All of which were spot on!&lt;/p&gt;
+
+&lt;h3&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;Overall the New Adventures in web design conference in my eyes was a huge success, I love the opportunity to catch up with other people in our industry to discuss and/or question the direction in which we&amp;#39;re all headed.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For more reviews and write-ups of the conference &lt;a href=&quot;http://lanyrd.com/2011/new-adventures-in-web-design/writeups/&quot;&gt;check out lanyard&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;And for all the photos of the event there&amp;#39;s no better place than the &lt;a href=&quot;http://flickr.com/groups/naconf/pool/&quot;&gt;New Adventures flickr pool&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks &lt;a href=&quot;http://twitter.com/colly&quot;&gt;@colly&lt;/a&gt; and team for such an entertaining and inspiring conference.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Working with media queries</title>
+            <link href="http://nathanstaines.github.com/articles/working-with-media-queries/"/>
+            <updated>2010-12-02T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/working-with-media-queries</id>
+            <content type="html">&lt;p&gt;The use of media queries simply allows us to apply different CSS styles based on resolution and/or device orientation. It uses the same old media declaration that we&amp;#39;ve used for serving up print stylesheets but now it just has a few more features under its belt.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Everyone&amp;#39;s doing it&lt;/strong&gt;... ok, so maybe not everyone but it&amp;#39;s definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.&lt;/p&gt;
+
+&lt;figure class=&quot;figure-img&quot;&gt;
+  &lt;a href=&quot;http://hicksdesign.co.uk&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-hicks.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Hicks Design&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3&gt;How do we use them?&lt;/h3&gt;
+
+&lt;p&gt;First we need to set the viewport to device-width&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;width=device-width, initial-scale=1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can either link to external stylesheets&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;only screen and (max-device-width: 480px)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;small.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;only screen and (min-device-width: 768px) and (max-device-width: 1024px)&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;medium.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Or add them to an existing stylesheet&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;c&quot;&gt;/* Minimum width */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;900px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* Maximum width */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* Minimum and maximum width */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;900px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* Maximum device width */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max-device-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;480px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* Maximum device width and orientation */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;max-device-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;480px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;orientation&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:portrait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* High resolution devices */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-webkit-min-device-pixel-ratio&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;only&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min-resolution&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;192dpi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffe11a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Is it supported?&lt;/h3&gt;
+
+&lt;p&gt;The browser support for media queries is actually pretty good. The latest versions of Firefox, Safari, Chrome, and Opera are all using it. Internet Explorer 9 will be, but IE8 and below do not :( however there is a &lt;a href=&quot;http://plugins.jquery.com/project/MediaQueries&quot;&gt;jQuery media queries plugin&lt;/a&gt; - for those not-so-capable browsers.&lt;/p&gt;
+
+&lt;h3&gt;Final thoughts&lt;/h3&gt;
+
+&lt;p&gt;One thing to keep in mind - Although we can now tailor our designs to suit different devices we&amp;#39;ll still be dealing with the exact same content. (&lt;a href=&quot;http://dev.w3.org/csswg/css3-flexbox/&quot;&gt;CSS3 flexbox&lt;/a&gt; can help rearrange some content if necessary) So even if we decide to use CSS to hide images on the iPhone, they&amp;#39;ll still be downloaded by the user.&lt;/p&gt;
+
+&lt;h3&gt;Notable Mentions&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://mediaqueri.es&quot;&gt;Mediaqueri.es&lt;/a&gt; - A collection of responsive web design.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://lessframework.com&quot;&gt;Less Framework&lt;/a&gt; - A CSS grid system for designing adaptive web­sites.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://cssgrid.net/&quot;&gt;CSSgrid&lt;/a&gt; - A 1140px wide, 12 column grid. Fluid all the way down to mobile.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/&quot;&gt;A Jason Grigsby article&lt;/a&gt; - On media queries for mobile being fools gold.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;figure-img&quot;&gt;
+  &lt;a href=&quot;http://edmerritt.com/&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-merritt.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Ed Merritt&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class=&quot;figure-img&quot;&gt;
+  &lt;a href=&quot;http://colly.com/&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-colly.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Simon Collison&lt;/figcaption&gt;
+&lt;/figure&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Starkers HTML5</title>
+            <link href="http://nathanstaines.github.com/articles/starkers-html5/"/>
+            <updated>2010-07-22T13:00:00+01:00</updated>
+            <id>http://nathanstaines.github.com/articles/starkers-html5</id>
+            <content type="html">&lt;p&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/starkers.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;div class=&quot;alert&quot;&gt;
+    &lt;h3&gt;Update:&lt;/h3&gt;
+    &lt;p&gt;Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;GitHub&lt;/a&gt; and use it in its current state.&lt;/p&gt;
+
+    &lt;p&gt;Alternatively I'd suggest downloading the original &lt;a href=&quot;http://starkerstheme.com&quot;&gt;Starkers&lt;/a&gt; recently updated by Viewport Industries or the &lt;a href=&quot;http://http://underscores.me&quot;&gt;underscores theme&lt;/a&gt; by Automattic.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It&amp;#39;s been roughly 2&amp;frac12; years since &lt;a href=&quot;http://elliotjaystocks.com&quot;&gt;Elliot Jay Stocks&lt;/a&gt; first released &lt;a href=&quot;http://elliotjaystocks.com/starkers/&quot;&gt;Starkers&lt;/a&gt;, a completely naked Wordpress theme for designers and developers to build on.&lt;/p&gt;
+
+&lt;p&gt;Like so many others I found Elliot&amp;#39;s theme invaluable, and so about 7 months ago I decided to create an HTML5 version that others would be able to use.&lt;/p&gt;
+
+&lt;figure class=&quot;figure-quote&quot;&gt;
+    &lt;blockquote&gt;Starkers is a bare bones WordPress theme created to act as a starting point for the theme designer...&lt;/blockquote&gt;
+    &lt;figcaption&gt;&lt;a href=&quot;http://elliotjaystocks/&quot; title=&quot;Elliot Jay Stocks&quot;&gt;Elliot Jay Stocks&lt;/a&gt;, Starkers&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;With the introduction of Wordpress 3.0 I&amp;#39;m pleased to unveil the new version of Starkers HTML5, just like the previous version this one has been based on Elliot&amp;#39;s &lt;a href=&quot;http://elliotjaystocks.com/blog/starkers-3/&quot;&gt;Starkers&lt;/a&gt;, which in turn was based on the new default theme known as &lt;a href=&quot;http://2010dev.wordpress.com/&quot;&gt;Twenty Ten&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;So what&amp;#39;s new?&lt;/h3&gt;
+
+&lt;p&gt;Thanks to Wordpress 3.0 theme developers now have new APIs that allow them to easily implement custom backgrounds, headers, shortlinks, menus, post types, and taxonomies.&lt;/p&gt;
+
+&lt;p&gt;The Twenty Ten theme shows off all of these new features, whereas Starkers leaves the functionality but strips back the styling.&lt;/p&gt;
+
+&lt;p&gt;For a more comprehensive look at everything that has improved in Wordpress 3.0 you can check out the &lt;a href=&quot;http://codex.wordpress.org/Version_3.0&quot;&gt;3.0 Codex page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Final notes&lt;/h3&gt;
+
+&lt;p&gt;Starkers HTML5 comes packed with &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt;, a small and simple JavaScript library that helps you take advantage of emerging web technologies (CSS3, HTML5) while still maintaining a fine level of control over older browsers that may not yet support these new technologies.&lt;/p&gt;
+
+&lt;p&gt;For a more in-depth look into HTML5 you can check out the following websites: &lt;a href=&quot;http://html5doctor.com/&quot;&gt;HTML5 Doctor&lt;/a&gt;, &lt;a href=&quot;http://diveintohtml5.org/&quot;&gt;Dive into HTML5&lt;/a&gt;, &lt;a href=&quot;http://www.w3.org/TR/html5/&quot;&gt;the WC3 working draft&lt;/a&gt; and &lt;a href=&quot;http://www.whatwg.org/specs/web-apps/current-work/multipage/&quot;&gt;the WHATWG working draft&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Although Starkers HTML5 is a great starting point for any WordPress theme development I highly recommend you take the time to check out and dig through Paul Irish and Divya Manian&amp;#39;s &lt;a href=&quot;http://html5boilerplate.com/&quot;&gt;HTML5 Boilerplate&lt;/a&gt;.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Scrolling against the grain</title>
+            <link href="http://nathanstaines.github.com/articles/scrolling-against-the-grain/"/>
+            <updated>2010-02-11T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/scrolling-against-the-grain</id>
+            <content type="html">&lt;p&gt;Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in &amp;#39;going against the grain&amp;#39; because by default, browsers want to wrap the content to fit vertically within the window.&lt;/p&gt;
+
+&lt;p&gt;There are plenty of different options out there for you when it comes to making your site go sideways, firstly &lt;a href=&quot;http://www.thehorizontalway.com/#footer&quot;&gt;the horizontal way&lt;/a&gt; have a template that you can download and have a play with.&lt;/p&gt;
+
+&lt;p&gt;Chris Coyier has also come up with &lt;a href=&quot;http://css-tricks.com/how-to-create-a-horizontally-scrolling-site/&quot;&gt;a solution&lt;/a&gt; using jQuery to create a table based layout on the fly, while Antonio Lupetti discusses &lt;a href=&quot;http://woork.blogspot.com/2009/02/useful-tips-to-design-horizontal.html&quot;&gt;another option&lt;/a&gt; of manually setting the width of your containing element.&lt;/p&gt;
+
+&lt;h3&gt;How I went horizontal&lt;/h3&gt;
+
+&lt;p&gt;I think I may have decided to go the road less traveled with the &lt;a href=&quot;http://qcdboards.com&quot;&gt;QCD Boards website&lt;/a&gt;, choosing to dynamically set the width of the containing element using jQuery.&lt;/p&gt;
+
+&lt;p&gt;I know it&amp;#39;s considered bad practise to handle page layout with JavaScript and it may not degrade as nicely as it should but has anyone really come across a bulletproof technique yet?&lt;/p&gt;
+
+&lt;p&gt;Well the idea behind this method is to come up with a &lt;strong&gt;set width&lt;/strong&gt; for each post, multiply it by the &lt;strong&gt;number of posts&lt;/strong&gt; you have and then include that figure in the CSS file, which in turn forces the browser to grow horizontally.&lt;/p&gt;
+
+&lt;p&gt;This is achieved by first setting the width of the post element in the CSS file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.post&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then all you need to do is include this simple jQuery function:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;numElementsSingle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.post&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;wrapperWidthSingle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;numElementsSingle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;wrapperWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapperWidthSingle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#wrapper&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapperWidth&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And you should end up with a layout structure similar to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/horiz.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I&amp;#39;ll do my best to help you out.&lt;/p&gt;
+
+&lt;h3&gt;In closing&lt;/h3&gt;
+
+&lt;p&gt;I know that there are plenty of &lt;a href=&quot;http://naldzgraphics.net/inspirations/40-examples-of-horizontal-scrolling-websites/&quot;&gt;horizontally scrolling websites&lt;/a&gt; out there so if you&amp;#39;ve come across a different/better solution for scrolling against the grain then please let me know.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A Helpful Tip:&lt;/strong&gt; if you hold shift while using your mouse wheel, most horizontal websites should scroll sideways for you.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>How do you say HTML?</title>
+            <link href="http://nathanstaines.github.com/articles/how-do-you-say-html/"/>
+            <updated>2010-02-11T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/how-do-you-say-html</id>
+            <content type="html">&lt;p&gt;Earlier this year I came to the realisation that I say HTML or more importantly the letter H, a little differently to a lot of others out there.&lt;/p&gt;
+
+&lt;p&gt;My journey of self discovery started with the release of a new WordPress theme which was initially going to be called &amp;#39;Genesis: an HTML5 variant of Starkers&amp;#39; but seeing as there was already a theme framework with a similar name, &lt;a href=&quot;http://elliotjaystocks.com&quot;&gt;Elliot Jay Stocks&lt;/a&gt; and myself decided on &amp;#39;Starkers HTML5&amp;#39; instead.&lt;/p&gt;
+
+&lt;p&gt;So my confusion lay in the use of &amp;#39;an HTML&amp;#39; instead of &amp;#39;a HTML&amp;#39;. At first I thought it was a simple typo by Elliot but then it dawned on me (thanks to a little bit of help from Google) that not all people pronounce the letter H the same way I do... weird I know.&lt;/p&gt;
+
+&lt;h3&gt;Aitch vs Haitch?&lt;/h3&gt;
+
+&lt;p&gt;H is the eighth letter in the basic modern Latin alphabet. Its name in both British and American English is aitch, plural aitches, though it is also pronounced haitch if you’re cool like me.&lt;/p&gt;
+
+&lt;p&gt;There is plenty of &lt;a href=&quot;http://en.wikipedia.org/wiki/H#Name_in_English&quot;&gt;information&lt;/a&gt; as to why there are two different pronunciations of the letter H but I&amp;#39;d personally like to thank the Catholics.&lt;/p&gt;
+
+&lt;figure class=&quot;figure-quote&quot;&gt;
+    &lt;blockquote&gt;We conducted a survey of the television programme Wheel of Fortune over a period of some weeks, just to see how many of the participants were aitchers and how many were haitchers. The results: 40% aitched and 60% haitched... Australians from a wide variety of backgrounds are haitchers these days.&lt;/blockquote&gt;
+    &lt;figcaption&gt;&lt;a href=&quot;http://www.anu.edu.au/ANDC/pubs/ozwords/June_98/2._aitch.htm&quot; title=&quot;Ab(h)ominable (H)aitch&quot;&gt;&lt;cite&gt;Ab(h)ominable (H)aitch&lt;/cite&gt;&lt;/a&gt;, by Frederick Ludowyk&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3&gt;So is it an HTML or a HTML?&lt;/h3&gt;
+
+&lt;p&gt;The rule of thumb is that you use &amp;#39;a&amp;#39; before words that start with a consonant sound and &amp;#39;an&amp;#39; before words that start with a vowel sound, so depending on how you pronounce the letter H will determine how you write it.&lt;/p&gt;
+
+&lt;p&gt;I personally say haitch instead of aitch and I understand that it&amp;#39;s most likely the lesser of the two alternatives but I&amp;#39;ve always been one to cheer for the underdog.&lt;/p&gt;
+</content>
+        </entry>
+    
+        <entry>
+            <title>Hello world!</title>
+            <link href="http://nathanstaines.github.com/articles/hello-world/"/>
+            <updated>2010-01-15T12:00:00+00:00</updated>
+            <id>http://nathanstaines.github.com/articles/hello-world</id>
+            <content type="html">&lt;p&gt;I&amp;#39;m here, I&amp;#39;ve finally made it... my very own slice of the world wide web! Now don&amp;#39;t get me wrong, I&amp;#39;ve had websites before but I&amp;#39;ve never had one named after me... it&amp;#39;s kind of a big deal.&lt;/p&gt;
+
+&lt;p&gt;Just like a builder who builds his own house or a mechanic who puts together his own car a designer who designs his own site, is never really finished. Even though I&amp;#39;m happy with the way things look at the moment I can certainly guarantee that over time improvements will be made.&lt;/p&gt;
+
+&lt;p&gt;Now depending on your choice of web browser, things may look a little differently from where you&amp;#39;re sitting (there might be a few issues with the inline labels in IE). The whole site has been designed using HTML5 and CSS3 which at the time of writing this have yet to be finalised and fully supported.&lt;/p&gt;
+
+&lt;p&gt;If you think you&amp;#39;ve come across any errors or just want to help me improve the site with some friendly advice then please &lt;a href=&quot;mailto:nathan@nathanstaines.com&quot;&gt;send me an email&lt;/a&gt;.&lt;/p&gt;
+</content>
+        </entry>
+    
+</feed>
