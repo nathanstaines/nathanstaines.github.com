@@ -3,15 +3,6 @@
 // =============================================================================
 
 @media (max-width: 479px) {
-  .nav-main {
-    float: none;
-    margin-top: $base-spacing-unit / 1.5;
-
-    li {
-      margin-right: $half-spacing-unit;
-      margin-left: 0;
-    }
-  }
 
   .post-date:after {
     display: none;
@@ -19,5 +10,26 @@
 
   .post-count {
     display: block;
+  }
+
+  // Visibility utilities
+  // =====================================
+
+  .visible-small {
+    display: inherit !important;
+  }
+
+  .visible-large {
+    display: none !important;
+  }
+
+  #logo {
+    .visible-small {
+      visibility: visible;
+    }
+
+    .visible-large {
+      visibility: hidden;
+    }
   }
 }

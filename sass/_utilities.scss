@@ -23,3 +23,10 @@
 .text-hide {
   @include hide-text;
 }
+
+// Visibility utilities
+// =====================================
+
+.visible-small {
+  display: none !important;
+}

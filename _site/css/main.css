@@ -592,6 +592,9 @@ iframe {
 #logo a {
   text-decoration: none;
 }
+#logo .visible-small {
+  visibility: hidden;
+}
 
 .logo-circles {
   position: relative;
@@ -724,21 +727,31 @@ iframe {
   border: 0;
 }
 
-@media (max-width: 479px) {
-  .nav-main {
-    float: none;
-    margin-top: 1rem;
-  }
-  .nav-main li {
-    margin-right: 0.75rem;
-    margin-left: 0;
-  }
+.visible-small {
+  display: none !important;
+}
 
+@media (max-width: 479px) {
   .post-date:after {
     display: none;
   }
 
   .post-count {
     display: block;
+  }
+
+  .visible-small {
+    display: inherit !important;
+  }
+
+  .visible-large {
+    display: none !important;
+  }
+
+  #logo .visible-small {
+    visibility: visible;
+  }
+  #logo .visible-large {
+    visibility: hidden;
   }
 }
