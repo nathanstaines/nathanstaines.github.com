@@ -388,6 +388,9 @@ iframe {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 white;
   background: rgba(0, 0, 0, 0.05);
 }
+.figure-img.pull-right, .figure-img.pull-left {
+  max-width: 50%;
+}
 .figure-img.pull-right {
   margin: 0 0 1.5rem 1.5rem;
 }
@@ -744,6 +747,7 @@ iframe {
     float: none;
   }
   .figure-img.pull-right, .figure-img.pull-left {
+    max-width: 100%;
     margin: 0 0 1.5rem 0;
   }
   .figure-img figcaption {

@@ -38,6 +38,11 @@ iframe {
   border-radius: $base-radius;
   @include inset-effect;
 
+  &.pull-right,
+  &.pull-left {
+    max-width: 50%;
+  }
+
   &.pull-right {
     margin: 0 0 $base-spacing-unit $base-spacing-unit;
   }

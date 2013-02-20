@@ -14,6 +14,7 @@
 
     &.pull-right,
     &.pull-left {
+      max-width: 100%;
       margin: 0 0 $base-spacing-unit 0;
     }
 
