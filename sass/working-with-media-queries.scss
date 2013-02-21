@@ -36,22 +36,13 @@
 // Maximum device width
 @media only screen and (max-device-width: 480px) {
   body {
-    background: red;
+    background: #f0f9f0;
   }
 }
 
 // Maximum device width and orientation
 @media only screen and (max-device-width: 480px) and (orientation:portrait) {
   body {
-    background: blue;
-  }
-}
-
-// High resolution devices
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  body {
-    background: green;
+    background: #f9f0f0;
   }
 }
