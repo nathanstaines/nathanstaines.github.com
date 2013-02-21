@@ -36,13 +36,13 @@
 // Maximum device width
 @media only screen and (max-device-width: 480px) {
   body {
-    background: #f0f9f0;
+    background: #f9f0f0;
   }
 }
 
 // Maximum device width and orientation
 @media only screen and (max-device-width: 480px) and (orientation:portrait) {
   body {
-    background: #f9f0f0;
+    background: #f0f9f0;
   }
 }
