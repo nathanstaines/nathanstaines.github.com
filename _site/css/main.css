@@ -701,11 +701,6 @@ iframe {
   color: #999999;
 }
 
-.post-date:after {
-  margin-left: 0.375rem;
-  content: "\2022";
-}
-
 .clearfix {
   *zoom: 1;
 }
@@ -761,14 +756,6 @@ iframe {
     float: none;
     width: 100%;
     padding: 0 0 0.75rem;
-  }
-
-  .post-date:after {
-    display: none;
-  }
-
-  .post-count {
-    display: block;
   }
 
   .visible-small {
