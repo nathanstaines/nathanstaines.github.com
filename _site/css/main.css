@@ -509,7 +509,7 @@ iframe {
 }
 .nav-main li {
   display: inline-block;
-  margin-left: 0.75rem;
+  padding-left: 0.75rem;
 }
 .nav-main a {
   display: block;
@@ -732,7 +732,7 @@ iframe {
   display: none !important;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 480px) {
   html {
     font-size: 0.875em;
   }
