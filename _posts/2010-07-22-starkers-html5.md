@@ -10,10 +10,10 @@ alias: /starkers
 <img class="img-polaroid" src="/img/starkers.png" alt="">
 
 <div class="alert">
-    <h3>Update:</h3>
-    <p>Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a> and use it in its current state.</p>
+  <h3>Update:</h3>
+  <p>Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a> and use it in its current state.</p>
 
-    <p>Alternatively I'd suggest downloading the original <a href="http://starkerstheme.com">Starkers</a> recently updated by Viewport Industries or the <a href="http://http://underscores.me">underscores theme</a> by Automattic.</p>
+  <p>Alternatively I'd suggest downloading the original <a href="http://starkerstheme.com">Starkers</a> recently updated by Viewport Industries or the <a href="http://http://underscores.me">underscores theme</a> by Automattic.</p>
 </div>
 
 It's been roughly 2&frac12; years since [Elliot Jay Stocks](http://elliotjaystocks.com) first released [Starkers](http://elliotjaystocks.com/starkers/), a completely naked Wordpress theme for designers and developers to build on.
@@ -21,8 +21,8 @@ It's been roughly 2&frac12; years since [Elliot Jay Stocks](http://elliotjaystoc
 Like so many others I found Elliot's theme invaluable, and so about 7 months ago I decided to create an HTML5 version that others would be able to use.
 
 <figure class="figure-quote">
-    <blockquote>Starkers is a bare bones WordPress theme created to act as a starting point for the theme designer...</blockquote>
-    <figcaption><a href="http://elliotjaystocks/" title="Elliot Jay Stocks">Elliot Jay Stocks</a>, Starkers</figcaption>
+  <blockquote>Starkers is a bare bones WordPress theme created to act as a starting point for the theme designer...</blockquote>
+  <figcaption><a href="http://elliotjaystocks/" title="Elliot Jay Stocks">Elliot Jay Stocks</a>, Starkers</figcaption>
 </figure>
 
 With the introduction of Wordpress 3.0 I'm pleased to unveil the new version of Starkers HTML5, just like the previous version this one has been based on Elliot's [Starkers](http://elliotjaystocks.com/blog/starkers-3/), which in turn was based on the new default theme known as [Twenty Ten](http://2010dev.wordpress.com/).
