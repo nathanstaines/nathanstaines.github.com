@@ -493,6 +493,9 @@ iframe {
 .alert p + p {
   margin-top: 0.75rem;
 }
+.alert a {
+  text-decoration: underline;
+}
 
 .nav ul {
   margin: 0;
