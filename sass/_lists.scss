@@ -39,6 +39,8 @@ li {
 
   .btn {
     display: block;
+    overflow: hidden;
     padding: $quarter-spacing-unit;
+    text-overflow: ellipsis;
   }
 }

@@ -232,7 +232,9 @@ li > ol {
 }
 .list-equipment .btn {
   display: block;
+  overflow: hidden;
   padding: 0.375rem;
+  text-overflow: ellipsis;
 }
 
 code {
