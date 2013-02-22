@@ -5,10 +5,10 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ site.title }}</title>
-    <link href="http://nathanstaines.github.com/feed.xml" rel="self" />
-    <link href="http://nathanstaines.github.com/" />
+    <link href="{{ site.url }}/feed.xml" rel="self" />
+    <link href="{{ site.url }}" />
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <id>http://nathanstaines.github.com/</id>
+    <id>{{ site.url }}</id>
     <author>
         <name>Nathan Staines</name>
         <email>nathan@nathanstaines.com</email>
@@ -17,9 +17,9 @@ layout: nil
     {% for post in site.posts %}
         <entry>
             <title>{{ post.title }}</title>
-            <link href="http://nathanstaines.github.com{{ post.url }}"/>
+            <link href="{{ site.url }}{{ post.url }}"/>
             <updated>{{ post.date | date_to_xmlschema }}</updated>
-            <id>http://nathanstaines.github.com{{ post.id }}</id>
+            <id>{{ site.url }}{{ post.id }}</id>
             <content type="html">{{ post.content | xml_escape }}</content>
         </entry>
     {% endfor %}

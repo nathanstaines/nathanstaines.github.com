@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Nathan Staines</title>
-    <link href="http://nathanstaines.github.com/feed.xml" rel="self" />
-    <link href="http://nathanstaines.github.com/" />
-    <updated>2013-02-22T11:31:53+00:00</updated>
-    <id>http://nathanstaines.github.com/</id>
+    <link href="http://nathanstaines.com/feed.xml" rel="self" />
+    <link href="http://nathanstaines.com" />
+    <updated>2013-02-22T15:06:59+00:00</updated>
+    <id>http://nathanstaines.com</id>
     <author>
         <name>Nathan Staines</name>
         <email>nathan@nathanstaines.com</email>
@@ -13,9 +13,9 @@
     
         <entry>
             <title>WordPress word count</title>
-            <link href="http://nathanstaines.github.com/articles/wordpress-word-count/"/>
+            <link href="http://nathanstaines.com/articles/wordpress-word-count/"/>
             <updated>2012-06-25T13:00:00+01:00</updated>
-            <id>http://nathanstaines.github.com/articles/wordpress-word-count</id>
+            <id>http://nathanstaines.com/articles/wordpress-word-count</id>
             <content type="html">&lt;p&gt;When I redesigned this last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.&lt;/p&gt;
 
 &lt;p&gt;I assumed this would be an easy thing to achieve using WordPress, which to a certain extent it was. However, I also wanted to be able to exclude any code blocks from the final count.&lt;/p&gt;
@@ -88,9 +88,9 @@
     
         <entry>
             <title>Directional buttons</title>
-            <link href="http://nathanstaines.github.com/articles/directional-buttons/"/>
+            <link href="http://nathanstaines.com/articles/directional-buttons/"/>
             <updated>2012-02-21T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/directional-buttons</id>
+            <id>http://nathanstaines.com/articles/directional-buttons</id>
             <content type="html">&lt;p&gt;I&amp;#39;ve been waiting for an excuse to fine tune an idea I had about creating some directional buttons using just CSS. So after seeing the &lt;a href=&quot;http://dribbble.com/shots/433299-Simple-light-button/rebounds&quot;&gt;Simple light button playoff on dribbble&lt;/a&gt;, I decided to get my act together and finally finish it off and in the process, write my first blog post for 2012.&lt;/p&gt;
 
 &lt;p&gt;These buttons have been made by utilising the CSS &lt;code&gt;:before&lt;/code&gt; attribute and &lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt; to ensure that browsers that &lt;strong&gt;don&amp;#39;t&lt;/strong&gt; support CSS transitions but &lt;strong&gt;do&lt;/strong&gt; support the &lt;code&gt;:before&lt;/code&gt; attribute don&amp;#39;t break. However, even without Modernizr or JavaScript enabled these buttons will degrade gracefully.&lt;/p&gt;
@@ -211,9 +211,9 @@
     
         <entry>
             <title>Macbook Pro SSD upgrade</title>
-            <link href="http://nathanstaines.github.com/articles/macbook-pro-ssd-upgrade/"/>
+            <link href="http://nathanstaines.com/articles/macbook-pro-ssd-upgrade/"/>
             <updated>2011-09-22T13:00:00+01:00</updated>
-            <id>http://nathanstaines.github.com/articles/macbook-pro-ssd-upgrade</id>
+            <id>http://nathanstaines.com/articles/macbook-pro-ssd-upgrade</id>
             <content type="html">&lt;p&gt;It&amp;#39;s been just over two weeks since I decided to upgrade my Macbook Pro 15&amp;quot; late 2008 model with a 128GB Crucial M4 &lt;abbr title=&quot;Solid State Drive&quot;&gt;SSD&lt;/abbr&gt; also replacing my SuperDrive with the exisiting 320GB &lt;abbr title=&quot;Hard Disc Drive&quot;&gt;HDD&lt;/abbr&gt; in the process.&lt;/p&gt;
 
 &lt;p&gt;I was initially going to bite the bullet and purchase a brand new Macbook Air but figured I&amp;#39;d probably want to upgrade again within the next 12-24 months, so despite the fact that everyone seems to be raving about the Air at the moment I thought going with the SSD upgrade instead would save me some money in the long run.&lt;/p&gt;
@@ -280,9 +280,9 @@
     
         <entry>
             <title>A responsive redesign</title>
-            <link href="http://nathanstaines.github.com/articles/a-responsive-redesign/"/>
+            <link href="http://nathanstaines.com/articles/a-responsive-redesign/"/>
             <updated>2011-08-19T13:00:00+01:00</updated>
-            <id>http://nathanstaines.github.com/articles/a-responsive-redesign</id>
+            <id>http://nathanstaines.com/articles/a-responsive-redesign</id>
             <content type="html">&lt;p&gt;&lt;strong&gt;I&amp;#39;ve finally decided to do the responsible thing and go &lt;em&gt;responsive&lt;/em&gt; with my website.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Today, sites are being viewed on a number of different devices and browsers each with differing dimensions and screen resolutions, gone are the days of the one size fits all design philosophy.&lt;/p&gt;
@@ -308,9 +308,9 @@
     
         <entry>
             <title>Thoughts on New Adventures 2011</title>
-            <link href="http://nathanstaines.github.com/articles/thoughts-on-new-adventures-2011/"/>
+            <link href="http://nathanstaines.com/articles/thoughts-on-new-adventures-2011/"/>
             <updated>2011-01-23T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/thoughts-on-new-adventures-2011</id>
+            <id>http://nathanstaines.com/articles/thoughts-on-new-adventures-2011</id>
             <content type="html">&lt;p&gt;I had the opportunity this week to head up north to Nottingham along with another 600+ fellow web geeks for the inaugural &lt;a href=&quot;http://newadventuresconf.com/&quot;&gt;New Adventures in web design conference&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;From the moment I arrived at St Pancras train station it felt like I was playing a real life version of &amp;#39;Where in the World is Carmen Sandiego?&amp;#39; it seemed like I had just missed other conference goers by only a matter of hours when I checked in on Gowalla.&lt;/p&gt;
@@ -385,9 +385,9 @@
     
         <entry>
             <title>Working with media queries</title>
-            <link href="http://nathanstaines.github.com/articles/working-with-media-queries/"/>
+            <link href="http://nathanstaines.com/articles/working-with-media-queries/"/>
             <updated>2010-12-02T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/working-with-media-queries</id>
+            <id>http://nathanstaines.com/articles/working-with-media-queries</id>
             <content type="html">&lt;p&gt;The use of media queries simply allows us to apply different CSS styles based on resolution and/or device orientation. It uses the same old media declaration that we&amp;#39;ve used for serving up print stylesheets but now it just has a few more features under its belt.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Everyone&amp;#39;s doing it&lt;/strong&gt;... ok, so maybe not everyone but it&amp;#39;s definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.&lt;/p&gt;
@@ -483,9 +483,9 @@
     
         <entry>
             <title>Starkers HTML5</title>
-            <link href="http://nathanstaines.github.com/articles/starkers-html5/"/>
+            <link href="http://nathanstaines.com/articles/starkers-html5/"/>
             <updated>2010-07-22T13:00:00+01:00</updated>
-            <id>http://nathanstaines.github.com/articles/starkers-html5</id>
+            <id>http://nathanstaines.com/articles/starkers-html5</id>
             <content type="html">&lt;p&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/starkers.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
 &lt;div class=&quot;alert&quot;&gt;
@@ -526,9 +526,9 @@
     
         <entry>
             <title>Scrolling against the grain</title>
-            <link href="http://nathanstaines.github.com/articles/scrolling-against-the-grain/"/>
+            <link href="http://nathanstaines.com/articles/scrolling-against-the-grain/"/>
             <updated>2010-02-11T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/scrolling-against-the-grain</id>
+            <id>http://nathanstaines.com/articles/scrolling-against-the-grain</id>
             <content type="html">&lt;p&gt;Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in &amp;#39;going against the grain&amp;#39; because by default, browsers want to wrap the content to fit vertically within the window.&lt;/p&gt;
 
 &lt;p&gt;There are plenty of different options out there for you when it comes to making your site go sideways, firstly &lt;a href=&quot;http://www.thehorizontalway.com/#footer&quot;&gt;the horizontal way&lt;/a&gt; have a template that you can download and have a play with.&lt;/p&gt;
@@ -571,9 +571,9 @@
     
         <entry>
             <title>How do you say HTML?</title>
-            <link href="http://nathanstaines.github.com/articles/how-do-you-say-html/"/>
+            <link href="http://nathanstaines.com/articles/how-do-you-say-html/"/>
             <updated>2010-02-11T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/how-do-you-say-html</id>
+            <id>http://nathanstaines.com/articles/how-do-you-say-html</id>
             <content type="html">&lt;p&gt;Earlier this year I came to the realisation that I say HTML or more importantly the letter H, a little differently to a lot of others out there.&lt;/p&gt;
 
 &lt;p&gt;My journey of self discovery started with the release of a new WordPress theme which was initially going to be called &amp;#39;Genesis: an HTML5 variant of Starkers&amp;#39; but seeing as there was already a theme framework with a similar name, &lt;a href=&quot;http://elliotjaystocks.com&quot;&gt;Elliot Jay Stocks&lt;/a&gt; and myself decided on &amp;#39;Starkers HTML5&amp;#39; instead.&lt;/p&gt;
@@ -601,9 +601,9 @@
     
         <entry>
             <title>Hello world!</title>
-            <link href="http://nathanstaines.github.com/articles/hello-world/"/>
+            <link href="http://nathanstaines.com/articles/hello-world/"/>
             <updated>2010-01-15T12:00:00+00:00</updated>
-            <id>http://nathanstaines.github.com/articles/hello-world</id>
+            <id>http://nathanstaines.com/articles/hello-world</id>
             <content type="html">&lt;p&gt;I&amp;#39;m here, I&amp;#39;ve finally made it... my very own slice of the world wide web! Now don&amp;#39;t get me wrong, I&amp;#39;ve had websites before but I&amp;#39;ve never had one named after me... it&amp;#39;s kind of a big deal.&lt;/p&gt;
 
 &lt;p&gt;Just like a builder who builds his own house or a mechanic who puts together his own car a designer who designs his own site, is never really finished. Even though I&amp;#39;m happy with the way things look at the moment I can certainly guarantee that over time improvements will be made.&lt;/p&gt;

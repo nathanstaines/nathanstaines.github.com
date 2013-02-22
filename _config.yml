@@ -4,4 +4,5 @@ permalink: /:categories/:title/
 exclude: ['Rakefile', 'readme.md', 'license.md', 'svg', 'sass']
 
 # Configuration required for some pages
+url: http://nathanstaines.com
 title: Nathan Staines
