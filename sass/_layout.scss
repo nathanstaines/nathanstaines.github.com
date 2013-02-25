@@ -82,11 +82,26 @@
   background: $footer-background;
 }
 
+#rss,
 #copyright {
   margin: ($base-spacing-unit / 1.5) 0;
 }
 
+#rss,
 #copyright,
 #copyright a {
   color: $gray;
+}
+
+#rss {
+  float: right;
+
+  &:hover {
+    text-decoration: none;
+    color: $orange;
+  }
+}
+
+#copyright {
+  float: left;
 }

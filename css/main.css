@@ -647,13 +647,27 @@ iframe {
   background: white;
 }
 
+#rss,
 #copyright {
   margin: 1rem 0;
 }
 
+#rss,
 #copyright,
 #copyright a {
   color: #999999;
+}
+
+#rss {
+  float: right;
+}
+#rss:hover {
+  text-decoration: none;
+  color: #d54e21;
+}
+
+#copyright {
+  float: left;
 }
 
 .post > header {
