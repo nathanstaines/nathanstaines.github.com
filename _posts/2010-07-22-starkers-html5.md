@@ -4,7 +4,7 @@ title: Starkers HTML5
 category: articles
 tags: [html, starkers, wordpress]
 date: 2010-07-22 12:00:00
-alias: /starkers
+alias: [/starkers, /archive/starkers-html5, /archive/starkers-html5-v3]
 ---
 
 <img class="img-polaroid" src="/img/starkers.png" alt="">
