@@ -521,14 +521,6 @@ iframe {
   text-decoration: none;
 }
 
-.nav-posts {
-  position: absolute;
-  right: 0;
-  bottom: 1.5rem;
-  text-shadow: 0 1px 0 white;
-  color: #999999;
-}
-
 @font-face {
   font-family: "fontcustom";
   src: url("../font/fontcustom.eot");
@@ -679,6 +671,24 @@ iframe {
 }
 .post > header > h2 {
   margin-bottom: 0.25rem;
+}
+.post > header .nav-posts {
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
+  text-shadow: 0 1px 0 white;
+  color: #999999;
+}
+.post > footer {
+  margin: 2.25rem 0 1.5rem;
+  *zoom: 1;
+}
+.post > footer:before, .post > footer:after {
+  content: " ";
+  display: table;
+}
+.post > footer:after {
+  clear: both;
 }
 
 .archive-list {

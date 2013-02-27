@@ -34,4 +34,16 @@ layout: default
   <div class="content">
     {{ content }}
   </div>
+
+  <footer>
+    <nav class="nav nav-posts">
+      {% if page.previous and page.previous.categories[0] == page.categories[0] %}
+        <a class="btn" href="{{ page.previous.url }}">&#8592; Previous post</a>
+      {% endif %}
+
+      {% if page.next and page.next.categories[0] == page.categories[0] %}
+        <a class="btn pull-right" href="{{ page.next.url }}">Next post &#8594;</a>
+      {% endif %}
+    </nav>
+  </footer>
 </article>
