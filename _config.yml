@@ -1,7 +1,7 @@
 # Standard Jekyll configuration
 markdown: redcarpet
 permalink: /:categories/:title/
-exclude: ['Rakefile', 'readme.md', 'license.md', 'svg', 'sass']
+exclude: ['Rakefile', 'readme.md', 'license.md', 'codekit-config.json', 'svg', 'sass']
 
 # Configuration required for some pages
 url: http://nathanstaines.com
