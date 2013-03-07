@@ -3,7 +3,7 @@
   <title>Nathan Staines</title>
   <link href="http://nathanstaines.com/feed.xml" rel="self" />
   <link href="http://nathanstaines.com" />
-  <updated>2013-03-04T15:59:49+00:00</updated>
+  <updated>2013-03-07T15:00:45+00:00</updated>
   <id>http://nathanstaines.com</id>
   <author>
     <name>Nathan Staines</name>
@@ -16,7 +16,7 @@
       <link href="http://nathanstaines.com/articles/wordpress-word-count/"/>
       <updated>2012-06-25T13:00:00+01:00</updated>
       <id>http://nathanstaines.com/articles/wordpress-word-count</id>
-      <content type="html">&lt;p&gt;When I redesigned this last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.&lt;/p&gt;
+      <content type="html">&lt;p&gt;When I redesigned this site last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.&lt;/p&gt;
 
 &lt;p&gt;I assumed this would be an easy thing to achieve using WordPress, which to a certain extent it was. However, I also wanted to be able to exclude any code blocks from the final count.&lt;/p&gt;
 
