@@ -45,26 +45,26 @@
   .visible-small {
     visibility: hidden;
   }
-}
 
-.logo-circles {
-  position: relative;
-  top: -1px;
-  display: inline-block;
-  width: $base-font-size;
-  height: $base-font-size;
-  margin-right: $half-spacing-unit;
-  border: 2px solid $white;
-  border-radius: $base-font-size;
-  @include box-shadow(0 0 0 4px $orange);
-  background: $blue;
-  @include transition(all 0.3s linear);
-}
+  .circles {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: $base-font-size;
+    height: $base-font-size;
+    margin-right: $half-spacing-unit;
+    border: 2px solid $white;
+    border-radius: 100%;
+    @include box-shadow(0 0 0 4px $orange);
+    background: $blue;
+    @include transition(all 0.3s linear);
+  }
 
-#logo:hover .logo-circles {
-  border: 6px solid $white;
-  background: $orange;
-  @include box-shadow(0 0 0 4px $blue);
+  &:hover .circles {
+    border: 6px solid $white;
+    background: $orange;
+    @include box-shadow(0 0 0 4px $blue);
+  }
 }
 
 // Site footer
