@@ -72,7 +72,9 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-dribbble:before { content: "\f100"; }
 .icon-flickr:before { content: "\f101"; }
 .icon-github:before { content: "\f102"; }
-.icon-instagram:before { content: "\f103"; }
-.icon-lastfm:before { content: "\f104"; }
-.icon-rss:before { content: "\f105"; }
-.icon-twitter:before { content: "\f106"; }
+.icon-heart-empty:before { content: "\f103"; }
+.icon-heart-full:before { content: "\f104"; }
+.icon-instagram:before { content: "\f105"; }
+.icon-lastfm:before { content: "\f106"; }
+.icon-rss:before { content: "\f107"; }
+.icon-twitter:before { content: "\f108"; }

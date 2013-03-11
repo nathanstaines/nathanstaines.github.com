@@ -24,3 +24,15 @@
     @include linear-gradient($white, darken($white, 3%));
   }
 }
+
+#likes {
+  display: inline-block;
+
+  &.counted {
+    text-shadow: none;
+    color: $white;
+    border-color: $orange;
+    @include box-shadow(none);
+    background: $orange;
+  }
+}
