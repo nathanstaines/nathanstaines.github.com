@@ -26,6 +26,9 @@
 }
 
 #likes {
+  position: absolute;
+  top: -4.625rem;
+  right: 0;
   display: inline-block;
 
   &.counted {

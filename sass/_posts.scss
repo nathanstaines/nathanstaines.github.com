@@ -11,18 +11,14 @@
     > h2 {
       margin-bottom: ($base-spacing-unit / 6);
     }
-
-    .nav-posts {
-      position: absolute;
-      right: 0;
-      bottom: $base-spacing-unit;
-      text-shadow: 0 1px 0 $white;
-      color: $gray;
-    }
   }
 
   > footer {
     margin: ($base-spacing-unit * 1.5) 0 $base-spacing-unit;
     @include clearfix();
   }
+}
+
+.content {
+  position: relative;
 }
