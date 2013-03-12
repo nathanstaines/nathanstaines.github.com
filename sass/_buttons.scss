@@ -36,3 +36,7 @@
     background: $orange;
   }
 }
+
+.no-js #likes {
+  display: none;
+}
