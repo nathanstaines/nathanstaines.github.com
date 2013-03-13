@@ -55,24 +55,24 @@ $footer-background:                 $white !default;
 // Typography
 // =====================================
 
-$base-font-size:                    16px !default;
-$base-line-height:                  24px !default;
 $base-font-family:                  "proxima-nova", "helvetica neue", helvetica, arial, sans-serif !default;
 $headings-font-family:              "adelle", georgia, times, "times new roman", serif !default;
 $mono-font-family:                  consolas, "liberation mono", courier, monospace !default;
 
-$giga-size:                         72px !default;
-$mega-size:                         48px !default;
-$kilo-size:                         42px !default;
+$base-font-size:                    18px !default;
+$base-line-height:                  27px !default;
 
-$alpha-size:                        36px !default;
-$beta-size:                         30px !default;
-$gamma-size:                        24px !default;
-$delta-size:                        21px !default;
-$epsilon-size:                      20px !default;
-$zeta-size:                         16px !default;
+$mega-size:                         90px !default;
+$kilo-size:                         72px !default;
 
-$milli-size:                        14px !default;
+$alpha-size:                        60px !default;
+$beta-size:                         48px !default;
+$gamma-size:                        36px !default;
+$delta-size:                        24px !default;
+$epsilon-size:                      21px !default;
+$zeta-size:                         18px !default;
+
+$milli-size:                        15px !default;
 $micro-size:                        12px !default;
 
 // Scaffolding
@@ -84,6 +84,6 @@ $half-spacing-unit:                 $base-spacing-unit / 2 !default;
 $quarter-spacing-unit:              $base-spacing-unit / 4 !default;
 $double-spacing-unit:               $base-spacing-unit * 2 !default;
 
-$footer-height:                     $base-spacing-unit * 2.375 !default;
+$footer-height:                     $base-spacing-unit * 2.333333333 !default;
 
 $base-radius:                       4px !default;

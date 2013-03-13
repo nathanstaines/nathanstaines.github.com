@@ -12,11 +12,8 @@
 
 .nav-main {
   float: right;
-
-  ul {
-    @include font-size($epsilon-size);
-    line-height: 1.25;
-  }
+  @include font-size($epsilon-size);
+  line-height: 1.333333333;
 
   li {
     display: inline-block;
