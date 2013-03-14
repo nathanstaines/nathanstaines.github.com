@@ -41,3 +41,54 @@
     @include box-shadow(none);
   }
 }
+
+// Sassy math
+// =====================================
+
+// Variables
+$pi: 3.1415926535897932384626433832795028841971693993751;
+$π: $pi;
+$e: 2.71828182845904523536028747135266249775724709369995;
+
+$iter: 50;
+
+// Random number
+@function rand() {
+  @return 4;
+}
+
+// Percent
+@function percent($number) {
+  @return $number * 0.01;
+}
+
+// Exponent
+@function exponent($base, $exponent) {
+  $value: $base;
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base; } }
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base; } }
+  @return $value;
+}
+
+@function pow($base, $exponent) {
+  @return exponent($base, $exponent);
+}
+
+
+// Square roots
+@function √($number) {
+  @return sqrt($number);
+}
+
+@function sqrt($number) {
+  $guess: rand();
+  $root: $guess;
+  @for $i from 1 through $iter {
+    $root: $root - (pow($root, 2) - $number) / (2 * $root);
+  }
+  @return $root;
+}

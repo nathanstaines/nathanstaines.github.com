@@ -16,3 +16,23 @@
   border-color: lighten($blue, 30%);
   background: lighten($blue, 55%);
 }
+
+.panel-demo {
+  position: relative;
+  padding: $double-spacing-unit $base-spacing-unit $base-spacing-unit;
+
+  &:after {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: $quarter-spacing-unit $half-spacing-unit;
+    border: 1px solid $gray-light;
+    border-radius: $base-radius 0;
+    @include font-size($milli-size);
+    font-weight: bold;
+    text-shadow: 0 1px 0 $white;
+    color: $gray;
+    background: $body-background;
+    content: "Demo";
+  }
+}

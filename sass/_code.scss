@@ -3,11 +3,11 @@
 // =============================================================================
 
 code {
-  padding: ($base-spacing-unit / 12) ($base-spacing-unit / 6);
-  border: 1px solid lighten($blue, 25%);
+  padding: ($base-spacing-unit / 6) ($base-spacing-unit / 6) ($base-spacing-unit / 12);
+  border: 1px solid lighten($orange, 25%);
   border-radius: $base-radius;
-  color: $blue;
-  background: lighten($blue, 50%);
+  color: $orange;
+  background: lighten($orange, 48%);
 }
 
 // Syntax highlighting
