@@ -57,7 +57,7 @@ iframe {
   }
 
   figcaption {
-    margin-top: $quarter-spacing-unit;
+    margin-top: $half-spacing-unit;
     @include font-size($milli-size);
 
     &:before {

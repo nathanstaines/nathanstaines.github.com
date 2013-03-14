@@ -18,17 +18,17 @@ h6 {
 
 h1,
 .alpha {
-  @include font-combo($beta-size, $alpha-size);
+  @include font-combo($beta-size, $kilo-size);
 }
 
 h2,
 .beta {
-  @include font-combo($gamma-size, $beta-size);
+  @include font-combo($gamma-size, $alpha-size);
 }
 
 h3,
 .gamma {
-  @include font-combo($delta-size, $gamma-size);
+  @include font-size($delta-size);
 }
 
 h4,
