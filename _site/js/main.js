@@ -51,6 +51,7 @@
               type: 'POST',
               contentType: 'application/json',
               success: function() {
+                $count.text('0');
                 sessionStorage.setItem($pageId, JSON.stringify({count: 0}));
               }
             });
