@@ -16,13 +16,7 @@
   text-align: center;
 }
 
-$dir-size: 2.388888889rem / sqrt(2);
-
-.dir-btn span,
-.dir-btn:before {
-  border: 1px solid $gray-light;
-  border-radius: $base-radius;
-}
+$dir-size: 2.375rem / sqrt(2);
 
 .dir-btn {
   position: relative;
@@ -30,6 +24,13 @@ $dir-size: 2.388888889rem / sqrt(2);
   width: $double-spacing-unit * 2;
   height: $base-spacing-unit * 1.5;
   z-index: 1;
+
+  span,
+  &:before {
+    border: 1px solid $gray-light;
+    border-radius: $base-radius;
+    background: $gray-lighter;
+  }
 
   span {
     position: absolute;
@@ -43,7 +44,6 @@ $dir-size: 2.388888889rem / sqrt(2);
     font-weight: bold;
     text-align: center;
     color: rgba(0, 0, 0, 0.6);
-    @include linear-gradient($white, darken($white, 3%));
   }
 
   &:before {
@@ -53,26 +53,30 @@ $dir-size: 2.388888889rem / sqrt(2);
     display: block;
     width: $dir-size;
     height: $dir-size;
-    @include linear-gradient(-45deg, $white, darken($white, 3%));
     @include transform(rotate(45deg));
     content: "";
     z-index: -1;
   }
-}
 
-.dir-btn:hover {
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  &:hover {
+    text-decoration: none;
 
-  span {
-    border-color: #aa305e;
-    color: rgba(0, 0, 0, 0.75);
-    @include linear-gradient(#f874a4, #ec528d);
+    span,
+    &:before {
+      border-color: #aa305e;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+      color: $white;
+      background: #ec528d;
+    }
   }
 
-  &:before {
-    border-color: #aa305e;
-    @include linear-gradient(-45deg, #f874a4, #ec528d);
+  &:active {
+    span,
+    &:before {
+      border-color: #822548;
+      color: $white;
+      background: #c5376d;
+    }
   }
 }
 
@@ -86,10 +90,8 @@ $dir-size: 2.388888889rem / sqrt(2);
     left: auto;
     right: -($dir-size / 2.475);
   }
-}
 
-.dir-next:hover {
-  span {
+  &:hover span {
     border-color: #aa305e;
   }
 }
