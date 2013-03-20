@@ -30,6 +30,7 @@
   top: -4.625rem;
   right: 0;
   display: inline-block;
+  @include animation(fadeIn 0.5s);
 
   &.counted {
     text-shadow: none;
@@ -37,6 +38,12 @@
     border-color: $orange;
     @include box-shadow(none);
     background: $orange;
+  }
+
+  &.moveme {
+    position: relative;
+    top: auto;
+    right: auto;
   }
 }
 

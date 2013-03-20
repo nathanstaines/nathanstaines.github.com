@@ -8,9 +8,26 @@
       hasLikes = false,
       database = 'nathanstaines',
       collection = 'likes',
-      apiKey = '5023a018e4b07b766e03f324';
+      apiKey = '5023a018e4b07b766e03f324',
+      timer;
 
   if ($likes.length) {
+
+    var likeMover = function() {
+      var $scroll = $(window).scrollTop();
+
+      $scroll = $scroll > 250 ? $likes.addClass('moveme') : $likes.removeClass('moveme');
+    };
+
+    $(window).scroll(function() {
+      if (timer) {
+        clearTimeout(timer);
+      }
+
+      timer = setTimeout(function() {
+        likeMover();
+      }, 100);
+    });
 
     if (localStorage && localStorage.getItem($pageId)) {
       var localData = JSON.parse(localStorage.getItem($pageId));
