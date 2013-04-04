@@ -4,10 +4,10 @@
 
 code {
   padding: ($base-spacing-unit / 6) ($base-spacing-unit / 6) ($base-spacing-unit / 12);
-  border: 1px solid lighten($orange, 25%);
+  border: 1px solid darken($yellow, 50%);
   border-radius: $base-radius;
-  color: $orange;
-  background: lighten($orange, 48%);
+  color: $brown;
+  background: $yellow;
 }
 
 // Syntax highlighting

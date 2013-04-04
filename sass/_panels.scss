@@ -15,6 +15,10 @@
 .panel-info {
   border-color: lighten($blue, 30%);
   background: lighten($blue, 55%);
+
+  pre {
+    border-color: lighten($blue, 30%);
+  }
 }
 
 .panel-demo {
