@@ -8,10 +8,10 @@
       hasLikes = false,
       database = 'nathanstaines',
       collection = 'likes',
-      apiKey = '5023a018e4b07b766e03f324',
+      apiKey = 'ZqUyD4bGcXktf9nj2A2Ixbt5IAMKWzKs',
       timer;
 
-  if ($likes.length) {
+  if (location.hostname.match('nathanstaines') && $likes.length) {
 
     var likeMover = function() {
       var $scroll = $(window).scrollTop();
