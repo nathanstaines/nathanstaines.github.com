@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+    <title>Now powered by Jekyll - Nathan Staines</title>
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+
+    <!--[if lt IE 9]>
+      <script src="/js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <script src="//use.typekit.com/wzg1ian.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="layout">
+      <header id="head" class="clearfix" role="banner">
+        <div class="container">
+          <h1 id="logo">
+            <a href="/" rel="home">
+              <span class="circles"></span>
+              <span class="visible-large">Nathan Staines</span>
+              <span class="visible-small">NS</span>
+            </a>
+          </h1>
+
+          <nav class="nav nav-main" role="navigation">
+            <ul>
+              <li>
+                <a href="http://twitter.com/nathanstaines">
+                  <i class="icon-twitter"></i>
+                  <span class="text-hide">Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://github.com/nathanstaines">
+                  <i class="icon-github"></i>
+                  <span class="text-hide">GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://dribbble.com/nathanstaines">
+                  <i class="icon-dribbble"></i>
+                  <span class="text-hide">Dribbble</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://last.fm/user/nneon">
+                  <i class="icon-lastfm"></i>
+                  <span class="text-hide">Last.fm</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://instagram.com/nathanstaines">
+                  <i class="icon-instagram"></i>
+                  <span class="text-hide">Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="content" class="container" role="main">
+        <article class="post clearfix">
+  <header>
+    
+      <h2>Now powered by Jekyll</h2>
+    
+
+    <p class="meta-data">
+      
+        <span class="post-date">April 05, 2013</span>
+      
+    </p>
+  </header>
+
+  <div class="content">
+    <p>Inspired by the <a href="http://daverupert.com/2012/11/brander-newer/">brander newer</a> version of Dave Rupert&#39;s blog I decided to make the switch from WordPress to <a href="http://jekyllrb.com/">Jekyll</a>, a simple, blog aware, static site generator written by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>. It basically takes a template directory, runs it through some Markdown and Liquid converters and spits out a completely static website.</p>
+
+<p>At first static websites can be a little tricky to get your head around. It kind of feels like a bit of a throwback to the <a href="http://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html">early days of web development</a>. Back when you didn&#39;t have to worry so much about databases and backend code, just pure front-end development before front-end development was even a thing.</p>
+
+<h3>Now hosted on GitHub</h3>
+
+<p>One of the best things about using Jekyll is the ability to use GitHub as a host. If you&#39;ve ever used <a href="http://pages.github.com/">GitHub Pages</a> before then you&#39;ve already experienced Jekyll in action. Every GitHub Page is run through Jekyll when you push content to your repo. This means that you can host your site for free, have every change version controlled and your content deployed instantly.</p>
+
+<p>However, it&#39;s not exactly a perfect fit if you want to use any of the <a href="https://github.com/mojombo/jekyll/wiki/Plugins#available-plugins">plugins</a> that are available for Jekyll. Unfortunately but understandably GitHub runs Jekyll in safe mode, which means the use of plugins is prohibited.</p>
+
+<div class="panel panel-info">
+
+  <h4>A solution to the plugin problem</h4>
+
+  <p>After scouring the internet for quite a while, here's the solution I ended up using:</p>
+
+  <ul>
+    <li>Setup two branches (source &amp; master)</li>
+    <li>Work directly on the source branch</li>
+    <li>Build the pages locally</li>
+    <li>Stage all the changes</li>
+    <li>Delete the contents of master</li>
+    <li>Copy the _site folder across from source to master</li>
+    <li>Push both branches to GitHub</li>
+  </ul>
+
+  <p>The git commands you'll need:</p>
+
+<div class="highlight"><pre><code class="bash">git branch -D master
+git checkout -b master
+git filter-branch --subdirectory-filter _site/ -f
+git checkout <span class="nb">source</span>
+git push --all origin
+</code></pre></div>
+
+  <p>Or you can <a href="http://git-scm.com/book/ch2-7.html#Git-Aliases">create a git alias</a> to run them all:</p>
+
+<div class="highlight"><pre><code class="bash">git config --global alias.deploy <span class="s1">'! git branch -D master &amp;&amp; git checkout -b master &amp;&amp; git filter-branch --subdirectory-filter _site/ -f &amp;&amp; git checkout source &amp;&amp; git push --all origin'</span>
+</code></pre></div>
+
+  <p>Then all you need to remember is:</p>
+
+<div class="highlight"><pre><code>git deploy</code></pre></div>
+
+</div>
+
+<p>The <a href="https://github.com/nathanstaines/nathanstaines.github.com">source code for my site</a> is available for your viewing pleasure on GitHub if you&#39;re interested in taking a look.</p>
+
+<p>If you&#39;d like any more info on how I setup Jekyll then <a href="mailto:&#110;&#097;&#116;&#104;&#097;&#110;&#064;&#110;&#097;&#116;&#104;&#097;&#110;&#115;&#116;&#097;&#105;&#110;&#101;&#115;&#046;&#099;&#111;&#109;">send me an email</a> or contact me via twitter <a href="http://twitter.com/nathanstaines">@nathanstaines</a>, I&#39;d be happy to help out where I can.</p>
+
+
+    <a id="likes" class="btn" data-page-id="/articles/now-powered-by-jekyll" href="#">
+      <i class="icon-heart-empty"></i>
+      <span class="count">&dash;</span>
+    </a>
+  </div>
+
+  <footer>
+    <nav class="nav nav-posts">
+      
+        <a class="btn" href="/articles/wordpress-word-count/">&#8592; Previous post</a>
+      
+
+      
+    </nav>
+  </footer>
+</article>
+
+      </main>
+
+      <div id="faux-foot"></div>
+    </div>
+
+    <footer id="foot" role="contentinfo">
+      <div class="container">
+        <p id="copyright"><a href="http://github.com/nathanstaines/nathanstaines.github.com/blob/source/license.md">&copy;</a> 2010 - 2013 Nathan Staines</p>
+
+        <a id="rss" href="/feed.xml"><i class="icon-rss"></i><span class="text-hide">RSS</span></a>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+    
+
+    <script src="/js/main.min.js"></script>
+
+    <script>
+      var _gaq=[['_setAccount','UA-5872209-5'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

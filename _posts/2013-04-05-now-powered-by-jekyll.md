@@ -2,7 +2,7 @@
 layout: post
 title: Now powered by Jekyll
 category: articles
-date: 2013-03-15 14:41:44
+date: 2013-04-05 17:35:00
 ---
 
 Inspired by the [brander newer](http://daverupert.com/2012/11/brander-newer/) version of Dave Rupert's blog I decided to make the switch from WordPress to [Jekyll](http://jekyllrb.com/), a simple, blog aware, static site generator written by [Tom Preston-Werner](http://tom.preston-werner.com/). It basically takes a template directory, runs it through some Markdown and Liquid converters and spits out a completely static website.
@@ -11,13 +11,15 @@ At first static websites can be a little tricky to get your head around. It kind
 
 ### Now hosted on GitHub
 
-One of the best things about using Jekyll has to be the ability to use GitHub as a host. If you've ever used [GitHub Pages](http://pages.github.com/) before then you've already experienced Jekyll in action. Every GitHub Page is run through Jekyll when you push content to your repo. Which means that you can host your site for free, have every change version controlled and your content instantly deployed.
+One of the best things about using Jekyll is the ability to use GitHub as a host. If you've ever used [GitHub Pages](http://pages.github.com/) before then you've already experienced Jekyll in action. Every GitHub Page is run through Jekyll when you push content to your repo. This means that you can host your site for free, have every change version controlled and your content deployed instantly.
 
-However, it's not exactly a perfect fit if you want to use one of the many [Jekyll plugins](https://github.com/mojombo/jekyll/wiki/Plugins#available-plugins) that are available. Unfortunately but understandably GitHub runs Jekyll in safe mode, which doesn't allow the use of plugins.
+However, it's not exactly a perfect fit if you want to use any of the [plugins](https://github.com/mojombo/jekyll/wiki/Plugins#available-plugins) that are available for Jekyll. Unfortunately but understandably GitHub runs Jekyll in safe mode, which means the use of plugins is prohibited.
 
 <div class="panel panel-info">
 
   <h4>A solution to the plugin problem</h4>
+
+  <p>After scouring the internet for quite a while, here's the solution I ended up using:</p>
 
   <ul>
     <li>Setup two branches (source &amp; master)</li>
@@ -49,6 +51,6 @@ git push --all origin
 
 </div>
 
-### Now styled with Sass
+The [source code for my site](https://github.com/nathanstaines/nathanstaines.github.com) is available for your viewing pleasure on GitHub if you're interested in taking a look.
 
-### Now even faster
+If you'd like any more info on how I setup Jekyll then <a href="mailto:&#110;&#097;&#116;&#104;&#097;&#110;&#064;&#110;&#097;&#116;&#104;&#097;&#110;&#115;&#116;&#097;&#105;&#110;&#101;&#115;&#046;&#099;&#111;&#109;">send me an email</a> or contact me via twitter [@nathanstaines](http://twitter.com/nathanstaines), I'd be happy to help out where I can.

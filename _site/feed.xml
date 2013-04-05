@@ -3,13 +3,70 @@
   <title>Nathan Staines</title>
   <link href="http://nathanstaines.com/feed.xml" rel="self" />
   <link href="http://nathanstaines.com" />
-  <updated>2013-03-20T17:54:07+00:00</updated>
+  <updated>2013-04-05T17:35:18+01:00</updated>
   <id>http://nathanstaines.com</id>
   <author>
     <name>Nathan Staines</name>
     <email>nathan@nathanstaines.com</email>
   </author>
 
+  
+    <entry>
+      <title>Now powered by Jekyll</title>
+      <link href="http://nathanstaines.com/articles/now-powered-by-jekyll/"/>
+      <updated>2013-04-05T18:35:00+01:00</updated>
+      <id>http://nathanstaines.com/articles/now-powered-by-jekyll</id>
+      <content type="html">&lt;p&gt;Inspired by the &lt;a href=&quot;http://daverupert.com/2012/11/brander-newer/&quot;&gt;brander newer&lt;/a&gt; version of Dave Rupert&amp;#39;s blog I decided to make the switch from WordPress to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, a simple, blog aware, static site generator written by &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt;. It basically takes a template directory, runs it through some Markdown and Liquid converters and spits out a completely static website.&lt;/p&gt;
+
+&lt;p&gt;At first static websites can be a little tricky to get your head around. It kind of feels like a bit of a throwback to the &lt;a href=&quot;http://www.w3.org/History/19921103-hypertext/hypertext/WWW/TheProject.html&quot;&gt;early days of web development&lt;/a&gt;. Back when you didn&amp;#39;t have to worry so much about databases and backend code, just pure front-end development before front-end development was even a thing.&lt;/p&gt;
+
+&lt;h3&gt;Now hosted on GitHub&lt;/h3&gt;
+
+&lt;p&gt;One of the best things about using Jekyll is the ability to use GitHub as a host. If you&amp;#39;ve ever used &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; before then you&amp;#39;ve already experienced Jekyll in action. Every GitHub Page is run through Jekyll when you push content to your repo. This means that you can host your site for free, have every change version controlled and your content deployed instantly.&lt;/p&gt;
+
+&lt;p&gt;However, it&amp;#39;s not exactly a perfect fit if you want to use any of the &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Plugins#available-plugins&quot;&gt;plugins&lt;/a&gt; that are available for Jekyll. Unfortunately but understandably GitHub runs Jekyll in safe mode, which means the use of plugins is prohibited.&lt;/p&gt;
+
+&lt;div class=&quot;panel panel-info&quot;&gt;
+
+  &lt;h4&gt;A solution to the plugin problem&lt;/h4&gt;
+
+  &lt;p&gt;After scouring the internet for quite a while, here's the solution I ended up using:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Setup two branches (source &amp;amp; master)&lt;/li&gt;
+    &lt;li&gt;Work directly on the source branch&lt;/li&gt;
+    &lt;li&gt;Build the pages locally&lt;/li&gt;
+    &lt;li&gt;Stage all the changes&lt;/li&gt;
+    &lt;li&gt;Delete the contents of master&lt;/li&gt;
+    &lt;li&gt;Copy the _site folder across from source to master&lt;/li&gt;
+    &lt;li&gt;Push both branches to GitHub&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;The git commands you'll need:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git branch -D master
+git checkout -b master
+git filter-branch --subdirectory-filter _site/ -f
+git checkout &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;
+git push --all origin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+  &lt;p&gt;Or you can &lt;a href=&quot;http://git-scm.com/book/ch2-7.html#Git-Aliases&quot;&gt;create a git alias&lt;/a&gt; to run them all:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git config --global alias.deploy &lt;span class=&quot;s1&quot;&gt;'! git branch -D master &amp;amp;&amp;amp; git checkout -b master &amp;amp;&amp;amp; git filter-branch --subdirectory-filter _site/ -f &amp;amp;&amp;amp; git checkout source &amp;amp;&amp;amp; git push --all origin'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+  &lt;p&gt;Then all you need to remember is:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code&gt;git deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/nathanstaines/nathanstaines.github.com&quot;&gt;source code for my site&lt;/a&gt; is available for your viewing pleasure on GitHub if you&amp;#39;re interested in taking a look.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;d like any more info on how I setup Jekyll then &lt;a href=&quot;mailto:&amp;#110;&amp;#097;&amp;#116;&amp;#104;&amp;#097;&amp;#110;&amp;#064;&amp;#110;&amp;#097;&amp;#116;&amp;#104;&amp;#097;&amp;#110;&amp;#115;&amp;#116;&amp;#097;&amp;#105;&amp;#110;&amp;#101;&amp;#115;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;send me an email&lt;/a&gt; or contact me via twitter &lt;a href=&quot;http://twitter.com/nathanstaines&quot;&gt;@nathanstaines&lt;/a&gt;, I&amp;#39;d be happy to help out where I can.&lt;/p&gt;
+</content>
+    </entry>
   
     <entry>
       <title>WordPress word count</title>
