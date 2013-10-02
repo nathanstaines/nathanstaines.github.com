@@ -103,13 +103,13 @@
 </div>
 
 <p>The HTML markup is pretty simple. Although, an extra <code>span</code> tag is required in order for the <code>z-index</code> styles to work on the <code>:before</code> pseudo-element.</p>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dir-btn dir-prev&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Prev<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;dir-btn dir-next&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Next<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 <p>First we start with our basic button styles:</p>
-<div class="highlight"><pre><code class="css"><span class="nc">.dir-btn</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.dir-btn</span> <span class="p">{</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
   <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
   <span class="k">width</span><span class="o">:</span> <span class="m">6</span><span class="n">rem</span><span class="p">;</span>
@@ -152,7 +152,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Then we add the directional arrows using the <code>:before</code> pseudo-element:</p>
-<div class="highlight"><pre><code class="css"><span class="nc">.dir-btn</span><span class="nd">:before</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.dir-btn</span><span class="nd">:before</span> <span class="p">{</span>
   <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
   <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">29207</span><span class="n">rem</span><span class="p">;</span>
   <span class="k">left</span><span class="o">:</span> <span class="m">-0</span><span class="o">.</span><span class="m">67854</span><span class="n">rem</span><span class="p">;</span>
@@ -178,7 +178,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>And lastly we flip the direction of the arrow for one of the buttons.</p>
-<div class="highlight"><pre><code class="css"><span class="nc">.dir-next</span> <span class="nt">span</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.dir-next</span> <span class="nt">span</span> <span class="p">{</span>
   <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
   <span class="k">border-right</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
 <span class="p">}</span>

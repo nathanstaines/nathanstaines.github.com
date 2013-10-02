@@ -95,7 +95,7 @@
 <h3>The simple solution</h3>
 
 <p>If you&#39;re not interested in removing any HTML elements from your final count then you can simply place the following function in your theme&#39;s <code>functions.php</code> file:</p>
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php language-php" data-lang="php"><span class="cp">&lt;?php</span>
   <span class="k">function</span> <span class="nf">wcount</span><span class="p">()</span> <span class="p">{</span>
     <span class="nv">$content</span> <span class="o">=</span> <span class="nx">get_post_field</span><span class="p">(</span> <span class="s1">&#39;post_content&#39;</span><span class="p">,</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
     <span class="nv">$count</span> <span class="o">=</span> <span class="nb">str_word_count</span><span class="p">(</span> <span class="nb">strip_tags</span><span class="p">(</span> <span class="nv">$content</span> <span class="p">)</span> <span class="p">);</span>
@@ -104,7 +104,7 @@
 <span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
 <p>Then add this to your theme wherever you&#39;d like the word count to appear:</p>
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php language-php" data-lang="php"><span class="cp">&lt;?php</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;wcount&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nx">wcount</span><span class="p">();</span>
   <span class="p">}</span>
@@ -121,7 +121,7 @@
 <!-- http://stackoverflow.com/questions/1516085/strip-html-tags-and-its-contents -->
 
 <!-- http://stackoverflow.com/questions/6090667/php-domdocument-errors-warnings-on-html5-tags -->
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php language-php" data-lang="php"><span class="cp">&lt;?php</span>
   <span class="k">function</span> <span class="nf">wcount</span><span class="p">()</span> <span class="p">{</span>
     <span class="nv">$content</span> <span class="o">=</span> <span class="nx">get_post_field</span><span class="p">(</span> <span class="s1">&#39;post_content&#39;</span><span class="p">,</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
 
@@ -146,7 +146,7 @@
 <span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
 <p>Then add this to your theme wherever you&#39;d like the word count to appear:</p>
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php language-php" data-lang="php"><span class="cp">&lt;?php</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;wcount&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="nx">wcount</span><span class="p">();</span>
   <span class="p">}</span>

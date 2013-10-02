@@ -100,15 +100,15 @@
 <h3>How do we use them?</h3>
 
 <p>First we need to set the viewport to device-width</p>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>We can either link to external stylesheets</p>
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (max-device-width: 480px)&quot;</span> <span class="na">href=</span><span class="s">&quot;small.css&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (max-device-width: 480px)&quot;</span> <span class="na">href=</span><span class="s">&quot;small.css&quot;</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (min-device-width: 768px) and (max-device-width: 1024px)&quot;</span> <span class="na">href=</span><span class="s">&quot;medium.css&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>Or add them to an existing stylesheet</p>
-<div class="highlight"><pre><code class="css"><span class="c">/* Minimum width */</span>
+<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="c">/* Minimum width */</span>
 <span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="p">{</span>
   <span class="nt">body</span> <span class="p">{</span>
     <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
