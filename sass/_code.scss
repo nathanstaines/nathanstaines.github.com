@@ -21,10 +21,8 @@ pre {
   overflow: auto;
   margin: 0 0 $base-spacing-unit;
   padding: $half-spacing-unit;
-  border: 1px solid $gray-light;
   border-radius: $base-radius;
-  background: $white;
-  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 $white);
+  @include inset-effect;
 }
 
 pre > code {

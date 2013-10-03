@@ -7,8 +7,6 @@ date: 2010-07-22 12:00:00
 alias: [/starkers, /archive/starkers-html5, /archive/starkers-html5-v3]
 ---
 
-<img class="img-polaroid" src="/img/starkers.png" alt="">
-
 <div class="alert">
   <h3>Update:</h3>
   <p>Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from <a href="https://github.com/nathanstaines/starkers-html5">GitHub</a> and use it in its current state.</p>

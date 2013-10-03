@@ -38,10 +38,6 @@ $function() {
 });
 ```
 
-And you should end up with a layout structure similar to this:
-
-<img class="img-polaroid" src="/img/horiz.jpg" alt="">
-
 Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I'll do my best to help you out.
 
 ### In closing

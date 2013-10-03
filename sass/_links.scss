@@ -3,13 +3,11 @@
 // =============================================================================
 
 a {
-  text-decoration: none;
   text-shadow: none;
   color: $link-color;
   @include transition(all 0.3s linear);
 
   &:hover {
-    text-decoration: underline;
     color: $link-color-hover;
   }
 

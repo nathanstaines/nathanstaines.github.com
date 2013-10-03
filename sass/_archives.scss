@@ -22,6 +22,10 @@
   article > h3 {
     margin-bottom: 0;
     padding-right: $base-spacing-unit * 4;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   &.with-year {

@@ -4,7 +4,6 @@ title: Working with media queries
 category: articles
 tags: [css, responsive, tutorial]
 date: 2010-12-02 12:00:00
-css: working-with-media-queries
 alias: [/archive/working-with-media-queries, /demo/media-queries.html]
 ---
 

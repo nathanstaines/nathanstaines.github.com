@@ -17,7 +17,8 @@
   background: lighten($blue, 55%);
 
   pre {
-    border-color: lighten($blue, 30%);
+    border-color: lighten($blue, 35%);
+    background: rgba(255, 255, 255, 0.5);
   }
 }
 
