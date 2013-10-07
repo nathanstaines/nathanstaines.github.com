@@ -14,7 +14,7 @@
   }
 
   > footer {
-    margin: ($base-spacing-unit * 1.5) 0 $base-spacing-unit;
+    margin: $base-spacing-unit 0;
     @include clearfix();
   }
 }

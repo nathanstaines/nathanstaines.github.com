@@ -29,13 +29,11 @@
   }
 
   &.with-year {
-    margin-top: $double-spacing-unit;
     padding-top: $base-spacing-unit;
     @include keyline(top);
   }
 
   &:first-child {
-    margin-top: 0;
     padding-top: 0;
     @include keyline(none);
 
