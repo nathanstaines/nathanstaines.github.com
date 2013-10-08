@@ -13,8 +13,8 @@ iframe {
   margin-bottom: $base-spacing-unit;
 }
 
-.img-polaroid,
-.iframe-polaroid {
+.iframe-polaroid,
+.img-polaroid img {
   padding: 4px;
   border: 1px solid $gray-light;
   border-radius: $base-radius;
@@ -51,7 +51,7 @@ iframe {
     margin: 0 $base-spacing-unit $base-spacing-unit 0;
   }
 
-  > img {
+  img {
     display: block;
     margin: 0 auto;
   }

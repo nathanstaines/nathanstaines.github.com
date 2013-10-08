@@ -12,7 +12,9 @@ The use of media queries simply allows us to apply different CSS styles based on
 **Everyone's doing it**... ok, so maybe not everyone but it's definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.
 
 <figure class="figure-img">
-  <a href="http://hicksdesign.co.uk"><img class="img-polaroid" src="/img/query-hicks.png" alt=""></a>
+  <a href="http://hicksdesign.co.uk">
+    {% picture query-hicks.png class="img-polaroid" alt="" %}
+  </a>
   <figcaption>Hicks Design</figcaption>
 </figure>
 
@@ -96,11 +98,15 @@ One thing to keep in mind - Although we can now tailor our designs to suit diffe
 + [A Jason Grigsby article](http://www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/) - On media queries for mobile being fools gold.
 
 <figure class="figure-img">
-  <a href="http://edmerritt.com/"><img class="img-polaroid" src="/img/query-merritt.png" alt=""></a>
+  <a href="http://edmerritt.com/">
+    {% picture query-merritt.png class="img-polaroid" alt="" %}
+  </a>
   <figcaption>Ed Merritt</figcaption>
 </figure>
 
 <figure class="figure-img">
-  <a href="http://colly.com/"><img class="img-polaroid" src="/img/query-colly.png" alt=""></a>
+  <a href="http://colly.com/">
+    {% picture query-colly.png class="img-polaroid" alt="" %}
+  </a>
   <figcaption>Simon Collison</figcaption>
 </figure>

@@ -15,7 +15,7 @@ This trend continued until after I had checked in at the Premier Inn (where ever
 ###Erskine Bowling
 
 <figure class="figure-img pull-right">
-  <img class="img-polaroid" src="/img/bowling-shoes-252x167.jpg" alt="">
+  {% picture half bowling-shoes.jpg class="img-polaroid" alt="" %}
   <figcaption>Bowling shoes &bull; photo by Marc Thiele</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ I didn't stick around to see which team was crowned champions but overall the ni
 ###Conference Speakers
 
 <figure class="figure-img pull-left">
-  <img class="img-polaroid" src="/img/albert-hall-252x189.jpg" alt="">
+  {% picture half albert-hall.jpg class="img-polaroid" alt="" %}
   <figcaption>Albert Hall &bull; photo by Simon Collison</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ Now although New Adventures was always billed as having a fast-paced punchy form
 ###The After Party
 
 <figure class="figure-img pull-right">
-  <img class="img-polaroid" src="/img/after-party-252x184.png" alt="">
+  {% picture after-party.png class="img-polaroid" alt="" %}
   <figcaption>Argh! &bull; photo by gablaxian</figcaption>
 </figure>
 

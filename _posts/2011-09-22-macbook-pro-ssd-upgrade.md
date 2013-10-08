@@ -16,31 +16,31 @@ I was initially going to bite the bullet and purchase a brand new Macbook Air bu
 <ul class="list-unstyled list-equipment two-up">
   <li class="lion-osx">
     <a class="btn" href="http://store.apple.com/uk/product/MD256Z/A">
-      <img class="img-polaroid" src="/img/osx-lion.png" alt="">
+      {% picture thumb osx-lion.png class="img-polaroid" alt="" %}
       OSX Lion thumb drive
     </a>
   </li>
   <li class="phillips">
     <a class="btn" href="http://www.crucial.com/uk/store/partspecs.aspx?imodule=CTSCRDRVRPH0">
-      <img class="img-polaroid" src="/img/phillips.png" alt="">
+      {% picture thumb phillips.png class="img-polaroid" alt="" %}
       00 phillips screwdriver
     </a>
   </li>
   <li class="torx">
     <a class="btn" href="http://www.amazon.co.uk/Silverline-277858-T6-Trx-Screwdriver/dp/B000LFXBIC/ref=sr_1_1?ie=UTF8&qid=1315568888&sr=8-1">
-      <img class="img-polaroid" src="/img/torx.png" alt="">
+      {% picture thumb torx.png class="img-polaroid" alt="" %}
       T6 Torx screwdriver
     </a>
   </li>
   <li class="crucial">
     <a class="btn" href="http://www.crucial.com/uk/store/partspecs.aspx?IMODULE=CT128M4SSD2">
-      <img class="img-polaroid" src="/img/crucial.png" alt="">
+      {% picture thumb crucial.png class="img-polaroid" alt="" %}
       128GB Crucial M4
     </a>
   </li>
   <li class="hdcaddy">
     <a class="btn" href="http://hdcaddy.com/product.php?id_product=10">
-      <img class="img-polaroid" src="/img/hdcaddy.png" alt="">
+      {% picture thumb hdcaddy.png class="img-polaroid" alt="" %}
       Fenvi HDcaddy
     </a>
   </li>

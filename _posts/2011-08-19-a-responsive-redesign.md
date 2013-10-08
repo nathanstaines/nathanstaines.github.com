@@ -11,7 +11,7 @@ date: 2011-08-19 12:00:00
 Today, sites are being viewed on a number of different devices and browsers each with differing dimensions and screen resolutions, gone are the days of the one size fits all design philosophy.
 
 <figure class="figure-img">
-  <img class="img-polaroid" src="/img/responsive.png" alt="">
+  {% picture responsive.png class="img-polaroid" alt="" %}
   <figcaption>A responsive redesign</figcaption>
 </figure>
 

@@ -3,7 +3,7 @@
   <title>Nathan Staines</title>
   <link href="http://nathanstaines.com/feed.xml" rel="self" />
   <link href="http://nathanstaines.com" />
-  <updated>2013-10-03T14:00:05+01:00</updated>
+  <updated>2013-10-08T10:32:36+01:00</updated>
   <id>http://nathanstaines.com</id>
   <author>
     <name>Nathan Staines</name>
@@ -270,31 +270,66 @@ git push --all origin
 &lt;ul class=&quot;list-unstyled list-equipment two-up&quot;&gt;
   &lt;li class=&quot;lion-osx&quot;&gt;
     &lt;a class=&quot;btn&quot; href=&quot;http://store.apple.com/uk/product/MD256Z/A&quot;&gt;
-      &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/osx-lion.png&quot; alt=&quot;&quot;&gt;
+      &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/osx-lion-48*48-77405c.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/osx-lion-48*48-77405c.png&quot; data-media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/osx-lion-48*48-77405c.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
       OSX Lion thumb drive
     &lt;/a&gt;
   &lt;/li&gt;
   &lt;li class=&quot;phillips&quot;&gt;
     &lt;a class=&quot;btn&quot; href=&quot;http://www.crucial.com/uk/store/partspecs.aspx?imodule=CTSCRDRVRPH0&quot;&gt;
-      &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/phillips.png&quot; alt=&quot;&quot;&gt;
+      &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/phillips-48*48-7c5cde.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/phillips-48*48-7c5cde.png&quot; data-media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/phillips-48*48-7c5cde.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
       00 phillips screwdriver
     &lt;/a&gt;
   &lt;/li&gt;
   &lt;li class=&quot;torx&quot;&gt;
     &lt;a class=&quot;btn&quot; href=&quot;http://www.amazon.co.uk/Silverline-277858-T6-Trx-Screwdriver/dp/B000LFXBIC/ref=sr_1_1?ie=UTF8&amp;qid=1315568888&amp;sr=8-1&quot;&gt;
-      &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/torx.png&quot; alt=&quot;&quot;&gt;
+      &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/torx-48*48-6d62a4.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/torx-48*48-6d62a4.png&quot; data-media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/torx-48*48-6d62a4.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
       T6 Torx screwdriver
     &lt;/a&gt;
   &lt;/li&gt;
   &lt;li class=&quot;crucial&quot;&gt;
     &lt;a class=&quot;btn&quot; href=&quot;http://www.crucial.com/uk/store/partspecs.aspx?IMODULE=CT128M4SSD2&quot;&gt;
-      &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/crucial.png&quot; alt=&quot;&quot;&gt;
+      &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/crucial-48*48-8fc96a.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/crucial-48*48-8fc96a.png&quot; data-media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/crucial-48*48-8fc96a.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
       128GB Crucial M4
     &lt;/a&gt;
   &lt;/li&gt;
   &lt;li class=&quot;hdcaddy&quot;&gt;
     &lt;a class=&quot;btn&quot; href=&quot;http://hdcaddy.com/product.php?id_product=10&quot;&gt;
-      &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/hdcaddy.png&quot; alt=&quot;&quot;&gt;
+      &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/hdcaddy-48*48-98bb90.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/hdcaddy-48*48-98bb90.png&quot; data-media=&quot;(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/hdcaddy-48*48-98bb90.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
       Fenvi HDcaddy
     &lt;/a&gt;
   &lt;/li&gt;
@@ -335,7 +370,16 @@ git push --all origin
 &lt;p&gt;Today, sites are being viewed on a number of different devices and browsers each with differing dimensions and screen resolutions, gone are the days of the one size fits all design philosophy.&lt;/p&gt;
 
 &lt;figure class=&quot;figure-img&quot;&gt;
-  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/responsive.png&quot; alt=&quot;&quot;&gt;
+  &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/responsive-320*135-ec4035.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/responsive-480*203-ec4035.png&quot; data-media=&quot;(min-width: 321px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/responsive-640*270-ec4035.png&quot; data-media=&quot;(min-width: 481px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/responsive-720*304-ec4035.png&quot; data-media=&quot;(min-width: 641px)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/responsive-320*135-ec4035.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
   &lt;figcaption&gt;A responsive redesign&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -367,7 +411,13 @@ git push --all origin
 &lt;h3&gt;Erskine Bowling&lt;/h3&gt;
 
 &lt;figure class=&quot;figure-img pull-right&quot;&gt;
-  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/bowling-shoes-252x167.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/bowling-shoes-320*213-b0f08c.jpg&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/bowling-shoes-320*213-b0f08c.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
   &lt;figcaption&gt;Bowling shoes &amp;bull; photo by Marc Thiele&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -386,7 +436,13 @@ git push --all origin
 &lt;h3&gt;Conference Speakers&lt;/h3&gt;
 
 &lt;figure class=&quot;figure-img pull-left&quot;&gt;
-  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/albert-hall-252x189.jpg&quot; alt=&quot;&quot;&gt;
+  &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/albert-hall-320*240-d78853.jpg&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/albert-hall-320*240-d78853.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
   &lt;figcaption&gt;Albert Hall &amp;bull; photo by Simon Collison&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -407,7 +463,16 @@ git push --all origin
 &lt;h3&gt;The After Party&lt;/h3&gt;
 
 &lt;figure class=&quot;figure-img pull-right&quot;&gt;
-  &lt;img class=&quot;img-polaroid&quot; src=&quot;/img/after-party-252x184.png&quot; alt=&quot;&quot;&gt;
+  &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/after-party-300*220-29f474.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/after-party-300*220-29f474.png&quot; data-media=&quot;(min-width: 321px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/after-party-300*220-29f474.png&quot; data-media=&quot;(min-width: 481px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/after-party-300*220-29f474.png&quot; data-media=&quot;(min-width: 641px)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/after-party-300*220-29f474.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
   &lt;figcaption&gt;Argh! &amp;bull; photo by gablaxian&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -440,7 +505,18 @@ git push --all origin
 &lt;p&gt;&lt;strong&gt;Everyone&amp;#39;s doing it&lt;/strong&gt;... ok, so maybe not everyone but it&amp;#39;s definitely starting to gain some traction amongst the designers who are prepared to push the boundaries - or at the very least experiment with them from time to time.&lt;/p&gt;
 
 &lt;figure class=&quot;figure-img&quot;&gt;
-  &lt;a href=&quot;http://hicksdesign.co.uk&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-hicks.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://hicksdesign.co.uk&quot;&gt;
+    &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/query-hicks-320*135-f99854.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-hicks-480*203-f99854.png&quot; data-media=&quot;(min-width: 321px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-hicks-640*270-f99854.png&quot; data-media=&quot;(min-width: 481px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-hicks-720*304-f99854.png&quot; data-media=&quot;(min-width: 641px)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/query-hicks-320*135-f99854.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
+  &lt;/a&gt;
   &lt;figcaption&gt;Hicks Design&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -517,12 +593,34 @@ git push --all origin
 &lt;/ul&gt;
 
 &lt;figure class=&quot;figure-img&quot;&gt;
-  &lt;a href=&quot;http://edmerritt.com/&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-merritt.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://edmerritt.com/&quot;&gt;
+    &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/query-merritt-320*135-1fab54.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-merritt-480*203-1fab54.png&quot; data-media=&quot;(min-width: 321px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-merritt-640*270-1fab54.png&quot; data-media=&quot;(min-width: 481px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-merritt-720*304-1fab54.png&quot; data-media=&quot;(min-width: 641px)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/query-merritt-320*135-1fab54.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
+  &lt;/a&gt;
   &lt;figcaption&gt;Ed Merritt&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class=&quot;figure-img&quot;&gt;
-  &lt;a href=&quot;http://colly.com/&quot;&gt;&lt;img class=&quot;img-polaroid&quot; src=&quot;/img/query-colly.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://colly.com/&quot;&gt;
+    &lt;span class=&quot;img-polaroid&quot; data-picture data-alt &gt;
+&lt;span data-src=&quot;/img/generated/query-colly-320*135-fedc62.png&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-colly-480*203-fedc62.png&quot; data-media=&quot;(min-width: 321px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-colly-640*270-fedc62.png&quot; data-media=&quot;(min-width: 481px)&quot;&gt;&lt;/span&gt;
+&lt;span data-src=&quot;/img/generated/query-colly-720*304-fedc62.png&quot; data-media=&quot;(min-width: 641px)&quot;&gt;&lt;/span&gt;
+&lt;noscript&gt;
+&lt;img src=&quot;/img/generated/query-colly-320*135-fedc62.png&quot; alt=&quot;&quot;&gt;
+&lt;/noscript&gt;
+&lt;/span&gt;
+
+  &lt;/a&gt;
   &lt;figcaption&gt;Simon Collison&lt;/figcaption&gt;
 &lt;/figure&gt;
 </content>
