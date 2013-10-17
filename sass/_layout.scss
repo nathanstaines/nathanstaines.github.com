@@ -104,3 +104,14 @@
 #copyright {
   float: left;
 }
+
+// Disqus comments
+// =====================================
+
+#disqus_thread {
+  margin-top: $base-spacing-unit;
+
+  iframe {
+    margin-bottom: ($base-spacing-unit / 3);
+  }
+}
