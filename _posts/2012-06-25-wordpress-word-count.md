@@ -12,7 +12,7 @@ I assumed this would be an easy thing to achieve using WordPress, which to a cer
 
 Below you'll find a couple of solutions I came up with to help solve the predicament I found myself in, they may not be bulletproof solutions but they did work for me.
 
-###The simple solution
+### The simple solution
 
 If you're not interested in removing any HTML elements from your final count then you can simply place the following function in your theme's `functions.php` file:
 
@@ -36,7 +36,7 @@ Then add this to your theme wherever you'd like the word count to appear:
 ?>
 ```
 
-###The not so simple solution
+### The not so simple solution
 
 This solution requires a little extra work. First you have to to create a new instance of the `DOMDocument` class and then disable the error reporting as it doesn't seem to want to play nice with HTML5.
 

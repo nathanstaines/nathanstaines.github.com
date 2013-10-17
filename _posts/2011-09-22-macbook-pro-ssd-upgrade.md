@@ -11,7 +11,7 @@ It's been just over two weeks since I decided to upgrade my Macbook Pro 15" late
 
 I was initially going to bite the bullet and purchase a brand new Macbook Air but figured I'd probably want to upgrade again within the next 12-24 months, so despite the fact that everyone seems to be raving about the Air at the moment I thought going with the SSD upgrade instead would save me some money in the long run.
 
-###Equipment used
+### Equipment used
 
 <ul class="list-unstyled list-equipment two-up">
   <li class="lion-osx">
@@ -46,13 +46,13 @@ I was initially going to bite the bullet and purchase a brand new Macbook Air bu
   </li>
 </ul>
 
-###Choosing the SSD
+### Choosing the SSD
 
 Obviously the most important part of this process is in deciding which SSD to go with. As always our trusty friend Google had plenty to say on the matter but not everything it spat out was entirely helpful. I did however find this [article from MacGateway](http://macgateway.com/reviews/best-ssd-upgrades-for-the-macbook-pro/) had enough information to get me started.
 
 There are already a number of good quality Solid State Drives to choose from and this is only going to increase as the technology behind them improves. I decided to go for a mixture of price, space and all-round speed settling on the 128GB Crucial M4 in the end.
 
-###Installation
+### Installation
 
 I've always been a bit of a clean freak when it comes to computers. I love reformatting my HDD (now SSD) about every 6 months in an effort to trick myself into thinking I have a completely new machine. I had an external HDD lying around that I used that to back up all of the files I wanted to keep and took this opportunity to install a clean version OSX Lion.
 
@@ -63,6 +63,6 @@ Replacing the HDD with the SSD couldn't have been simpler (assuming of course yo
 
 <iframe class="iframe-polaroid" width="720" height="440" src="http://www.youtube.com/embed/iv91m2z6DPY" frameborder="0" allowfullscreen></iframe>
 
-###Conclusion
+### Conclusion
 
 So far everything seems to be a lot snappier than it was before, applications are responding a lot quicker and waiting for my machine to boot up in the morning is now a thing of the past. If you're thinking about performing a similar upgrade on your machine - do it, you won't regret it.

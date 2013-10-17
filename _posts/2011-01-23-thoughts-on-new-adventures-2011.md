@@ -12,7 +12,7 @@ From the moment I arrived at St Pancras train station it felt like I was playing
 
 This trend continued until after I had checked in at the Premier Inn (where everything's premier but the price) and headed on out to the now famous:
 
-###Erskine Bowling
+### Erskine Bowling
 
 <figure class="figure-img pull-right">
   {% picture half bowling-shoes.jpg class="img-polaroid" alt="" %}
@@ -31,7 +31,7 @@ And even though I wasn't lucky enough to be apart of a bowling team I did get th
 
 I didn't stick around to see which team was crowned champions but overall the night to me was plenty of fun.
 
-###Conference Speakers
+### Conference Speakers
 
 <figure class="figure-img pull-left">
   {% picture half albert-hall.jpg class="img-polaroid" alt="" %}
@@ -50,7 +50,7 @@ For me the conference accomplished everything it set out to do:
 
 Now although New Adventures was always billed as having a fast-paced punchy format, my one and only criticism would be to say that 10 speakers in a day is a lot to take on - and a lot to take in.
 
-###The After Party
+### The After Party
 
 <figure class="figure-img pull-right">
   {% picture after-party.png class="img-polaroid" alt="" %}
@@ -63,7 +63,7 @@ A few hours later and we arrived at Escucha to find plenty of fellow web geeks c
 
 There's always a few factors at play when it comes to hosting a successful after party (in my opinion at least). The venue, the free tab at the bar and the volume. All of which were spot on!
 
-###Final Thoughts
+### Final Thoughts
 
 Overall the New Adventures in web design conference in my eyes was a huge success, I love the opportunity to catch up with other people in our industry to discuss and/or question the direction in which we're all headed.
 

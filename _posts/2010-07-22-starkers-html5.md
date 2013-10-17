@@ -25,7 +25,7 @@ Like so many others I found Elliot's theme invaluable, and so about 7 months ago
 
 With the introduction of Wordpress 3.0 I'm pleased to unveil the new version of Starkers HTML5, just like the previous version this one has been based on Elliot's [Starkers](http://elliotjaystocks.com/blog/starkers-3/), which in turn was based on the new default theme known as [Twenty Ten](http://2010dev.wordpress.com/).
 
-###So what's new?
+### So what's new?
 
 Thanks to Wordpress 3.0 theme developers now have new APIs that allow them to easily implement custom backgrounds, headers, shortlinks, menus, post types, and taxonomies.
 
@@ -33,7 +33,7 @@ The Twenty Ten theme shows off all of these new features, whereas Starkers leave
 
 For a more comprehensive look at everything that has improved in Wordpress 3.0 you can check out the [3.0 Codex page](http://codex.wordpress.org/Version_3.0).
 
-###Final notes
+### Final notes
 
 Starkers HTML5 comes packed with [Modernizr](http://modernizr.com/), a small and simple JavaScript library that helps you take advantage of emerging web technologies (CSS3, HTML5) while still maintaining a fine level of control over older browsers that may not yet support these new technologies.
 

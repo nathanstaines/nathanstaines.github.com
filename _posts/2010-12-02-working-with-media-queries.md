@@ -18,7 +18,7 @@ The use of media queries simply allows us to apply different CSS styles based on
   <figcaption>Hicks Design</figcaption>
 </figure>
 
-###How do we use them?
+### How do we use them?
 
 First we need to set the viewport to device-width
 
@@ -82,15 +82,15 @@ only screen and (min-resolution: 192dpi) {
 }
 ```
 
-###Is it supported?
+### Is it supported?
 
 The browser support for media queries is actually pretty good. The latest versions of Firefox, Safari, Chrome, and Opera are all using it. Internet Explorer 9 will be, but IE8 and below do not :( however there is a [jQuery media queries plugin](http://plugins.jquery.com/project/MediaQueries) - for those not-so-capable browsers.
 
-###Final thoughts
+### Final thoughts
 
 One thing to keep in mind - Although we can now tailor our designs to suit different devices we'll still be dealing with the exact same content. ([CSS3 flexbox](http://dev.w3.org/csswg/css3-flexbox/) can help rearrange some content if necessary) So even if we decide to use CSS to hide images on the iPhone, they'll still be downloaded by the user.
 
-###Notable Mentions
+### Notable Mentions
 
 + [Mediaqueri.es](http://mediaqueri.es) - A collection of responsive web design.
 + [Less Framework](http://lessframework.com) - A CSS grid system for designing adaptive web­sites.
