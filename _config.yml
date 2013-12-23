@@ -40,3 +40,18 @@ picture:
       ppi: [1, 1.5]
       source_default:
         width: 48
+    banner:
+      source_xl:
+        media: '(min-width: 721px)'
+        width: 1200
+      source_lg:
+        media: '(min-width: 641px)'
+        width: 720
+      source_md:
+        media: '(min-width: 481px)'
+        width: 640
+      source_sm:
+        media: '(min-width: 321px)'
+        width: 480
+      source_default:
+        width: 320

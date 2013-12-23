@@ -20,6 +20,10 @@
 // Toggling content
 // =====================================
 
+.hidden {
+  visibility: hidden;
+}
+
 .text-hide {
   @include hide-text;
 }

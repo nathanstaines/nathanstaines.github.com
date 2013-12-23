@@ -83,3 +83,16 @@ iframe {
     }
   }
 }
+
+// Banners
+// =====================================
+
+.banner {
+  max-height: 440px;
+  margin: -($base-spacing-unit * 1.666666667) auto ($base-spacing-unit * 1.666666667);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
