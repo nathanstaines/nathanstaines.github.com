@@ -1,0 +1,190 @@
+// =============================================================================
+// Curriculum Vitae
+// =============================================================================
+
+@import "base";
+
+// Page specific styles
+// =====================================
+
+dl {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit;
+  padding-top: $base-spacing-unit;
+  border-top: 3px solid $gray-darker;
+
+  &:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+dt,
+dd {
+  line-height: $base-spacing-unit * 1.5;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+#content {
+  margin-bottom: 0;
+}
+
+.img-rounded img {
+  border-radius: 50%;
+}
+
+.cv-content {
+  padding: ($base-spacing-unit * 3.25) 0;
+
+  h2 {
+    margin-bottom: $base-spacing-unit;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  p + p {
+    margin-top: $base-spacing-unit;
+  }
+
+  .btn {
+    text-shadow: none;
+    @include box-shadow(none);
+  }
+
+  @include clearfix;
+}
+
+.cv-profile {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.cv-intro {
+  color: $white;
+  background: #34495e;
+
+  h2 {
+    color: $white;
+  }
+
+  .btn {
+    color: $white;
+
+    &:hover {
+      border-color: #5dade2;
+      background: #5dade2;
+    }
+  }
+}
+
+.cv-projects {
+  background: $gray-lighter;
+
+  li {
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+.cv-education,
+.cv-skills {
+  border-top: 1px solid $gray-light;
+}
+
+.cv-contact {
+  text-align: center;
+  color: lighten($gray-lighter, 3%);
+  background: darken($gray-darker, 12%);
+
+  h2 {
+    @include font-size($alpha-size);
+    color: lighten($gray-lighter, 3%);
+  }
+
+  .btn {
+    padding: $quarter-spacing-unit $half-spacing-unit;
+    border: none;
+    color: $white;
+    background: #3498db;
+
+    &:hover {
+      background: #5dade2;
+    }
+  }
+}
+
+// Responsive styles
+// =====================================
+
+@media (min-width: 480px) {
+  dl {
+    margin-top: $base-spacing-unit;
+    margin-bottom: 0;
+    padding-top: $base-spacing-unit;
+    border-top: 3px solid $gray-darker;
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  dt,
+  dd {
+    line-height: $base-spacing-unit * 1.5;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    width: 155px;
+    font-weight: normal;
+    text-align: right;
+
+    &:first-child + dd {
+      font-weight: bold;
+      border-top: none;
+    }
+  }
+
+  dd {
+    margin-left: 175px;
+    border-top: 1px solid $gray-light;
+  }
+
+  .cv-profile {
+    text-align: left;
+
+    .img-polaroid img {
+      position: relative;
+      top: -$base-spacing-unit / 6.75;
+      float: left;
+      margin-right: $base-spacing-unit / 1.5;
+    }
+  }
+
+  .cv-projects {
+    li {
+      float: left;
+      width: 31%;
+      margin-bottom: 0;
+      margin-left: 3.5%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
