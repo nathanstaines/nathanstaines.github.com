@@ -97,6 +97,23 @@ dd {
   }
 }
 
+.cv-starkers {
+  color: $white;
+  background: #020202;
+
+  a {
+    color: #e74c3c;
+
+    &:hover {
+      color: #ec7063;
+    }
+  }
+
+  h2 {
+    color: $white;
+  }
+}
+
 .cv-education,
 .cv-skills {
   border-top: 1px solid $gray-light;
@@ -207,6 +224,16 @@ dd {
       &:first-child {
         margin-left: 0;
       }
+    }
+  }
+
+  .cv-starkers {
+    padding: 0;
+
+    .container {
+      min-height: 400px;
+      padding: 80px 40px 80px 280px;
+      background: url(../img/cv-starkers.jpg) left bottom no-repeat;
     }
   }
 

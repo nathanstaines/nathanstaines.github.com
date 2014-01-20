@@ -1003,6 +1003,20 @@ dd {
   margin-bottom: 1.5rem;
 }
 
+.cv-starkers {
+  color: white;
+  background: #020202;
+}
+.cv-starkers a {
+  color: #e74c3c;
+}
+.cv-starkers a:hover {
+  color: #ec7063;
+}
+.cv-starkers h2 {
+  color: white;
+}
+
 .cv-education,
 .cv-skills {
   border-top: 1px solid #cccccc;
@@ -1097,6 +1111,15 @@ dd {
   }
   .cv-projects li:first-child {
     margin-left: 0;
+  }
+
+  .cv-starkers {
+    padding: 0;
+  }
+  .cv-starkers .container {
+    min-height: 400px;
+    padding: 80px 40px 80px 280px;
+    background: url(../img/cv-starkers.jpg) left bottom no-repeat;
   }
 
   .cv-lists {
