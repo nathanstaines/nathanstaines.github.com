@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://nathanstaines.com</loc>
-    <lastmod>2014-01-18T16:35:53+00:00</lastmod>
+    <lastmod>2014-01-20T10:20:19+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -10,7 +10,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/now-powered-by-jekyll/</loc>
     
-      <lastmod>2013-04-05T17:35:00Z</lastmod>
+      <lastmod>2013-04-05T18:35:00+01:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -19,7 +19,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/wordpress-word-count/</loc>
     
-      <lastmod>2012-06-25T12:00:00Z</lastmod>
+      <lastmod>2012-06-25T13:00:00+01:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -28,7 +28,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/directional-buttons/</loc>
     
-      <lastmod>2012-02-21T12:00:00Z</lastmod>
+      <lastmod>2012-02-21T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -37,7 +37,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/macbook-pro-ssd-upgrade/</loc>
     
-      <lastmod>2011-09-22T12:00:00Z</lastmod>
+      <lastmod>2011-09-22T13:00:00+01:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -46,7 +46,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/a-responsive-redesign/</loc>
     
-      <lastmod>2011-08-19T12:00:00Z</lastmod>
+      <lastmod>2011-08-19T13:00:00+01:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -55,7 +55,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/thoughts-on-new-adventures-2011/</loc>
     
-      <lastmod>2011-01-23T12:00:00Z</lastmod>
+      <lastmod>2011-01-23T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -64,7 +64,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/working-with-media-queries/</loc>
     
-      <lastmod>2010-12-02T12:00:00Z</lastmod>
+      <lastmod>2010-12-02T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -73,7 +73,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/starkers-html5/</loc>
     
-      <lastmod>2010-07-22T12:00:00Z</lastmod>
+      <lastmod>2010-07-22T13:00:00+01:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -82,7 +82,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/scrolling-against-the-grain/</loc>
     
-      <lastmod>2010-02-11T12:00:00Z</lastmod>
+      <lastmod>2010-02-11T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -91,7 +91,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/how-do-you-say-html/</loc>
     
-      <lastmod>2010-02-11T12:00:00Z</lastmod>
+      <lastmod>2010-02-11T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -100,7 +100,7 @@
   <url>
     <loc>http://nathanstaines.com/articles/hello-world/</loc>
     
-      <lastmod>2010-01-15T12:00:00Z</lastmod>
+      <lastmod>2010-01-15T12:00:00+00:00</lastmod>
     
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

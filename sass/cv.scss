@@ -124,6 +124,28 @@ dd {
   }
 }
 
+.cv-lists {
+  ul {
+    margin-left: 0;
+    list-style: none;
+
+    ul > li {
+      padding-left: $base-spacing-unit;
+      font-style: italic;
+      color: $gray;
+    }
+  }
+
+  li {
+    border-top: 1px solid $gray-light;
+    line-height: $base-spacing-unit * 1.5;
+  }
+
+  > ul > li:first-child {
+    border-top: none;
+  }
+}
+
 // Responsive styles
 // =====================================
 
@@ -180,6 +202,20 @@ dd {
       float: left;
       width: 31%;
       margin-bottom: 0;
+      margin-left: 3.5%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .cv-lists {
+    @include clearfix;
+
+    > ul {
+      float: left;
+      width: 31%;
       margin-left: 3.5%;
 
       &:first-child {

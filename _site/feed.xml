@@ -3,7 +3,7 @@
   <title>Nathan Staines</title>
   <link href="http://nathanstaines.com/feed.xml" rel="self" />
   <link href="http://nathanstaines.com" />
-  <updated>2014-01-18T16:35:53+00:00</updated>
+  <updated>2014-01-20T10:20:19+00:00</updated>
   <id>http://nathanstaines.com</id>
   <author>
     <name>Nathan Staines</name>
@@ -14,7 +14,7 @@
     <entry>
       <title>Now powered by Jekyll</title>
       <link href="http://nathanstaines.com/articles/now-powered-by-jekyll/"/>
-      <updated>2013-04-05T17:35:00Z</updated>
+      <updated>2013-04-05T18:35:00+01:00</updated>
       <id>http://nathanstaines.com/articles/now-powered-by-jekyll</id>
       <content type="html">&lt;p&gt;Inspired by the &lt;a href=&quot;http://daverupert.com/2012/11/brander-newer/&quot;&gt;brander newer&lt;/a&gt; version of Dave Rupert&amp;#39;s blog I decided to make the switch from WordPress to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, a simple, blog aware, static site generator written by &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt;. It basically takes a template directory, runs it through some Markdown and Liquid converters and spits out a completely static website.&lt;/p&gt;
 
@@ -30,7 +30,7 @@
 
   &lt;h4&gt;A solution to the plugin problem&lt;/h4&gt;
 
-  &lt;p&gt;After scouring the internet for quite a while, here&#39;s the solution I ended up using:&lt;/p&gt;
+  &lt;p&gt;After scouring the internet for quite a while, here's the solution I ended up using:&lt;/p&gt;
 
   &lt;ul&gt;
     &lt;li&gt;Setup two branches (source &amp;amp; master)&lt;/li&gt;
@@ -42,7 +42,7 @@
     &lt;li&gt;Push both branches to GitHub&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;The git commands you&#39;ll need:&lt;/p&gt;
+  &lt;p&gt;The git commands you'll need:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git branch -D master
 git checkout -b master
@@ -53,7 +53,7 @@ git push --all origin
 
   &lt;p&gt;Or you can &lt;a href=&quot;http://git-scm.com/book/ch2-7.html#Git-Aliases&quot;&gt;create a git alias&lt;/a&gt; to run them all:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git config --global alias.deploy &lt;span class=&quot;s1&quot;&gt;&#39;! git branch -D master &amp;amp;&amp;amp; git checkout -b master &amp;amp;&amp;amp; git filter-branch --subdirectory-filter _site/ -f &amp;amp;&amp;amp; git checkout source &amp;amp;&amp;amp; git push --all origin&#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git config --global alias.deploy &lt;span class=&quot;s1&quot;&gt;'! git branch -D master &amp;amp;&amp;amp; git checkout -b master &amp;amp;&amp;amp; git filter-branch --subdirectory-filter _site/ -f &amp;amp;&amp;amp; git checkout source &amp;amp;&amp;amp; git push --all origin'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
   &lt;p&gt;Then all you need to remember is:&lt;/p&gt;
@@ -71,7 +71,7 @@ git push --all origin
     <entry>
       <title>WordPress word count</title>
       <link href="http://nathanstaines.com/articles/wordpress-word-count/"/>
-      <updated>2012-06-25T12:00:00Z</updated>
+      <updated>2012-06-25T13:00:00+01:00</updated>
       <id>http://nathanstaines.com/articles/wordpress-word-count</id>
       <content type="html">&lt;p&gt;When I redesigned this site last time around I decided it would be a good idea to display a word count for each of the articles; you know, for all those people just dying to know how many words were waiting to be read.&lt;/p&gt;
 
@@ -146,7 +146,7 @@ git push --all origin
     <entry>
       <title>Directional buttons</title>
       <link href="http://nathanstaines.com/articles/directional-buttons/"/>
-      <updated>2012-02-21T12:00:00Z</updated>
+      <updated>2012-02-21T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/directional-buttons</id>
       <content type="html">&lt;p&gt;I&amp;#39;ve been waiting for an excuse to fine tune an idea I had about creating some directional buttons using just CSS. So after seeing the &lt;a href=&quot;http://dribbble.com/shots/433299-Simple-light-button/rebounds&quot;&gt;Simple light button playoff on dribbble&lt;/a&gt;, I decided to get my act together and finally finish it off and in the process, write my first blog post for 2012.&lt;/p&gt;
 
@@ -259,7 +259,7 @@ git push --all origin
     <entry>
       <title>Macbook Pro SSD upgrade</title>
       <link href="http://nathanstaines.com/articles/macbook-pro-ssd-upgrade/"/>
-      <updated>2011-09-22T12:00:00Z</updated>
+      <updated>2011-09-22T13:00:00+01:00</updated>
       <id>http://nathanstaines.com/articles/macbook-pro-ssd-upgrade</id>
       <content type="html">&lt;p&gt;It&amp;#39;s been just over two weeks since I decided to upgrade my Macbook Pro 15&amp;quot; late 2008 model with a 128GB Crucial M4 &lt;abbr title=&quot;Solid State Drive&quot;&gt;SSD&lt;/abbr&gt; also replacing my SuperDrive with the exisiting 320GB &lt;abbr title=&quot;Hard Disc Drive&quot;&gt;HDD&lt;/abbr&gt; in the process.&lt;/p&gt;
 
@@ -363,7 +363,7 @@ git push --all origin
     <entry>
       <title>A responsive redesign</title>
       <link href="http://nathanstaines.com/articles/a-responsive-redesign/"/>
-      <updated>2011-08-19T12:00:00Z</updated>
+      <updated>2011-08-19T13:00:00+01:00</updated>
       <id>http://nathanstaines.com/articles/a-responsive-redesign</id>
       <content type="html">&lt;p&gt;&lt;strong&gt;I&amp;#39;ve finally decided to do the responsible thing and go &lt;em&gt;responsive&lt;/em&gt; with my website.&lt;/strong&gt;&lt;/p&gt;
 
@@ -400,7 +400,7 @@ git push --all origin
     <entry>
       <title>Thoughts on New Adventures 2011</title>
       <link href="http://nathanstaines.com/articles/thoughts-on-new-adventures-2011/"/>
-      <updated>2011-01-23T12:00:00Z</updated>
+      <updated>2011-01-23T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/thoughts-on-new-adventures-2011</id>
       <content type="html">&lt;p&gt;I had the opportunity this week to head up north to Nottingham along with another 600+ fellow web geeks for the inaugural &lt;a href=&quot;http://newadventuresconf.com/&quot;&gt;New Adventures in web design conference&lt;/a&gt;.&lt;/p&gt;
 
@@ -498,7 +498,7 @@ git push --all origin
     <entry>
       <title>Working with media queries</title>
       <link href="http://nathanstaines.com/articles/working-with-media-queries/"/>
-      <updated>2010-12-02T12:00:00Z</updated>
+      <updated>2010-12-02T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/working-with-media-queries</id>
       <content type="html">&lt;p&gt;The use of media queries simply allows us to apply different CSS styles based on resolution and/or device orientation. It uses the same old media declaration that we&amp;#39;ve used for serving up print stylesheets but now it just has a few more features under its belt.&lt;/p&gt;
 
@@ -629,13 +629,13 @@ git push --all origin
     <entry>
       <title>Starkers HTML5</title>
       <link href="http://nathanstaines.com/articles/starkers-html5/"/>
-      <updated>2010-07-22T12:00:00Z</updated>
+      <updated>2010-07-22T13:00:00+01:00</updated>
       <id>http://nathanstaines.com/articles/starkers-html5</id>
       <content type="html">&lt;div class=&quot;alert&quot;&gt;
   &lt;h3&gt;Update:&lt;/h3&gt;
-  &lt;p&gt;Unfortunately I&#39;m no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;GitHub&lt;/a&gt; and use it in its current state.&lt;/p&gt;
+  &lt;p&gt;Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;GitHub&lt;/a&gt; and use it in its current state.&lt;/p&gt;
 
-  &lt;p&gt;Alternatively I&#39;d suggest downloading the original &lt;a href=&quot;https://github.com/viewportindustries/starkers&quot;&gt;Starkers&lt;/a&gt; recently updated by Viewport Industries or the &lt;a href=&quot;http://underscores.me&quot;&gt;underscores theme&lt;/a&gt; by Automattic.&lt;/p&gt;
+  &lt;p&gt;Alternatively I'd suggest downloading the original &lt;a href=&quot;https://github.com/viewportindustries/starkers&quot;&gt;Starkers&lt;/a&gt; recently updated by Viewport Industries or the &lt;a href=&quot;http://underscores.me&quot;&gt;underscores theme&lt;/a&gt; by Automattic.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;It&amp;#39;s been roughly 2&amp;frac12; years since &lt;a href=&quot;http://elliotjaystocks.com&quot;&gt;Elliot Jay Stocks&lt;/a&gt; first released &lt;a href=&quot;http://elliotjaystocks.com/starkers/&quot;&gt;Starkers&lt;/a&gt;, a completely naked Wordpress theme for designers and developers to build on.&lt;/p&gt;
@@ -670,7 +670,7 @@ git push --all origin
     <entry>
       <title>Scrolling against the grain</title>
       <link href="http://nathanstaines.com/articles/scrolling-against-the-grain/"/>
-      <updated>2010-02-11T12:00:00Z</updated>
+      <updated>2010-02-11T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/scrolling-against-the-grain</id>
       <content type="html">&lt;p&gt;Recently I was faced with the challenge of creating a horizontally scrolling website, a challenge in which very few have survived with their sanity still intact. The challenge lies in &amp;#39;going against the grain&amp;#39; because by default, browsers want to wrap the content to fit vertically within the window.&lt;/p&gt;
 
@@ -711,7 +711,7 @@ git push --all origin
     <entry>
       <title>How do you say HTML?</title>
       <link href="http://nathanstaines.com/articles/how-do-you-say-html/"/>
-      <updated>2010-02-11T12:00:00Z</updated>
+      <updated>2010-02-11T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/how-do-you-say-html</id>
       <content type="html">&lt;p&gt;Earlier this year I came to the realisation that I say HTML or more importantly the letter H, a little differently to a lot of others out there.&lt;/p&gt;
 
@@ -741,7 +741,7 @@ git push --all origin
     <entry>
       <title>Hello world!</title>
       <link href="http://nathanstaines.com/articles/hello-world/"/>
-      <updated>2010-01-15T12:00:00Z</updated>
+      <updated>2010-01-15T12:00:00+00:00</updated>
       <id>http://nathanstaines.com/articles/hello-world</id>
       <content type="html">&lt;p&gt;I&amp;#39;m here, I&amp;#39;ve finally made it... my very own slice of the world wide web! Now don&amp;#39;t get me wrong, I&amp;#39;ve had websites before but I&amp;#39;ve never had one named after me... it&amp;#39;s kind of a big deal.&lt;/p&gt;
 
