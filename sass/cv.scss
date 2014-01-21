@@ -251,3 +251,82 @@ dd {
     }
   }
 }
+
+@media print {
+  html {
+    font-size: 1em;
+  }
+
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  dl {
+    margin-top: ($base-spacing-unit / 1.5);
+    padding-top: ($base-spacing-unit / 1.5);
+    border-top: 1px solid $gray-darker;
+  }
+
+  .img-rounded img {
+    border-radius: 0;
+  }
+
+  .cv-content,
+  .cv-starkers .container {
+    min-height: 100px;
+    padding: ($base-spacing-unit / 1.5) 0;
+  }
+
+  .cv-intro {
+    .btn {
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+  }
+
+  .cv-experience {
+    page-break-before: always;
+  }
+
+  .cv-education,
+  .cv-skills {
+    border-top: none;
+  }
+}
