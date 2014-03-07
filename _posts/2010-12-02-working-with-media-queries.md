@@ -22,65 +22,15 @@ The use of media queries simply allows us to apply different CSS styles based on
 
 First we need to set the viewport to device-width
 
-``` html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
+{% gist 9421235 index-a.html %}
 
 We can either link to external stylesheets
 
-``` html
-<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="small.css">
-
-<link rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="medium.css">
-```
+{% gist 9421235 index-b.html %}
 
 Or add them to an existing stylesheet
 
-``` css
-/* Minimum width */
-@media screen and (min-width: 900px) {
-  body {
-    background: #ffe11a;
-  }
-}
-
-/* Maximum width */
-@media screen and (max-width: 600px) {
-  body {
-    background: #ffe11a;
-  }
-}
-
-/* Minimum and maximum width */
-@media screen and (min-width: 600px) and (max-width: 900px) {
-  body {
-    background: #ffe11a;
-  }
-}
-
-/* Maximum device width */
-@media only screen and (max-device-width: 480px) {
-  body {
-    background: #ffe11a;
-  }
-}
-
-/* Maximum device width and orientation */
-@media only screen and (max-device-width: 480px) and (orientation:portrait) {
-  body {
-    background: #ffe11a;
-  }
-}
-
-/* High resolution devices */
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  body {
-    background: #ffe11a;
-  }
-}
-```
+{% gist 9421235 main.css %}
 
 ### Is it supported?
 

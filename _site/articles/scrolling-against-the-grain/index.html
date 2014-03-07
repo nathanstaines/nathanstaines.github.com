@@ -46,12 +46,6 @@
                 </a>
               </li>
               <li>
-                <a href="http://last.fm/user/nneon">
-                  <i class="icon-lastfm"></i>
-                  <span class="text-hide">Last.fm</span>
-                </a>
-              </li>
-              <li>
                 <a href="http://instagram.com/nathanstaines">
                   <i class="icon-instagram"></i>
                   <span class="text-hide">Instagram</span>
@@ -94,17 +88,13 @@
 <p>Well the idea behind this method is to come up with a <strong>set width</strong> for each post, multiply it by the <strong>number of posts</strong> you have and then include that figure in the CSS file, which in turn forces the browser to grow horizontally.</p>
 
 <p>This is achieved by first setting the width of the post element in the CSS file:</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.post</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">800px</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-<p>Then all you need to do is include this simple jQuery function:</p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">$function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">numElementsSingle</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.post&#39;</span><span class="p">).</span><span class="nx">size</span><span class="p">(),</span>
-      <span class="nx">wrapperWidthSingle</span> <span class="o">=</span> <span class="nx">numElementsSingle</span> <span class="o">*</span> <span class="mi">800</span><span class="p">,</span>
-      <span class="nx">wrapperWidth</span> <span class="o">=</span> <span class="nx">wrapperWidthSingle</span><span class="p">;</span>
 
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#wrapper&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="nx">width</span><span class="o">:</span> <span class="nx">wrapperWidth</span> <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div>
+<script src="https://gist.github.com/9420947.js?file=main.css"> </script>
+
+<p>Then all you need to do is include this simple jQuery function:</p>
+
+<script src="https://gist.github.com/9420947.js?file=main.js"> </script>
+
 <p>Obviously if you want to employ this technique on your own site then you could change the values to something that better suits your needs. Also, if you require more detailed instructions on how to implement this method just let me know and I&#39;ll do my best to help you out.</p>
 
 <h3>In closing</h3>

@@ -33,21 +33,15 @@ However, it's not exactly a perfect fit if you want to use any of the [plugins](
 
   <p>The git commands you'll need:</p>
 
-<div class="highlight"><pre><code class="bash">git branch -D master
-git checkout -b master
-git filter-branch --subdirectory-filter _site/ -f
-git checkout <span class="nb">source</span>
-git push --all origin
-</code></pre></div>
+  {% gist 9421823 bash-a.sh %}
 
   <p>Or you can <a href="http://git-scm.com/book/ch2-7.html#Git-Aliases">create a git alias</a> to run them all:</p>
 
-<div class="highlight"><pre><code class="bash">git config --global alias.deploy <span class="s1">'! git branch -D master &amp;&amp; git checkout -b master &amp;&amp; git filter-branch --subdirectory-filter _site/ -f &amp;&amp; git checkout source &amp;&amp; git push --all origin'</span>
-</code></pre></div>
+  {% gist 9421823 bash-b.sh %}
 
   <p>Then all you need to remember is:</p>
 
-<div class="highlight"><pre><code>git deploy</code></pre></div>
+  {% gist 9421823 bash-c.sh %}
 
 </div>
 

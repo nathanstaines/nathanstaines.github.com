@@ -46,12 +46,6 @@
                 </a>
               </li>
               <li>
-                <a href="http://last.fm/user/nneon">
-                  <i class="icon-lastfm"></i>
-                  <span class="text-hide">Last.fm</span>
-                </a>
-              </li>
-              <li>
                 <a href="http://instagram.com/nathanstaines">
                   <i class="icon-instagram"></i>
                   <span class="text-hide">Instagram</span>
@@ -102,58 +96,17 @@
 <h3>How do we use them?</h3>
 
 <p>First we need to set the viewport to device-width</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
+
+<script src="https://gist.github.com/9421235.js?file=index-a.html"> </script>
+
 <p>We can either link to external stylesheets</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (max-device-width: 480px)&quot;</span> <span class="na">href=</span><span class="s">&quot;small.css&quot;</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media=</span><span class="s">&quot;only screen and (min-device-width: 768px) and (max-device-width: 1024px)&quot;</span> <span class="na">href=</span><span class="s">&quot;medium.css&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
+<script src="https://gist.github.com/9421235.js?file=index-b.html"> </script>
+
 <p>Or add them to an existing stylesheet</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="c">/* Minimum width */</span>
-<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
 
-<span class="c">/* Maximum width */</span>
-<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">600px</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<script src="https://gist.github.com/9421235.js?file=main.css"> </script>
 
-<span class="c">/* Minimum and maximum width */</span>
-<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">600px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c">/* Maximum device width */</span>
-<span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c">/* Maximum device width and orientation */</span>
-<span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-device-width</span><span class="o">:</span> <span class="nt">480px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:portrait</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c">/* High resolution devices */</span>
-<span class="k">@media</span>
-<span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">),</span>
-<span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">192dpi</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="o">:</span> <span class="m">#ffe11a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
 <h3>Is it supported?</h3>
 
 <p>The browser support for media queries is actually pretty good. The latest versions of Firefox, Safari, Chrome, and Opera are all using it. Internet Explorer 9 will be, but IE8 and below do not :( however there is a <a href="http://plugins.jquery.com/project/MediaQueries">jQuery media queries plugin</a> - for those not-so-capable browsers.</p>

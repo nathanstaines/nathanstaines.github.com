@@ -3,11 +3,10 @@
 // =============================================================================
 
 code {
-  padding: ($base-spacing-unit / 6) ($base-spacing-unit / 6) ($base-spacing-unit / 12);
-  border: 1px solid darken($yellow, 50%);
+  padding: ($base-spacing-unit / 12) ($base-spacing-unit / 6);
+  border: 1px solid $gray-light;
   border-radius: $base-radius;
-  color: $brown;
-  background: $yellow;
+  background: #f0f2f4;
 }
 
 // Gist syntax highlighting
@@ -62,7 +61,7 @@ code {
 }
 
 .gist-syntax .c           { color: $highlight-base04 !important; font-style: italic; } // Comment
-.gist-syntax .err         { color: $highlight-base08 !important; background-color: lighten($highlight-base08, 45%) !important; } // Error
+.gist-syntax .err         { color: $highlight-base08 !important; background-color: lighten($highlight-base08, 25%) !important; } // Error
 .gist-syntax .k           { color: $highlight-base05 !important; font-weight: normal !important; } // Keyword
 .gist-syntax .o           { color: $highlight-base05 !important; font-weight: normal !important; } // Operator
 .gist-syntax .cm          { color: $highlight-base04 !important; font-style: italic; } // Comment.Multiline

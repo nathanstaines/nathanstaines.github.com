@@ -46,12 +46,6 @@
                 </a>
               </li>
               <li>
-                <a href="http://last.fm/user/nneon">
-                  <i class="icon-lastfm"></i>
-                  <span class="text-hide">Last.fm</span>
-                </a>
-              </li>
-              <li>
                 <a href="http://instagram.com/nathanstaines">
                   <i class="icon-instagram"></i>
                   <span class="text-hide">Instagram</span>
@@ -107,21 +101,15 @@
 
   <p>The git commands you'll need:</p>
 
-<div class="highlight"><pre><code class="bash">git branch -D master
-git checkout -b master
-git filter-branch --subdirectory-filter _site/ -f
-git checkout <span class="nb">source</span>
-git push --all origin
-</code></pre></div>
+  <script src="https://gist.github.com/9421823.js?file=bash-a.sh"> </script>
 
   <p>Or you can <a href="http://git-scm.com/book/ch2-7.html#Git-Aliases">create a git alias</a> to run them all:</p>
 
-<div class="highlight"><pre><code class="bash">git config --global alias.deploy <span class="s1">'! git branch -D master &amp;&amp; git checkout -b master &amp;&amp; git filter-branch --subdirectory-filter _site/ -f &amp;&amp; git checkout source &amp;&amp; git push --all origin'</span>
-</code></pre></div>
+  <script src="https://gist.github.com/9421823.js?file=bash-b.sh"> </script>
 
   <p>Then all you need to remember is:</p>
 
-<div class="highlight"><pre><code>git deploy</code></pre></div>
+  <script src="https://gist.github.com/9421823.js?file=bash-c.sh"> </script>
 
 </div>
 
