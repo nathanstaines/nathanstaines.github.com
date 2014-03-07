@@ -3,7 +3,7 @@
   <title>Nathan Staines</title>
   <link href="http://nathanstaines.com/feed.xml" rel="self" />
   <link href="http://nathanstaines.com" />
-  <updated>2014-01-21T21:36:23+00:00</updated>
+  <updated>2014-03-07T17:50:48+00:00</updated>
   <id>http://nathanstaines.com</id>
   <author>
     <name>Nathan Staines</name>
@@ -30,7 +30,7 @@
 
   &lt;h4&gt;A solution to the plugin problem&lt;/h4&gt;
 
-  &lt;p&gt;After scouring the internet for quite a while, here&#39;s the solution I ended up using:&lt;/p&gt;
+  &lt;p&gt;After scouring the internet for quite a while, here's the solution I ended up using:&lt;/p&gt;
 
   &lt;ul&gt;
     &lt;li&gt;Setup two branches (source &amp;amp; master)&lt;/li&gt;
@@ -42,7 +42,7 @@
     &lt;li&gt;Push both branches to GitHub&lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;p&gt;The git commands you&#39;ll need:&lt;/p&gt;
+  &lt;p&gt;The git commands you'll need:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git branch -D master
 git checkout -b master
@@ -53,7 +53,7 @@ git push --all origin
 
   &lt;p&gt;Or you can &lt;a href=&quot;http://git-scm.com/book/ch2-7.html#Git-Aliases&quot;&gt;create a git alias&lt;/a&gt; to run them all:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git config --global alias.deploy &lt;span class=&quot;s1&quot;&gt;&#39;! git branch -D master &amp;amp;&amp;amp; git checkout -b master &amp;amp;&amp;amp; git filter-branch --subdirectory-filter _site/ -f &amp;amp;&amp;amp; git checkout source &amp;amp;&amp;amp; git push --all origin&#39;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;git config --global alias.deploy &lt;span class=&quot;s1&quot;&gt;'! git branch -D master &amp;amp;&amp;amp; git checkout -b master &amp;amp;&amp;amp; git filter-branch --subdirectory-filter _site/ -f &amp;amp;&amp;amp; git checkout source &amp;amp;&amp;amp; git push --all origin'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
   &lt;p&gt;Then all you need to remember is:&lt;/p&gt;
@@ -633,9 +633,9 @@ git push --all origin
       <id>http://nathanstaines.com/articles/starkers-html5</id>
       <content type="html">&lt;div class=&quot;alert&quot;&gt;
   &lt;h3&gt;Update:&lt;/h3&gt;
-  &lt;p&gt;Unfortunately I&#39;m no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;GitHub&lt;/a&gt; and use it in its current state.&lt;/p&gt;
+  &lt;p&gt;Unfortunately I'm no longer able to maintain and/or update Starkers HTML5 although you can still get a copy from &lt;a href=&quot;https://github.com/nathanstaines/starkers-html5&quot;&gt;GitHub&lt;/a&gt; and use it in its current state.&lt;/p&gt;
 
-  &lt;p&gt;Alternatively I&#39;d suggest downloading the original &lt;a href=&quot;https://github.com/viewportindustries/starkers&quot;&gt;Starkers&lt;/a&gt; recently updated by Viewport Industries or the &lt;a href=&quot;http://underscores.me&quot;&gt;underscores theme&lt;/a&gt; by Automattic.&lt;/p&gt;
+  &lt;p&gt;Alternatively I'd suggest downloading the original &lt;a href=&quot;https://github.com/viewportindustries/starkers&quot;&gt;Starkers&lt;/a&gt; recently updated by Viewport Industries or the &lt;a href=&quot;http://underscores.me&quot;&gt;underscores theme&lt;/a&gt; by Automattic.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;It&amp;#39;s been roughly 2&amp;frac12; years since &lt;a href=&quot;http://elliotjaystocks.com&quot;&gt;Elliot Jay Stocks&lt;/a&gt; first released &lt;a href=&quot;http://elliotjaystocks.com/starkers/&quot;&gt;Starkers&lt;/a&gt;, a completely naked Wordpress theme for designers and developers to build on.&lt;/p&gt;

@@ -21,25 +21,25 @@ $orange:                            #d54e21 !default;
 $yellow:                            #fcf8e3 !default;
 $brown:                             #7f612e !default;
 
-// Solarized colors
+// Base16 ocean colors
 // =====================================
 
-$highlight-base03:                  #002b36 !default;
-$highlight-base02:                  #073642 !default;
-$highlight-base01:                  #586e75 !default;
-$highlight-base00:                  #657b83 !default;
-$highlight-base0:                   #839496 !default;
-$highlight-base1:                   #93a1a1 !default;
-$highlight-base2:                   #eee8d5 !default;
-$highlight-base3:                   #fdf6e3 !default;
-$highlight-yellow:                  #b58900 !default;
-$highlight-orange:                  #cb4b16 !default;
-$highlight-red:                     #dc322f !default;
-$highlight-magenta:                 #d33682 !default;
-$highlight-violet:                  #6c71c4 !default;
-$highlight-blue:                    #268bd2 !default;
-$highlight-cyan:                    #2aa198 !default;
-$highlight-green:                   #859900 !default;
+$highlight-base00:                  #2b303b !default;
+$highlight-base01:                  #343d46 !default;
+$highlight-base02:                  #4f5b66 !default;
+$highlight-base03:                  #65737e !default;
+$highlight-base04:                  #a7adba !default;
+$highlight-base05:                  #c0c5ce !default;
+$highlight-base06:                  #dfe1e8 !default;
+$highlight-base07:                  #eff1f5 !default;
+$highlight-base08:                  #bf616a !default;
+$highlight-base09:                  #d08770 !default;
+$highlight-base0A:                  #ebcb8b !default;
+$highlight-base0B:                  #a3be8c !default;
+$highlight-base0C:                  #96b5b4 !default;
+$highlight-base0D:                  #8fa1b3 !default;
+$highlight-base0E:                  #b48ead !default;
+$highlight-base0F:                  #ab7967 !default;
 
 // Base colors
 // =====================================
@@ -56,7 +56,7 @@ $body-background:                   $white !default;
 
 $base-font-family:                  "proxima-nova", "helvetica neue", helvetica, arial, sans-serif !default;
 $headings-font-family:              "adelle", georgia, times, "times new roman", serif !default;
-$mono-font-family:                  consolas, "liberation mono", courier, monospace !default;
+$mono-font-family:                  menlo, consolas, "liberation mono", courier, monospace !default;
 
 $base-font-size:                    18px !default;
 $base-line-height:                  27px !default;
