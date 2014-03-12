@@ -1,0 +1,64 @@
+//
+// Mixins
+// =====================================
+
+// Type
+// -------------------------------------
+
+@mixin font-size($font-size) {
+  font-size: ($font-size / $base-font-size) * 1rem;
+}
+
+@mixin font-combo($font-size, $line-height) {
+  @include font-size($font-size);
+  line-height: ($line-height / $font-size);
+}
+
+// Utilities
+// -------------------------------------
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin text-hide() {
+  border: 0;
+  font: #{0/0} a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+// Keylines
+// -------------------------------------
+
+@mixin keyline($position) {
+  @if $position == top {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @if $position == bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @if $position == none {
+    border: none;
+  }
+}
+
+// Inset effect
+// -------------------------------------
+
+@mixin inset-effect {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 1px 0 $white;
+  background: #f0f2f4;
+}

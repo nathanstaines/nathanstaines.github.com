@@ -1,0 +1,59 @@
+//
+// Utilities
+// =====================================
+
+// Floats
+// -------------------------------------
+
+.clearfix {
+  @include clearfix();
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+// -------------------------------------
+
+.hidden {
+  visibility: hidden;
+}
+
+.text-hide {
+  @include text-hide();
+}
+
+// Visibility utilities
+// -------------------------------------
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block {
+  display: none !important;
+}
+
+// Media queries
+// -------------------------------------
+
+@media (max-width: $screen-xs-max) {
+  .visible-xs-block {
+    display: block !important;
+  }
+
+  .visible-xs-inline {
+    display: inline !important;
+  }
+
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+}

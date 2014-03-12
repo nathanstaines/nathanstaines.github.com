@@ -1,0 +1,31 @@
+//
+// Posts
+// =====================================
+
+.post-header {
+  position: relative;
+  margin-bottom: $base-spacing-unit;
+  @include keyline(bottom);
+
+  h2 {
+    margin-bottom: $quarter-spacing-unit;
+  }
+}
+
+.post-content {
+  position: relative;
+}
+
+.post-footer {
+  margin: $base-spacing-unit 0;
+  @include clearfix();
+}
+
+// Media queries
+// -------------------------------------
+
+@media (min-width: $screen-xs-min) {
+  .post-header h2 {
+    margin-bottom: ($base-spacing-unit / 6);
+  }
+}

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+{% if page.banner %}
+  <div class="banner hidden">
+    {% picture banner banners/{{ page.banner }} alt="" %}
+    {% if page.caption %}
+      <span class="caption">{{ page.caption }}</span>
+    {% endif %}
+  </div>
+{% endif %}
+
+<main id="content" class="container" role="main">
+  <article class="post">
+    <header class="post-header">
+      {% if page.title %}
+        <h2>{{ page.title }}</h2>
+      {% endif %}
+
+      <p class="meta-data">
+        {% if page.date  %}
+          <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        {% endif %}
+      </p>
+    </header>
+    <div class="post-content">
+      {{ content }}
+
+      <a id="likes" class="btn" data-page-id="{{ page.id }}" href="#">
+        <i class="icon-heart-empty"></i> <span class="count">&dash;</span>
+      </a>
+    </div>
+    <footer class="post-footer">
+      <nav class="nav nav-posts">
+        {% if page.previous and page.previous.categories[0] == page.categories[0] %}
+          <a class="btn" href="{{ page.previous.url }}">&#8592; Prev</a>
+        {% endif %}
+
+        {% if page.next and page.next.categories[0] == page.categories[0] %}
+          <a class="btn pull-right" href="{{ page.next.url }}">Next &#8594;</a>
+        {% endif %}
+      </nav>
+    </footer>
+  </article>
+
+  <div id="disqus_thread"></div>
+
+  <script>
+    var disqus_shortname = 'nathanstaines';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    <p>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></p>
+  </noscript>
+</main>

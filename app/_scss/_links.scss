@@ -1,0 +1,12 @@
+//
+// Links
+// =====================================
+
+a {
+  color: $link-color;
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}

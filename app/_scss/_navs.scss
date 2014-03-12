@@ -1,0 +1,30 @@
+//
+// Navigation
+// =====================================
+
+.nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+// Main nav
+// -------------------------------------
+
+.nav-main {
+  float: right;
+  @include font-size($epsilon-size);
+  line-height: 1.333333333;
+
+  li {
+    display: inline-block;
+    padding-left: $half-spacing-unit;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}

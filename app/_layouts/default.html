@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An Australian front-end developer living in London.">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    {% if page.css %}
+      <style>{{ page.css }}</style>
+    {% endif %}
+
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <script src="//use.typekit.com/wzg1ian.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div id="layout">
+      <header id="head" role="banner">
+        <div class="container">
+          <h1 class="brand">
+            <a href="/">
+              <span class="circles"></span>
+              <span class="hidden-xs">Nathan Staines</span>
+              <span class="visible-xs-inline">NS</span>
+            </a>
+          </h1>
+          <nav class="nav nav-main" role="navigation">
+            <ul>
+              <li>
+                <a href="http://twitter.com/nathanstaines">
+                  <i class="icon-twitter"></i><span class="text-hide">Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://github.com/nathanstaines">
+                  <i class="icon-github"></i><span class="text-hide">GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://dribbble.com/nathanstaines">
+                  <i class="icon-dribbble"></i><span class="text-hide">Dribbble</span>
+                </a>
+              </li>
+              <li>
+                <a href="http://instagram.com/nathanstaines">
+                  <i class="icon-instagram"></i><span class="text-hide">Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      {{ content }}
+
+      <div id="faux-foot"></div>
+    </div>
+    <footer id="foot" role="contentinfo">
+      <div class="container">
+        <p>
+          <span class="pull-left">&copy; 2010 - {{ site.time | date: "%Y" }} Nathan Staines</span>
+          <span class="pull-right"><a href="/feed.xml"><i class="icon-rss"></i><span class="text-hide">RSS</span></a></span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- build:js(app) /js/scripts.js -->
+    <script src="/_bower_components/picturefill/picturefill.js"></script>
+    <script src="/_bower_components/jquery/dist/jquery.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- endbuild -->
+
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-5872209-5');ga('send','pageview');
+    </script>
+  </body>
+</html>

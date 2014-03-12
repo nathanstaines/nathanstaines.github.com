@@ -1,0 +1,95 @@
+//
+// Layout
+// =====================================
+
+.container {
+  width: 90%;
+  max-width: 44em;
+  margin: 0 auto;
+}
+
+#layout {
+  min-height: 100%;
+  margin-bottom: -#{$footer-height};
+}
+
+#content {
+  margin-bottom: $base-spacing-unit;
+}
+
+// Site header
+// -------------------------------------
+
+#head {
+  margin-bottom: ($base-spacing-unit * 1.666666667);
+  padding: $half-spacing-unit 0;
+  border-bottom: 1px solid $gray-light;
+  background: #f0f2f4;
+  @include clearfix();
+}
+
+// Branding
+// -------------------------------------
+
+.brand {
+  display: inline-block;
+  margin: 0;
+  @include font-size($delta-size);
+  line-height: 1;
+  vertical-align: middle;
+
+  a {
+    text-decoration: none;
+  }
+
+  .circles {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    width: $milli-size;
+    height: $milli-size;
+    margin-right: $quarter-spacing-unit;
+    border: 2px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px $orange;
+    background: $blue;
+    transition: all 0.3s linear;
+  }
+
+  &:hover {
+    .circles {
+      border: 6px solid $white;
+      background: $orange;
+      box-shadow: 0 0 0 4px $blue;
+    }
+  }
+}
+
+// Site footer
+// -------------------------------------
+
+#faux-foot {
+  height: $footer-height;
+}
+
+#foot {
+  position: relative;
+  clear: both;
+  height: $footer-height;
+  border-top: 1px solid $gray-light;
+  color: $gray;
+  background: #f0f2f4;
+
+  p {
+    margin: $half-spacing-unit 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
