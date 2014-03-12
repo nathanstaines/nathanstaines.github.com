@@ -2,6 +2,10 @@
 // Archives
 // =====================================
 
+.archive {
+  @include clearfix();
+}
+
 .archive-item {
   position: relative;
 
