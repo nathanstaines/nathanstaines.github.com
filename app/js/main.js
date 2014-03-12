@@ -4,21 +4,22 @@
   var App = {
     likeCount: function() {
 
-      var $likes = $('#likes'),
-          $count = $likes.find('span.count'),
-          $pageId = $likes.data('page-id'),
-          hasLikes = false,
-          database = 'nathanstaines',
-          collection = 'likes',
-          apiKey = 'ZqUyD4bGcXktf9nj2A2Ixbt5IAMKWzKs',
-          timer;
+      var $likes = $('#likes');
+      var $count = $likes.find('span.count');
+      var $pageId = $likes.data('page-id');
+      var hasLikes = false;
+      var database = 'nathanstaines';
+      var collection = 'likes';
+      var apiKey = 'ZqUyD4bGcXktf9nj2A2Ixbt5IAMKWzKs';
+      var timer;
 
       if (location.hostname.match('nathanstaines') && $likes.length) {
 
         var likeMover = function() {
-          var $scroll = $(window).scrollTop();
+          var $scrollPoint = $(window).scrollTop();
+          var $bannerHeight = $('.banner').height();
 
-          $scroll = $scroll > 250 ? $likes.addClass('moveme') : $likes.removeClass('moveme');
+          $scrollPoint = $scrollPoint > $bannerHeight + 250 ? $likes.addClass('moveme') : $likes.removeClass('moveme');
         };
 
         $(window).scroll(function() {
@@ -80,8 +81,8 @@
         }
 
         $likes.on('click', function(e) {
-          var $this = $(this),
-              $num = $count.text();
+          var $this = $(this);
+          var $num = $count.text();
 
           $this.toggleClass('counted')
             .find('i')
@@ -114,10 +115,10 @@
     },
 
     bannerImage: function() {
-      var $container = $('.banner'),
-          wrapperHeight,
-          imageHeight,
-          overlap;
+      var $container = $('.banner');
+      var wrapperHeight;
+      var imageHeight;
+      var overlap;
 
       function centerImage() {
         imageHeight = $container.find('img').height();
