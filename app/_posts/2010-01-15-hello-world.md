@@ -5,7 +5,7 @@ category: articles
 tags: [css, html]
 date: 2010-01-15 12:00:00
 banner: 01.jpg
-caption: <a href="http://flickr.com/photos/seeminglee/8921138110/">Sing-ming Lee</a>
+caption: <a href="http://flickr.com/photos/seeminglee/8921138110/">See-ming Lee</a>
 ---
 
 I'm here, I've finally made it... my very own slice of the world wide web! Now don't get me wrong, I've had websites before but I've never had one named after me... it's kind of a big deal.
