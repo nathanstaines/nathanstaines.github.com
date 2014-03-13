@@ -26,19 +26,23 @@ layout: default
     </header>
     <div class="post-content">
       {{ content }}
-
-      <a id="likes" class="btn" data-page-id="{{ page.id }}" href="#">
-        <i class="icon-heart-empty"></i> <span class="count">&dash;</span>
-      </a>
     </div>
     <footer class="post-footer">
       <nav class="nav nav-posts">
         {% if page.previous and page.previous.categories[0] == page.categories[0] %}
-          <a class="btn" href="{{ page.previous.url }}">&#8592; Prev</a>
+          <a class="btn pull-left" href="{{ page.previous.url }}">&#8592; Prev</a>
+        {% else %}
+          <a class="btn pull-left disabled">&#8592; Prev</a>
         {% endif %}
+
+        <a id="likes" class="btn" data-page-id="{{ page.id }}" href="#">
+          <i class="icon-heart-empty"></i> <span class="count">&dash;</span>
+        </a>
 
         {% if page.next and page.next.categories[0] == page.categories[0] %}
           <a class="btn pull-right" href="{{ page.next.url }}">Next &#8594;</a>
+        {% else %}
+          <a class="btn pull-right disabled">Next &#8594;</a>
         {% endif %}
       </nav>
     </footer>

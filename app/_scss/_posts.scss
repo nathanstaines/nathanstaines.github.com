@@ -2,6 +2,10 @@
 // Posts
 // =====================================
 
+.post {
+  position: relative;
+}
+
 .post-header {
   position: relative;
   margin-bottom: $base-spacing-unit;
@@ -9,11 +13,8 @@
 
   h2 {
     margin-bottom: $quarter-spacing-unit;
+    padding-right: ($base-spacing-unit * 3);
   }
-}
-
-.post-content {
-  position: relative;
 }
 
 .post-footer {
