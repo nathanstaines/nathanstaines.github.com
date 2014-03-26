@@ -9,6 +9,7 @@ module.exports = {
       src: [
         'img/**/*',
         'fonts/**/*',
+        'favicon.ico',
         '!**/_*{,/**}'
       ],
       dest: 'dist'
