@@ -70,3 +70,27 @@ blockquote {
     content: none;
   }
 }
+
+// FOUT fix
+// -------------------------------------
+
+.wf-loading {
+  p,
+  h1,
+  h2,
+  h3,
+  dl,
+  ol,
+  ul,
+  blockquote,
+  figcaption,
+  .btn,
+  .brand span,
+  .caption {
+    visibility: hidden;
+  }
+
+  .brand .circles {
+    visibility: visible;
+  }
+}
