@@ -36,7 +36,7 @@ dd {
   margin-bottom: 0;
 }
 
-.img-rounded img {
+.img-rounded {
   border-radius: 50%;
 }
 
@@ -206,7 +206,7 @@ dd {
   .cv-profile {
     text-align: left;
 
-    .img-polaroid img {
+    .img-polaroid {
       position: relative;
       top: -#{$base-spacing-unit / 6.75};
       float: left;
@@ -304,7 +304,7 @@ dd {
     border-top: 1px solid $gray-darker;
   }
 
-  .img-rounded img {
+  .img-rounded {
     border-radius: 0;
   }
 

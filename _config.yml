@@ -21,6 +21,7 @@ exclude: [
 
 picture:
   source: img/_fullsize
+  markup: 'picture'
   presets:
     default:
       source_lg:
