@@ -18,7 +18,7 @@
 }
 
 .post-footer {
-  margin: $base-spacing-unit 0;
+  margin: $base-spacing-unit 0 $double-spacing-unit;
   @include clearfix();
 }
 

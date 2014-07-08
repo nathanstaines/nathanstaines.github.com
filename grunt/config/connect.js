@@ -2,7 +2,7 @@
 
 module.exports = {
   options: {
-    port: 9000,
+    port: 3000,
     livereload: 35729,
     hostname: 'localhost'
   },
