@@ -1,9 +1,0 @@
-{
-  "name": "nathanstaines",
-  "private": true,
-  "dependencies": {
-    "jquery": "~2.1.1",
-    "normalize-css": "~3.0.1",
-    "picturefill": "~2.0.0"
-  }
-}
